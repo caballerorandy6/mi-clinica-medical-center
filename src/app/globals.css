@@ -1,26 +1,174 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ========================================
+     PALETA VERDE CÁLIDO - Clínica Hispana
+     Salud + Profesional + Acogedor
+     ======================================== */
+
+  /* Colores Principales - Mi Clínica Medical Center */
+  --red-primary: #DC2626;      /* Rojo cálido para CTAs */
+  --red-dark: #B91C1C;
+  --red-light: #FEE2E2;
+
+  --blue-primary: #1E40AF;     /* Azul médico profesional */
+  --blue-dark: #1E3A8A;
+  --blue-light: #DBEAFE;
+
+  /* VERDE CÁLIDO - Color principal de fondo */
+  --green-primary: #16A34A;    /* Verde salud */
+  --green-light: #DCFCE7;      /* Verde claro */
+  --green-bg: #F0FDF4;         /* Verde menta suave (fondo principal) */
+  --green-bg-alt: #ECFDF5;     /* Verde alternativo */
+  --green-warm: #F7FDF9;       /* Verde muy suave con calidez */
+
+  /* Acentos Cálidos */
+  --amber-light: #FEF3C7;      /* Crema dorado para acentos */
+  --cream-bg: #FEFDFB;         /* Crema muy suave */
+
+  /* WhatsApp */
+  --whatsapp: #25D366;
+  --whatsapp-dark: #128C7E;
+
+  /* ========================================
+     shadcn/ui theme - VERDE CÁLIDO
+     ======================================== */
+  --radius: 0.625rem;
+
+  /* Fondo principal: Verde menta muy suave */
+  --background: #F7FDF9;
+  --foreground: #1F2937;       /* Gris oscuro profesional */
+
+  /* Cards */
+  --card: #FFFFFF;
+  --card-foreground: #1F2937;
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2937;
+
+  /* Primario: Rojo cálido (CTAs) */
+  --primary: #DC2626;
+  --primary-foreground: #FFFFFF;
+
+  /* Secundario: Azul médico */
+  --secondary: #1E40AF;
+  --secondary-foreground: #FFFFFF;
+
+  /* Muted: Tonos verdes suaves */
+  --muted: #F0FDF4;
+  --muted-foreground: #4B5563;
+
+  /* Acento: Verde salud */
+  --accent: #DCFCE7;
+  --accent-foreground: #166534;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  /* Bordes suaves */
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #16A34A;             /* Ring verde para focus */
+
+  /* Éxito: Verde */
+  --success: #16A34A;
+  --success-foreground: #FFFFFF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
+  /* Custom colors - Verde Cálido */
+  --color-red-primary: var(--red-primary);
+  --color-red-dark: var(--red-dark);
+  --color-red-light: var(--red-light);
+  --color-blue-primary: var(--blue-primary);
+  --color-blue-dark: var(--blue-dark);
+  --color-blue-light: var(--blue-light);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-dark: var(--whatsapp-dark);
+
+  /* Verdes */
+  --color-green-primary: var(--green-primary);
+  --color-green-light: var(--green-light);
+  --color-green-bg: var(--green-bg);
+  --color-green-bg-alt: var(--green-bg-alt);
+  --color-green-warm: var(--green-warm);
+
+  /* Acentos */
+  --color-amber-light: var(--amber-light);
+  --color-cream-bg: var(--cream-bg);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* WhatsApp pulse animation */
+@keyframes pulse-whatsapp {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-pulse-whatsapp {
+  animation: pulse-whatsapp 2s ease-in-out infinite;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--blue-light);
+  color: var(--blue-primary);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
