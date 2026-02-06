@@ -74,7 +74,7 @@ export function Specialties() {
                 <Card
                   className={`h-full hover:shadow-lg transition-all ${
                     specialty.highlighted
-                      ? "border-2 border-primary bg-gradient-to-br from-white to-red-light/30"
+                      ? "border-2 border-primary bg-gradient-to-br from-white to-green-light/30"
                       : ""
                   }`}
                 >

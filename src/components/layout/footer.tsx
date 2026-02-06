@@ -16,7 +16,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="Logo Mi Clínica Medical Center - Clínica hispana en Houston TX"
                 width={60}
                 height={60}

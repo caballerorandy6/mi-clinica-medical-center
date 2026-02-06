@@ -7,6 +7,21 @@ export interface Specialty {
   highlighted?: boolean;
 }
 
+export interface Service {
+  id: string;
+  slug: string;
+  title: string;
+  shortTitle: string;
+  description: string;
+  longDescription: string;
+  icon: string;
+  category: "especialidad" | "diagnostico" | "mujer" | "especial" | "otro";
+  keywords: string[];
+  features: string[];
+  highlighted?: boolean;
+  order: number;
+}
+
 export interface Promotion {
   id: string;
   title: string;

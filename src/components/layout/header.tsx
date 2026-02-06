@@ -1,126 +1,358 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { List, X, Phone } from "@phosphor-icons/react";
+import { List, Phone, MapPin, Clock, WhatsappLogo } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { NAVIGATION_LINKS, CONTACT_INFO } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const closeMenu = () => setIsMenuOpen(false);
+  // Intersection Observer para detectar sección activa
+  useEffect(() => {
+    const sections = NAVIGATION_LINKS
+      .filter(link => link.href.startsWith("#"))
+      .map(link => link.href.replace("#", ""));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -70% 0px",
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((sectionId) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsappNumber}`;
+
+  // Determinar si un link está activo
+  const isActiveLink = (href: string) => {
+    if (href === "/") return pathname === "/" && !activeSection;
+    if (href.startsWith("#")) return activeSection === href;
+    return pathname.startsWith(href);
+  };
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white shadow-md" : "bg-white/95 backdrop-blur-sm"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
+        isScrolled
+          ? "bg-white shadow-xl shadow-black/5"
+          : "bg-gradient-to-b from-black/50 to-transparent"
       )}
     >
-      {/* Top bar with phone */}
-      <div className="bg-secondary text-white py-2">
-        <div className="container mx-auto px-4 flex justify-center md:justify-end">
-          <a
-            href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
-            className="flex items-center gap-2 text-sm hover:text-white/80 transition-colors"
-            aria-label="Llamar a la clínica hispana Mi Clínica Medical Center"
-          >
-            <Phone className="size-4" />
-            <span>{CONTACT_INFO.phone}</span>
-          </a>
+      {/* Top bar - Info (solo visible cuando no hay scroll) */}
+      <div
+        className={cn(
+          "transition-all duration-500 ease-out overflow-hidden",
+          isScrolled
+            ? "max-h-0 opacity-0"
+            : "max-h-14 opacity-100"
+        )}
+      >
+        <div className="bg-secondary/90 backdrop-blur-sm">
+          <div className="container mx-auto px-4 py-2">
+            <div className="flex items-center justify-between text-sm">
+              {/* Left - Location (hidden on mobile/tablet, visible lg+) */}
+              <a
+                href={CONTACT_INFO.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden lg:flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-300"
+              >
+                <MapPin className="size-4 shrink-0" weight="fill" />
+                <span className="truncate max-w-[200px] xl:max-w-xs">{CONTACT_INFO.address}</span>
+              </a>
+
+              {/* Center - Hours (hidden on mobile/tablet, visible xl+) */}
+              <div className="hidden xl:flex items-center gap-2 text-white/90">
+                <Clock className="size-4" weight="fill" />
+                <span>{CONTACT_INFO.hours}</span>
+              </div>
+
+              {/* Right - Contact (always visible, centered on mobile) */}
+              <div className="flex items-center gap-4 mx-auto lg:mx-0">
+                <a
+                  href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+                  className="flex items-center gap-2 text-white hover:text-green-light transition-colors duration-300 font-semibold"
+                >
+                  <Phone className="size-4" weight="fill" />
+                  <span>{CONTACT_INFO.phone}</span>
+                </a>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden sm:flex items-center gap-2 text-white/90 hover:text-green-400 transition-colors duration-300"
+                >
+                  <WhatsappLogo className="size-4" weight="fill" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Main navigation */}
-      <nav className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
+      <nav aria-label="Navegación principal" className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3"
-            aria-label="Mi Clínica Medical Center - Clínica Hispana en Houston"
+            className="flex items-center gap-3 group shrink-0"
+            aria-label="Mi Clínica Medical Center - Inicio"
           >
-            <Image
-              src="/images/logo.png"
-              alt="Logo de Mi Clínica Medical Center - Clínica hispana de confianza en Houston TX"
-              width={50}
-              height={50}
-              className="w-12 h-12 md:w-14 md:h-14"
-              priority
-            />
+            <div
+              className={cn(
+                "relative transition-all duration-500 rounded-full",
+                isScrolled
+                  ? "w-10 h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 bg-white shadow-sm"
+                  : "w-12 h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-white/95 shadow-lg shadow-black/20"
+              )}
+            >
+              <Image
+                src="/images/logo.webp"
+                alt="Logo Mi Clínica Medical Center"
+                fill
+                className="object-contain p-1 transition-all duration-500 group-hover:scale-105"
+                priority
+                sizes="(max-width: 1024px) 48px, (max-width: 1280px) 56px, 64px"
+              />
+            </div>
             <div className="hidden sm:block">
-              <p className="text-lg font-bold text-secondary">Mi Clínica</p>
-              <p className="text-xs text-muted-foreground">Medical Center</p>
+              <p
+                className={cn(
+                  "text-lg lg:text-xl xl:text-2xl font-bold leading-tight transition-all duration-500",
+                  isScrolled ? "text-secondary" : "text-white drop-shadow-lg"
+                )}
+              >
+                Mi Clínica
+              </p>
+              <p
+                className={cn(
+                  "text-[9px] lg:text-[10px] xl:text-xs font-semibold tracking-[0.1em] transition-all duration-500",
+                  isScrolled ? "text-muted-foreground" : "text-white/90 drop-shadow-md"
+                )}
+              >
+                MEDICAL CENTER
+              </p>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
-            {NAVIGATION_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-foreground hover:text-primary font-medium transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+          {/* Desktop Navigation (visible lg+) */}
+          <div className="hidden lg:flex items-center">
+            {NAVIGATION_LINKS.map((link) => {
+              const isActive = isActiveLink(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    "relative px-3 xl:px-4 py-2 text-sm xl:text-base font-medium transition-all duration-300 rounded-lg whitespace-nowrap",
+                    "before:absolute before:bottom-1 before:left-2 before:right-2 before:h-0.5 before:rounded-full",
+                    "before:transition-all before:duration-300 before:ease-out",
+                    isScrolled
+                      ? [
+                          "text-foreground/80 hover:text-primary hover:bg-primary/5",
+                          "before:bg-primary",
+                          isActive
+                            ? "text-primary bg-primary/5 before:scale-x-100"
+                            : "before:scale-x-0 hover:before:scale-x-100",
+                        ]
+                      : [
+                          "text-white/90 hover:text-white hover:bg-white/10",
+                          "before:bg-white",
+                          isActive
+                            ? "text-white bg-white/10 before:scale-x-100"
+                            : "before:scale-x-0 hover:before:scale-x-100",
+                        ]
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* CTA Button - Desktop */}
-          <div className="hidden lg:block">
-            <Button asChild size="lg">
-              <a href="#contacto">Agendar Cita</a>
+          {/* Desktop CTA (visible lg+) */}
+          <div className="hidden lg:flex items-center gap-2 xl:gap-4">
+            <a
+              href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+              className={cn(
+                "flex items-center gap-2 font-semibold transition-all duration-300 px-2 xl:px-3 py-2 rounded-lg whitespace-nowrap",
+                isScrolled
+                  ? "text-foreground hover:text-primary hover:bg-primary/5"
+                  : "text-white hover:bg-white/10"
+              )}
+            >
+              <div
+                className={cn(
+                  "w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300",
+                  isScrolled ? "bg-primary/10" : "bg-white/10"
+                )}
+              >
+                <Phone
+                  className={cn(
+                    "size-4 transition-colors duration-300",
+                    isScrolled ? "text-primary" : "text-white"
+                  )}
+                  weight="fill"
+                  aria-hidden="true"
+                />
+              </div>
+              <span className="sr-only">Llamar al </span>
+              <span className="hidden xl:inline text-sm">{CONTACT_INFO.phone}</span>
+            </a>
+            <Button
+              asChild
+              size="default"
+              className={cn(
+                "transition-all duration-500 font-semibold shadow-lg text-sm",
+                isScrolled
+                  ? "bg-primary text-white hover:bg-primary/90 shadow-primary/20"
+                  : "bg-white text-secondary hover:bg-white/90 shadow-white/20"
+              )}
+            >
+              <Link href="#contacto">Agendar Cita</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
-            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
-            aria-expanded={isMenuOpen}
-          >
-            {isMenuOpen ? <X className="size-6" /> : <List className="size-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        <div
-          className={cn(
-            "lg:hidden overflow-hidden transition-all duration-300",
-            isMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
-          )}
-        >
-          <div className="flex flex-col gap-3 pb-4">
-            {NAVIGATION_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className="text-foreground hover:text-primary font-medium py-2 border-b border-border transition-colors"
+          {/* Mobile Menu (visible below lg) */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="lg:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                className={cn(
+                  "h-10 w-10 rounded-xl transition-all duration-300",
+                  isScrolled
+                    ? "text-foreground hover:bg-primary/5 hover:text-primary"
+                    : "text-white hover:bg-white/10"
+                )}
+                aria-label="Abrir menú"
               >
-                {link.label}
-              </Link>
-            ))}
-            <Button asChild className="mt-2">
-              <a href="#contacto" onClick={closeMenu}>
-                Agendar Cita en la Clínica Hispana
-              </a>
-            </Button>
-          </div>
+                <List className="size-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0" showCloseButton={false}>
+              <div className="flex flex-col h-full">
+                {/* Sheet Header */}
+                <div className="p-5 border-b bg-gradient-to-r from-secondary to-teal-dark">
+                  <Link
+                    href="/"
+                    className="flex items-center gap-3"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/10 p-1">
+                      <Image
+                        src="/images/logo.webp"
+                        alt="Logo Mi Clínica Medical Center"
+                        width={56}
+                        height={56}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <SheetTitle className="text-lg font-bold text-white text-left">
+                        Mi Clínica
+                      </SheetTitle>
+                      <p className="text-[10px] text-white/80 font-semibold tracking-widest">
+                        MEDICAL CENTER
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+
+                {/* Navigation Links */}
+                <nav className="flex-1 p-4 overflow-y-auto">
+                  <div className="flex flex-col gap-1">
+                    {NAVIGATION_LINKS.map((link) => {
+                      const isActive = isActiveLink(link.href);
+                      return (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className={cn(
+                            "flex items-center px-4 py-3 font-medium rounded-xl transition-all duration-300",
+                            isActive
+                              ? "bg-primary/10 text-primary border-l-4 border-primary"
+                              : "text-foreground hover:bg-muted hover:text-primary hover:translate-x-1"
+                          )}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {link.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </nav>
+
+                {/* Sheet Footer */}
+                <div className="p-4 border-t bg-muted/50 space-y-3">
+                  <div className="grid grid-cols-2 gap-2">
+                    <a
+                      href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+                      className="flex flex-col items-center gap-2 p-3 bg-white rounded-xl shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300"
+                    >
+                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                        <Phone className="size-5 text-primary" weight="fill" />
+                      </div>
+                      <span className="text-sm font-semibold text-foreground">Llamar</span>
+                    </a>
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-col items-center gap-2 p-3 bg-white rounded-xl shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300"
+                    >
+                      <div className="w-10 h-10 bg-green-500/10 rounded-full flex items-center justify-center">
+                        <WhatsappLogo className="size-5 text-green-600" weight="fill" />
+                      </div>
+                      <span className="text-sm font-semibold text-foreground">WhatsApp</span>
+                    </a>
+                  </div>
+                  <Button asChild className="w-full h-12 text-sm font-semibold" size="lg">
+                    <Link href="#contacto" onClick={() => setIsOpen(false)}>
+                      Agendar Cita Ahora
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </nav>
     </header>

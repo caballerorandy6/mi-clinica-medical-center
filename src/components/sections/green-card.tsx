@@ -27,7 +27,7 @@ export function GreenCard() {
 
             <h2 className="text-3xl md:text-4xl font-bold">
               Examen Médico Green Card I-693 en la{" "}
-              <span className="text-red-light">Clínica Hispana</span>
+              <span className="text-green-light">Clínica Hispana</span>
             </h2>
 
             <p className="text-lg text-white/80 leading-relaxed">

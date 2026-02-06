@@ -1,41 +1,53 @@
+import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/hero";
-import { Promotions } from "@/components/sections/promotions";
-import { Testimonials } from "@/components/sections/testimonials";
-import { Specialties } from "@/components/sections/specialties";
-import { Services } from "@/components/sections/services";
-import { GreenCard } from "@/components/sections/green-card";
-import { Location } from "@/components/sections/location";
-import { FAQ } from "@/components/sections/faq";
-import { Contact } from "@/components/sections/contact";
+
+// Dynamic imports para secciones below-the-fold (mejor performance)
+const Promotions = dynamic(() =>
+  import("@/components/sections/promotions").then((mod) => mod.Promotions)
+);
+
+const Testimonials = dynamic(() =>
+  import("@/components/sections/testimonials").then((mod) => mod.Testimonials)
+);
+
+const Specialties = dynamic(() =>
+  import("@/components/sections/specialties").then((mod) => mod.Specialties)
+);
+
+const Services = dynamic(() =>
+  import("@/components/sections/services").then((mod) => mod.Services)
+);
+
+const GreenCard = dynamic(() =>
+  import("@/components/sections/green-card").then((mod) => mod.GreenCard)
+);
+
+const Location = dynamic(() =>
+  import("@/components/sections/location").then((mod) => mod.Location)
+);
+
+const FAQ = dynamic(() =>
+  import("@/components/sections/faq").then((mod) => mod.FAQ)
+);
+
+const Contact = dynamic(() =>
+  import("@/components/sections/contact").then((mod) => mod.Contact)
+);
 
 export default function Home() {
   return (
     <>
-      {/* 1. Hero Section con Trust Badges integrados */}
+      {/* Hero - Carga inmediata (above the fold) */}
       <Hero />
 
-      {/* 2. Promociones de la Clínica Hispana */}
+      {/* Secciones below-the-fold - Carga diferida */}
       <Promotions />
-
-      {/* 3. Video Reviews / Testimonios */}
       <Testimonials />
-
-      {/* 4. Especialidades Médicas (Ginecología primero) */}
       <Specialties />
-
-      {/* 5. Servicios Específicos */}
       <Services />
-
-      {/* 6. Exámenes Green Card I-693 */}
       <GreenCard />
-
-      {/* 7. Horarios y Ubicación */}
       <Location />
-
-      {/* 8. FAQ */}
       <FAQ />
-
-      {/* 9. Formulario de Contacto */}
       <Contact />
     </>
   );
