@@ -12,15 +12,18 @@ import {
   Clock,
   Star,
   WhatsappLogo,
+  CaretDown,
 } from "@phosphor-icons/react";
+
 import { Button } from "@/components/ui/button";
-import { HERO_CONTENT, CONTACT_INFO, TRUST_BADGES } from "@/lib/constants";
+import { CONTACT_INFO, TRUST_BADGES } from "@/lib/constants";
 
 const trustBadgeIconMap = {
   Shield,
   MessageCircle: ChatCircle,
   Users,
   Clock,
+  Star,
 };
 
 const fadeInUp = {
@@ -47,13 +50,13 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[100svh] flex items-center pt-40 md:pt-44 lg:pt-48 pb-32 md:pb-40 overflow-hidden"
+      className="relative min-h-svh flex items-center pt-32 md:pt-36 lg:pt-40 pb-28 md:pb-32 overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0 -z-20">
         <Image
           src="/images/hero.webp"
-          alt="Clínica Hispana Mi Clínica Medical Center en Houston"
+          alt="Clínica Hispana con Ginecología en Español - Mi Clínica Medical Center Houston TX"
           fill
           className="object-cover object-center"
           priority
@@ -63,8 +66,8 @@ export function Hero() {
       </div>
 
       {/* Overlay con gradiente elegante */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 -z-10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent -z-10" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-black/40 -z-10" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent -z-10" />
 
       <div className="container mx-auto px-4">
         <div className="max-w-3xl">
@@ -72,45 +75,43 @@ export function Hero() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="space-y-6"
+            className="space-y-5"
           >
-            {/* Badge USCIS */}
+            {/* Title - SEO optimizado, lo primero que impacta */}
+            <motion.h1
+              variants={fadeInUp}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05]"
+            >
+              <span className="text-primary">Clínica Hispana</span>
+              <br />
+              Cerca de Ti en Houston
+            </motion.h1>
+
+            {/* Subtitle - Conciso, incluye Ginecología */}
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl lg:text-2xl text-white/90 font-medium max-w-xl"
+            >
+              Ginecología y atención médica en español. Doctores que hablan tu idioma.
+            </motion.p>
+
+            {/* Badge USCIS - Después del mensaje principal */}
             <motion.div variants={fadeInUp}>
-              <div className="inline-flex items-center gap-2 bg-primary/90 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                <Shield className="size-4" weight="fill" />
+              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
+                <Shield className="size-4 text-primary" weight="fill" />
                 <span>Autorizado por USCIS para Exámenes I-693</span>
               </div>
             </motion.div>
 
-            {/* Title */}
-            <motion.h1
-              variants={fadeInUp}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1]"
-            >
-              Tu{" "}
-              <span className="text-primary">Clínica Hispana</span>
-              <br />
-              de Confianza
-            </motion.h1>
-
-            {/* Subtitle */}
-            <motion.p
-              variants={fadeInUp}
-              className="text-xl md:text-2xl text-white/90 font-medium max-w-2xl"
-            >
-              Atención médica profesional 100% en español para ti y tu familia en Houston, TX
-            </motion.p>
-
-            {/* Features */}
+            {/* Features - 3 diferenciadores únicos (sin redundancia) */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap gap-x-6 gap-y-3 text-white/90"
+              className="flex flex-wrap gap-x-6 gap-y-2 text-white/90"
             >
               {[
                 "Sin Cita Previa",
                 "Abierto 7 Días",
                 "Precios Accesibles",
-                "100% en Español",
               ].map((feature) => (
                 <div key={feature} className="flex items-center gap-2">
                   <CheckCircle className="size-5 text-primary" weight="fill" />
@@ -119,10 +120,10 @@ export function Hero() {
               ))}
             </motion.div>
 
-            {/* CTAs */}
+            {/* CTAs - Con urgencia */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-3 pt-2"
             >
               <Button
                 asChild
@@ -130,8 +131,8 @@ export function Hero() {
                 className="text-lg h-14 px-8 bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30"
               >
                 <a href="#contacto">
-                  <Calendar className="size-5 mr-2" />
-                  Agendar Cita
+                  <Calendar className="size-5 mr-2" aria-hidden="true" />
+                  Agenda Hoy
                 </a>
               </Button>
               <Button
@@ -140,50 +141,45 @@ export function Hero() {
                 className="text-lg h-14 px-8 bg-white text-foreground hover:bg-white/90 shadow-xl"
               >
                 <a href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}>
-                  <Phone className="size-5 mr-2" />
+                  <Phone className="size-5 mr-2" aria-hidden="true" />
                   {CONTACT_INFO.phone}
                 </a>
               </Button>
               <Button
                 asChild
                 size="lg"
-                className="text-lg h-14 px-8 bg-[#25D366] hover:bg-[#128C7E] text-white shadow-xl sm:hidden"
+                className="text-lg h-14 px-8 bg-whatsapp hover:bg-whatsapp-dark text-white shadow-xl sm:hidden"
               >
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                  <WhatsappLogo className="size-5 mr-2" weight="fill" />
+                  <WhatsappLogo className="size-5 mr-2" weight="fill" aria-hidden="true" />
                   WhatsApp
                 </a>
               </Button>
             </motion.div>
 
-            {/* Hours & Rating */}
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-wrap items-center gap-6 pt-2 text-white/80"
-            >
-              <div className="flex items-center gap-2">
-                <Clock className="size-5 text-primary" />
-                <span>
-                  <span className="font-semibold text-white">Horario:</span>{" "}
-                  {CONTACT_INFO.hours}
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="size-4 text-yellow-400" weight="fill" />
-                  ))}
-                </div>
-                <span className="font-semibold text-white">5.0</span>
-                <span className="text-white/60">Google Reviews</span>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
 
+      {/* Scroll Indicator - Link a servicios */}
+      <motion.a
+        href="#especialidades"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        className="absolute bottom-32 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors cursor-pointer"
+      >
+        <span className="text-xs font-medium tracking-wider uppercase">Ver servicios</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <CaretDown className="size-5" />
+        </motion.div>
+      </motion.a>
+
       {/* Trust Badges - Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent pt-16 pb-6">
+      <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent pt-12 pb-6">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -27,25 +27,34 @@ export function Header() {
 
   // Intersection Observer para detectar sección activa
   useEffect(() => {
-    const sections = NAVIGATION_LINKS
+    // Incluir hero (inicio) para resetear activeSection cuando estamos arriba
+    const navSections = NAVIGATION_LINKS
       .filter(link => link.href.startsWith("#"))
       .map(link => link.href.replace("#", ""));
+
+    const allSections = ["inicio", ...navSections];
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(`#${entry.target.id}`);
+            const sectionId = entry.target.id;
+            // Si estamos en el hero, no hay link activo
+            if (sectionId === "inicio") {
+              setActiveSection("");
+            } else {
+              setActiveSection(`#${sectionId}`);
+            }
           }
         });
       },
       {
-        rootMargin: "-20% 0px -70% 0px",
-        threshold: 0,
+        rootMargin: "-10% 0px -60% 0px",
+        threshold: 0.1,
       }
     );
 
-    sections.forEach((sectionId) => {
+    allSections.forEach((sectionId) => {
       const element = document.getElementById(sectionId);
       if (element) {
         observer.observe(element);
@@ -69,8 +78,8 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
         isScrolled
-          ? "bg-white shadow-xl shadow-black/5"
-          : "bg-gradient-to-b from-black/50 to-transparent"
+          ? "bg-background/95 backdrop-blur-md shadow-lg shadow-black/5"
+          : "bg-linear-to-b from-black/60 to-transparent"
       )}
     >
       {/* Top bar - Info (solo visible cuando no hay scroll) */}
@@ -173,7 +182,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation (visible lg+) */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center gap-1">
             {NAVIGATION_LINKS.map((link) => {
               const isActive = isActiveLink(link.href);
               return (
@@ -181,23 +190,15 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "relative px-3 xl:px-4 py-2 text-sm xl:text-base font-medium transition-all duration-300 rounded-lg whitespace-nowrap",
-                    "before:absolute before:bottom-1 before:left-2 before:right-2 before:h-0.5 before:rounded-full",
-                    "before:transition-all before:duration-300 before:ease-out",
+                    "relative px-4 xl:px-5 py-2.5 text-sm xl:text-base font-medium transition-all duration-300 rounded-xl whitespace-nowrap",
                     isScrolled
                       ? [
-                          "text-foreground/80 hover:text-primary hover:bg-primary/5",
-                          "before:bg-primary",
-                          isActive
-                            ? "text-primary bg-primary/5 before:scale-x-100"
-                            : "before:scale-x-0 hover:before:scale-x-100",
+                          "text-foreground/70 hover:text-primary hover:bg-primary/10",
+                          isActive && "text-primary bg-primary/10 font-semibold",
                         ]
                       : [
-                          "text-white/90 hover:text-white hover:bg-white/10",
-                          "before:bg-white",
-                          isActive
-                            ? "text-white bg-white/10 before:scale-x-100"
-                            : "before:scale-x-0 hover:before:scale-x-100",
+                          "text-white/80 hover:text-white hover:bg-white/15",
+                          isActive && "text-white bg-white/15 font-semibold",
                         ]
                   )}
                 >
@@ -209,41 +210,31 @@ export function Header() {
 
           {/* Desktop CTA (visible lg+) */}
           <div className="hidden lg:flex items-center gap-2 xl:gap-4">
-            <a
-              href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
-              className={cn(
-                "flex items-center gap-2 font-semibold transition-all duration-300 px-2 xl:px-3 py-2 rounded-lg whitespace-nowrap",
-                isScrolled
-                  ? "text-foreground hover:text-primary hover:bg-primary/5"
-                  : "text-white hover:bg-white/10"
-              )}
-            >
-              <div
-                className={cn(
-                  "w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300",
-                  isScrolled ? "bg-primary/10" : "bg-white/10"
-                )}
+            {/* Teléfono solo visible cuando hay scroll (evita duplicado con top bar) */}
+            {isScrolled && (
+              <a
+                href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+                className="flex items-center gap-2.5 font-semibold transition-all duration-300 px-3 py-2 rounded-xl whitespace-nowrap text-foreground/80 hover:text-primary hover:bg-primary/10"
               >
-                <Phone
-                  className={cn(
-                    "size-4 transition-colors duration-300",
-                    isScrolled ? "text-primary" : "text-white"
-                  )}
-                  weight="fill"
-                  aria-hidden="true"
-                />
-              </div>
-              <span className="sr-only">Llamar al </span>
-              <span className="hidden xl:inline text-sm">{CONTACT_INFO.phone}</span>
-            </a>
+                <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 bg-primary/10">
+                  <Phone
+                    className="size-4 text-primary"
+                    weight="fill"
+                    aria-hidden="true"
+                  />
+                </div>
+                <span className="sr-only">Llamar al </span>
+                <span className="hidden xl:inline text-sm font-medium">{CONTACT_INFO.phone}</span>
+              </a>
+            )}
             <Button
               asChild
               size="default"
               className={cn(
-                "transition-all duration-500 font-semibold shadow-lg text-sm",
+                "transition-all duration-300 font-semibold text-sm px-6",
                 isScrolled
-                  ? "bg-primary text-white hover:bg-primary/90 shadow-primary/20"
-                  : "bg-white text-secondary hover:bg-white/90 shadow-white/20"
+                  ? "bg-primary text-white hover:bg-primary/90 shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/30"
+                  : "bg-white text-secondary hover:bg-white/95 shadow-lg shadow-black/10 hover:scale-105"
               )}
             >
               <Link href="#contacto">Agendar Cita</Link>
@@ -270,7 +261,7 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0" showCloseButton={false}>
               <div className="flex flex-col h-full">
                 {/* Sheet Header */}
-                <div className="p-5 border-b bg-gradient-to-r from-secondary to-teal-dark">
+                <div className="p-5 border-b bg-linear-to-r from-secondary to-teal-dark">
                   <Link
                     href="/"
                     className="flex items-center gap-3"

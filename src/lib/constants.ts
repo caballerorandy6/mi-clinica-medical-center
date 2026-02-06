@@ -50,10 +50,10 @@ export const TRUST_BADGES: TrustBadge[] = [
     icon: "MessageCircle",
   },
   {
-    id: "gratuitas",
-    title: "Opciones Gratuitas",
-    description: "Precios accesibles y planes de pago",
-    icon: "Shield",
+    id: "rating",
+    title: "5.0 ★ Google Reviews",
+    description: "Calificación perfecta de pacientes",
+    icon: "Star",
   },
   {
     id: "domingos",
