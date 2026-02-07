@@ -41,7 +41,7 @@ export function Promotions() {
             >
               <Card
                 className={`h-full relative overflow-hidden ${
-                  index === 1
+                  index === 0
                     ? "border-2 border-primary shadow-xl scale-105"
                     : "hover:shadow-lg transition-shadow"
                 }`}
@@ -49,9 +49,9 @@ export function Promotions() {
                 {/* Badge */}
                 <div className="absolute top-4 right-4">
                   <Badge
-                    variant={index === 1 ? "default" : "secondary"}
+                    variant={index === 0 ? "default" : "secondary"}
                     className={
-                      index === 2 ? "bg-success hover:bg-success/90" : ""
+                      index === 2 ? "bg-success hover:bg-success/90 text-white" : ""
                     }
                   >
                     {promo.badge}
@@ -92,7 +92,7 @@ export function Promotions() {
                   <Button
                     asChild
                     className="w-full mt-4"
-                    variant={index === 1 ? "default" : "outline"}
+                    variant={index === 0 ? "default" : "outline"}
                   >
                     <a href="#contacto">Agendar en la Clínica Hispana</a>
                   </Button>

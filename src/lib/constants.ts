@@ -811,46 +811,47 @@ export function getServicesByCategory(
 
 export const PROMOTIONS: Promotion[] = [
   {
-    id: "consulta-general",
-    title: "Consulta Médica General",
-    badge: "Más Popular",
+    id: "ginecologia",
+    title: "Consulta con Ginecólogo que Habla Español",
+    badge: "¡Más Popular!",
     description:
-      "Consulta médica completa en español en nuestra clínica hispana de Houston.",
-    price: "$50",
+      "En nuestra clínica hispana, ginecólogos certificados que hablan español te atienden con profesionalismo y calidez.",
+    price: "$75",
+    originalPrice: "$120",
     includes: [
-      "Evaluación médica completa",
-      "Diagnóstico profesional",
-      "Receta médica si es necesario",
-      "Seguimiento incluido",
+      "Consulta ginecológica completa",
+      "Evaluación de salud femenina",
+      "Orientación en español",
+      "Seguimiento personalizado",
     ],
   },
   {
-    id: "paquete-mujer",
-    title: "Paquete Salud de la Mujer",
-    badge: "Recomendado",
+    id: "inmigracion",
+    title: "Exámenes Médicos de Inmigración",
+    badge: "Paquete Completo",
     description:
-      "Examen ginecológico completo en la clínica hispana Mi Clínica Medical Center.",
-    price: "$99",
-    originalPrice: "$150",
-    includes: [
-      "Consulta ginecológica",
-      "Papanicolaou",
-      "Ultrasonido pélvico",
-      "Resultados en 48 horas",
-    ],
-  },
-  {
-    id: "green-card-exam",
-    title: "Examen Green Card I-693",
-    badge: "USCIS Autorizado",
-    description:
-      "Examen médico de inmigración completo en nuestra clínica hispana autorizada por USCIS.",
+      "Clínica hispana autorizada para exámenes de inmigración. Todo el proceso en español con médico Civil Surgeon certificado.",
     price: "$200",
     includes: [
       "Examen físico completo",
       "Análisis de sangre requeridos",
       "Formulario I-693 sellado",
-      "Médico civil surgeon certificado",
+      "Médico Civil Surgeon certificado",
+    ],
+  },
+  {
+    id: "ultrasonido-embarazo",
+    title: "Ultrasonido de Embarazo",
+    badge: "Oferta Especial",
+    description:
+      "En nuestra clínica hispana familiar, ultrasonidos de embarazo con tecnología moderna y atención en español.",
+    price: "$85",
+    originalPrice: "$130",
+    includes: [
+      "Ultrasonido obstétrico",
+      "Imágenes para llevar",
+      "Interpretación médica",
+      "Seguimiento prenatal",
     ],
   },
 ];

@@ -50,7 +50,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-svh flex items-center pt-32 md:pt-36 lg:pt-40 pb-28 md:pb-32 overflow-hidden"
+      className="relative min-h-svh flex flex-col pt-16 sm:pt-20 md:pt-28 lg:pt-32 pb-4 overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0 -z-20">
@@ -69,147 +69,146 @@ export function Hero() {
       <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-black/40 -z-10" />
       <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent -z-10" />
 
-      <div className="container mx-auto px-4">
+      {/* Gradiente de transición suave hacia la siguiente sección */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-linear-to-t from-[#F0FDF4] via-[#F0FDF4]/50 to-transparent -z-10" />
+
+      {/* Main Content - Flex grow para ocupar espacio disponible */}
+      <div className="flex-1 flex flex-col justify-center container mx-auto px-4 py-4">
         <div className="max-w-3xl">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="space-y-5"
+            className="space-y-3 sm:space-y-4 md:space-y-5"
           >
-            {/* Title - SEO optimizado, lo primero que impacta */}
+            {/* Title - SEO optimizado */}
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05]"
+              className="text-[1.75rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15]"
             >
               <span className="text-primary">Clínica Hispana</span>
               <br />
               Cerca de Ti en Houston
             </motion.h1>
 
-            {/* Subtitle - Conciso, incluye Ginecología */}
+            {/* Subtitle - Conciso */}
             <motion.p
               variants={fadeInUp}
-              className="text-lg md:text-xl lg:text-2xl text-white/90 font-medium max-w-xl"
+              className="text-[15px] sm:text-lg md:text-xl lg:text-2xl text-white/90 font-medium max-w-xl leading-snug"
             >
               Ginecología y atención médica en español. Doctores que hablan tu idioma.
             </motion.p>
 
-            {/* Badge USCIS - Después del mensaje principal */}
-            <motion.div variants={fadeInUp}>
-              <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
-                <Shield className="size-4 text-primary" weight="fill" />
-                <span>Autorizado por USCIS para Exámenes I-693</span>
-              </div>
-            </motion.div>
-
-            {/* Features - 3 diferenciadores únicos (sin redundancia) */}
+            {/* Features - 3 diferenciadores */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-wrap gap-x-6 gap-y-2 text-white/90"
+              className="flex flex-wrap gap-x-4 sm:gap-x-5 gap-y-1.5 text-white/90"
             >
               {[
                 "Sin Cita Previa",
                 "Abierto 7 Días",
-                "Precios Accesibles",
+                "USCIS Autorizado",
               ].map((feature) => (
-                <div key={feature} className="flex items-center gap-2">
-                  <CheckCircle className="size-5 text-primary" weight="fill" />
-                  <span className="font-medium">{feature}</span>
+                <div key={feature} className="flex items-center gap-1.5">
+                  <CheckCircle className="size-4 text-primary" weight="fill" aria-hidden="true" />
+                  <span className="text-xs sm:text-sm font-medium">{feature}</span>
                 </div>
               ))}
             </motion.div>
 
-            {/* CTAs - Con urgencia */}
+            {/* CTAs - Diseño móvil mejorado */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-3 pt-2"
+              className="pt-1 sm:pt-2"
             >
-              <Button
-                asChild
-                size="lg"
-                className="text-lg h-14 px-8 bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30"
-              >
-                <a href="#contacto">
-                  <Calendar className="size-5 mr-2" aria-hidden="true" />
-                  Agenda Hoy
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                className="text-lg h-14 px-8 bg-white text-foreground hover:bg-white/90 shadow-xl"
-              >
-                <a href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}>
-                  <Phone className="size-5 mr-2" aria-hidden="true" />
-                  {CONTACT_INFO.phone}
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                className="text-lg h-14 px-8 bg-whatsapp hover:bg-whatsapp-dark text-white shadow-xl sm:hidden"
-              >
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                  <WhatsappLogo className="size-5 mr-2" weight="fill" aria-hidden="true" />
-                  WhatsApp
-                </a>
-              </Button>
+              {/* Botones principales en fila */}
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                <Button
+                  asChild
+                  size="lg"
+                  className="text-sm sm:text-base md:text-lg h-10 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30"
+                >
+                  <a href="#contacto">
+                    <Calendar className="size-4 sm:size-5 mr-1.5" aria-hidden="true" />
+                    Agenda Hoy
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  className="text-sm sm:text-base md:text-lg h-10 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 bg-white text-foreground hover:bg-white/90 shadow-xl"
+                >
+                  <a href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}>
+                    <Phone className="size-4 sm:size-5 mr-1.5" aria-hidden="true" />
+                    <span className="hidden xs:inline">{CONTACT_INFO.phone}</span>
+                    <span className="xs:hidden">Llamar</span>
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  className="text-sm h-10 px-4 bg-whatsapp hover:bg-whatsapp-dark text-white shadow-xl sm:hidden"
+                >
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    <WhatsappLogo className="size-4 mr-1.5" weight="fill" aria-hidden="true" />
+                    WhatsApp
+                  </a>
+                </Button>
+              </div>
             </motion.div>
-
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll Indicator - Link a servicios */}
+      {/* Scroll Indicator */}
       <motion.a
         href="#especialidades"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-32 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors cursor-pointer"
+        transition={{ delay: 1 }}
+        className="group flex flex-col items-center gap-1.5 py-3 sm:py-4 cursor-pointer"
       >
-        <span className="text-xs font-medium tracking-wider uppercase">Ver servicios</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <CaretDown className="size-5" />
-        </motion.div>
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 group-hover:bg-white/20 group-hover:text-white transition-all">
+          <span className="text-[11px] sm:text-xs font-medium tracking-wide uppercase">Ver servicios</span>
+          <motion.span
+            animate={{ y: [0, 3, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <CaretDown className="size-3.5 sm:size-4" aria-hidden="true" />
+          </motion.span>
+        </span>
       </motion.a>
 
-      {/* Trust Badges - Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent pt-12 pb-6">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
-          >
-            {TRUST_BADGES.map((badge) => {
-              const Icon = trustBadgeIconMap[badge.icon as keyof typeof trustBadgeIconMap];
-              return (
-                <div
-                  key={badge.id}
-                  className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-white/10"
-                >
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/20 rounded-full flex items-center justify-center shrink-0">
-                    <Icon className="size-5 md:size-6 text-primary" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="font-semibold text-white text-sm md:text-base leading-tight truncate">
-                      {badge.title}
-                    </p>
-                    <p className="text-xs md:text-sm text-white/60 truncate">
-                      {badge.description}
-                    </p>
-                  </div>
+      {/* Trust Badges - Al final como social proof */}
+      <div className="container mx-auto px-4 pb-3 sm:pb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4"
+        >
+          {TRUST_BADGES.map((badge) => {
+            const Icon = trustBadgeIconMap[badge.icon as keyof typeof trustBadgeIconMap];
+            return (
+              <div
+                key={badge.id}
+                className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-white/10"
+              >
+                <div className="size-8 sm:size-10 md:size-11 bg-primary/20 rounded-full flex items-center justify-center shrink-0">
+                  <Icon className="size-4 sm:size-5 text-primary" aria-hidden="true" />
                 </div>
-              );
-            })}
-          </motion.div>
-        </div>
+                <div className="min-w-0 flex-1">
+                  <p className="font-semibold text-white text-xs sm:text-sm leading-tight">
+                    {badge.title}
+                  </p>
+                  <p className="hidden sm:block text-[10px] md:text-xs text-white/60 truncate">
+                    {badge.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );
