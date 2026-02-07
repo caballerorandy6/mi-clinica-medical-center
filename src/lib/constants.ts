@@ -38,16 +38,16 @@ export const NAVIGATION_LINKS: NavigationLink[] = [
 
 export const TRUST_BADGES: TrustBadge[] = [
   {
-    id: "hispana",
-    title: "Clínica Hispana Familiar",
-    description: "Atención médica para toda la comunidad",
+    id: "sin-seguro",
+    title: "Sin Seguro Bienvenidos",
+    description: "Atención para todos sin importar seguro",
     icon: "Users",
   },
   {
-    id: "ginecologos",
-    title: "Ginecólogos en Español",
-    description: "Doctores que hablan tu idioma",
-    icon: "MessageCircle",
+    id: "precios",
+    title: "Precios Accesibles",
+    description: "Opciones económicas para la comunidad",
+    icon: "Shield",
   },
   {
     id: "rating",
@@ -56,9 +56,9 @@ export const TRUST_BADGES: TrustBadge[] = [
     icon: "Star",
   },
   {
-    id: "domingos",
-    title: "Abierto Domingos",
-    description: "Lunes a Domingo 9AM-9PM",
+    id: "mismo-dia",
+    title: "Citas Mismo Día",
+    description: "Agenda hoy, te atendemos hoy",
     icon: "Clock",
   },
 ];
