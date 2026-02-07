@@ -27,7 +27,7 @@ export function Promotions() {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Promociones de la{" "}
-            <span className="text-primary">Clínica Hispana</span>
+            <span className="text-primary">Clínica Hispana</span> en Houston
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Aprovecha nuestros precios especiales en la clínica hispana Mi

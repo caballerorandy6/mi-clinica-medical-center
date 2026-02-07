@@ -49,8 +49,8 @@ export function Specialties() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Servicios de la{" "}
-            <span className="text-primary">Clínica Hispana</span> en Houston
+            Ginecología en{" "}
+            <span className="text-primary">Español</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Nuestra clínica hispana Mi Clínica Medical Center ofrece una amplia
@@ -74,7 +74,7 @@ export function Specialties() {
                 <Card
                   className={`h-full hover:shadow-lg transition-all ${
                     specialty.highlighted
-                      ? "border-2 border-primary bg-gradient-to-br from-white to-green-light/30"
+                      ? "border-2 border-primary bg-linear-to-br from-white to-green-light/30"
                       : ""
                   }`}
                 >

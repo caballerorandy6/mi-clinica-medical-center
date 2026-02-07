@@ -20,8 +20,8 @@ export function Location() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Ubicación de la{" "}
-            <span className="text-primary">Clínica Hispana</span>
+            Clínica Hispana Cerca de Ti en{" "}
+            <span className="text-primary">Houston</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Visita nuestra clínica hispana Mi Clínica Medical Center en Houston,

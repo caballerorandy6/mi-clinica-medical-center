@@ -81,7 +81,7 @@ export function Services() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Más Servicios en Nuestra{" "}
+            Servicios Médicos de la{" "}
             <span className="text-primary">Clínica Hispana</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -106,7 +106,7 @@ export function Services() {
                 <Card
                   className={`h-full hover:shadow-lg transition-all ${
                     service.highlighted
-                      ? "border-2 border-success bg-gradient-to-br from-green-light to-green-bg"
+                      ? "border-2 border-success bg-linear-to-br from-green-light to-green-bg"
                       : ""
                   }`}
                 >
