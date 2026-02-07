@@ -14,6 +14,12 @@ const promoImages: Record<string, string> = {
   "ultrasonido-embarazo": "/images/promotions/ultrasound-promo.webp",
 };
 
+const promoAltText: Record<string, string> = {
+  ginecologia: "Ginecóloga hispana atendiendo paciente en consulta - Clínica Hispana Houston",
+  inmigracion: "Examen médico de inmigración I-693 en clínica hispana Houston",
+  "ultrasonido-embarazo": "Ultrasonido de embarazo en clínica hispana - Atención prenatal Houston",
+};
+
 export function Promotions() {
   return (
     <section className="py-16 bg-linear-to-b from-green-bg to-green-bg-alt">
@@ -63,7 +69,7 @@ export function Promotions() {
                   <>
                     <Image
                       src={promoImages[promo.id]}
-                      alt=""
+                      alt={promoAltText[promo.id] || promo.title}
                       fill
                       className="object-cover object-[center_20%] md:object-[center_30%] xl:object-center"
                       sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
