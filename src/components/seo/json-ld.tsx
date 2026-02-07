@@ -4,9 +4,12 @@ export function JsonLdMedicalClinic() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
-    additionalType: "Hispanic Health Clinic",
+    "@id": `${SITE_CONFIG.baseUrl}/#medicalclinic`,
     name: SITE_CONFIG.name,
-    alternateName: "Clínica Hispana Mi Clínica Medical Center",
+    alternateName: [
+      "Clínica Hispana Mi Clínica Medical Center",
+      "Clínica Hispana Houston",
+    ],
     description: SITE_CONFIG.description,
     url: SITE_CONFIG.baseUrl,
     telephone: CONTACT_INFO.phone,
@@ -39,7 +42,8 @@ export function JsonLdMedicalClinic() {
         closes: "21:00",
       },
     ],
-    image: `${SITE_CONFIG.baseUrl}/images/logo.png`,
+    image: `${SITE_CONFIG.baseUrl}/images/logo.webp`,
+    logo: `${SITE_CONFIG.baseUrl}/images/logo.webp`,
     priceRange: "$$",
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Credit Card",
@@ -71,9 +75,9 @@ export function JsonLdMedicalClinic() {
       },
     ],
     medicalSpecialty: [
-      "GeneralPractice",
       "Gynecology",
       "Pediatrics",
+      "GeneralPractice",
       "DiagnosticLab",
     ],
     isAcceptingNewPatients: true,
@@ -110,46 +114,18 @@ export function JsonLdFAQ() {
   );
 }
 
-export function JsonLdLocalBusiness() {
+export function JsonLdBreadcrumb() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": SITE_CONFIG.baseUrl,
-    name: SITE_CONFIG.name,
-    alternateName: "Clínica Hispana Houston",
-    description:
-      "Clínica hispana de confianza en Houston TX. Atención médica profesional en español. Exámenes Green Card I-693 autorizados por USCIS.",
-    url: SITE_CONFIG.baseUrl,
-    telephone: CONTACT_INFO.phone,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "1914 Gessner Rd B",
-      addressLocality: "Houston",
-      addressRegion: "TX",
-      postalCode: "77080",
-      addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 29.8067,
-      longitude: -95.5567,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday",
-      ],
-      opens: "09:00",
-      closes: "21:00",
-    },
-    image: `${SITE_CONFIG.baseUrl}/images/logo.png`,
-    priceRange: "$$",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Inicio",
+        item: SITE_CONFIG.baseUrl,
+      },
+    ],
   };
 
   return (

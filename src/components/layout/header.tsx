@@ -172,7 +172,7 @@ export function Header() {
               </p>
               <p
                 className={cn(
-                  "text-[9px] lg:text-[10px] xl:text-xs font-semibold tracking-[0.1em] transition-all duration-500",
+                  "text-[9px] lg:text-[10px] xl:text-xs font-semibold tracking-widest transition-all duration-500",
                   isScrolled ? "text-muted-foreground" : "text-white/90 drop-shadow-md"
                 )}
               >

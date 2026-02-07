@@ -69,8 +69,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-black/40 -z-10" />
       <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent -z-10" />
 
-      {/* Gradiente de transición suave hacia la siguiente sección */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-linear-to-t from-[#F0FDF4] via-[#F0FDF4]/50 to-transparent -z-10" />
+
 
       {/* Main Content - Flex grow para ocupar espacio disponible */}
       <div className="flex-1 flex flex-col justify-center container mx-auto px-4 py-4">
@@ -91,12 +90,12 @@ export function Hero() {
               Cerca de Ti en Houston
             </motion.h1>
 
-            {/* Subtitle - Conciso */}
+            {/* Subtitle - SEO optimizado */}
             <motion.p
               variants={fadeInUp}
               className="text-[15px] sm:text-lg md:text-xl lg:text-2xl text-white/90 font-medium max-w-xl leading-snug"
             >
-              Ginecología y atención médica en español. Doctores que hablan tu idioma.
+              Tu Clínica Hispana Familiar con Ginecólogos que Hablan Español
             </motion.p>
 
             {/* Features - 3 diferenciadores */}

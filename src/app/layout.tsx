@@ -7,7 +7,7 @@ import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 import {
   JsonLdMedicalClinic,
   JsonLdFAQ,
-  JsonLdLocalBusiness,
+  JsonLdBreadcrumb,
 } from "@/components/seo/json-ld";
 
 // Fuente para títulos - Poppins: moderna, profesional, geométrica
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://miclinicamedicalcenter.com"),
   title: {
     default:
-      "Clínica Hispana en Houston | Ginecología en Español | Cerca de Ti",
+      "Clínica Hispana Cerca de Ti en Houston | Ginecología en Español",
     template: "%s | Clínica Hispana Houston - Mi Clínica Medical Center",
   },
   other: {
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     url: "https://miclinicamedicalcenter.com",
     siteName: "Clínica Hispana Mi Clínica Medical Center",
     title:
-      "Clínica Hispana en Houston | Ginecología en Español | Cerca de Ti",
+      "Clínica Hispana Cerca de Ti en Houston | Ginecología en Español",
     description:
       "Clínica hispana cerca de ti en Houston. Ginecólogos que hablan español, exámenes médicos de inmigración, ultrasonidos de embarazo. Clínica familiar hispana con opciones gratuitas. Abierto domingos.",
     images: [
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Clínica Hispana en Houston | Ginecología en Español | Cerca de Ti",
+    title: "Clínica Hispana Cerca de Ti en Houston | Ginecología en Español",
     description:
       "Clínica hispana cerca de ti en Houston. Ginecólogos que hablan español, exámenes médicos de inmigración. Clínica familiar hispana.",
     images: ["/images/og-image.jpg"],
@@ -122,7 +122,7 @@ export default function RootLayout({
       <head>
         <JsonLdMedicalClinic />
         <JsonLdFAQ />
-        <JsonLdLocalBusiness />
+        <JsonLdBreadcrumb />
       </head>
       <body className="antialiased">
         <Header />
