@@ -815,7 +815,7 @@ export const PROMOTIONS: Promotion[] = [
     title: "Consulta con Ginecólogo que Habla Español",
     badge: "¡Más Popular!",
     description:
-      "En nuestra clínica hispana, ginecólogos certificados que hablan español te atienden con profesionalismo y calidez.",
+      "En nuestra clínica hispana, ginecólogos certificados que hablan español te atienden con profesionalismo y calidez. Más de 500 pacientes atendidas.",
     price: "$75",
     originalPrice: "$120",
     includes: [
@@ -828,10 +828,11 @@ export const PROMOTIONS: Promotion[] = [
   {
     id: "inmigracion",
     title: "Exámenes Médicos de Inmigración",
-    badge: "Paquete Completo",
+    badge: "Precio Especial",
     description:
       "Clínica hispana autorizada para exámenes de inmigración. Todo el proceso en español con médico Civil Surgeon certificado.",
     price: "$200",
+    originalPrice: "$275",
     includes: [
       "Examen físico completo",
       "Análisis de sangre requeridos",
@@ -842,7 +843,7 @@ export const PROMOTIONS: Promotion[] = [
   {
     id: "ultrasonido-embarazo",
     title: "Ultrasonido de Embarazo",
-    badge: "Oferta Especial",
+    badge: "Oferta Limitada",
     description:
       "En nuestra clínica hispana familiar, ultrasonidos de embarazo con tecnología moderna y atención en español.",
     price: "$85",
