@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useCallback, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Star, Quotes, GoogleLogo } from "@phosphor-icons/react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -124,17 +125,20 @@ export function TestimonialsCarousel({ reviews }: TestimonialsCarouselProps) {
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-muted-foreground text-sm leading-relaxed flex-grow line-clamp-4">
+                    <p className="text-muted-foreground text-sm leading-relaxed grow line-clamp-4">
                       &ldquo;{review.text}&rdquo;
                     </p>
 
                     {/* Author */}
                     <div className="flex items-center gap-3 pt-4 mt-auto border-t border-gray-100">
                       {review.profile_photo_url ? (
-                        <img
+                        <Image
                           src={review.profile_photo_url}
                           alt={`Foto de ${review.author_name}`}
+                          width={36}
+                          height={36}
                           className="size-9 rounded-full object-cover"
+                          unoptimized
                         />
                       ) : (
                         <div className="size-9 bg-primary/10 rounded-full flex items-center justify-center">
@@ -148,7 +152,7 @@ export function TestimonialsCarousel({ reviews }: TestimonialsCarouselProps) {
                           {review.author_name}
                         </p>
                         <p className="text-xs text-muted-foreground flex items-center gap-1">
-                          <GoogleLogo className="size-3 flex-shrink-0" weight="bold" />
+                          <GoogleLogo className="size-3 shrink-0" weight="bold" />
                           <span className="truncate">{review.relative_time_description}</span>
                         </p>
                       </div>

@@ -2,7 +2,7 @@
 
 ## Proyecto
 
-**Sitio web para Mi Clínica Medical Center** - Clínica hispana en Houston, TX que ofrece 29+ servicios médicos.
+**Sitio web para Mi Clínica Medical Center** - Clínica hispana en Houston, TX con servicios médicos en español.
 
 **Tech Stack:** Next.js 16, React 19, TypeScript, Tailwind CSS v4, shadcn/ui, Zod, React Hook Form, Framer Motion, Phosphor Icons, Health Icons
 
@@ -753,7 +753,7 @@ function Component() {
 // ✅ Cada página necesita title único
 export const metadata: Metadata = {
   title: 'Servicios Médicos | Mi Clínica Medical Center',
-  description: 'Descubre nuestros 29 servicios médicos en español...',
+  description: 'Descubre nuestros servicios médicos en español...',
 };
 ```
 
