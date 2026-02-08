@@ -50,8 +50,8 @@ export const TRUST_BADGES: TrustBadge[] = [
   },
   {
     id: "rating",
-    title: "5.0 ★ Google Reviews",
-    description: "Calificación perfecta de pacientes",
+    title: "Google Reviews",
+    description: "Reseñas verificadas de pacientes",
     icon: "Star",
   },
   {

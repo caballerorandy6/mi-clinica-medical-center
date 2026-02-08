@@ -1,18 +1,14 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { Hero } from "@/components/sections/hero";
-import { GoogleReviewsSection } from "@/components/sections/google-reviews-section";
-import { GoogleReviewsSkeleton } from "@/components/reviews/google-reviews-skeleton";
+import { Testimonials } from "@/components/sections/testimonials";
+import { TestimonialsSkeleton } from "@/components/sections/testimonials-skeleton";
+import { getGoogleReviews, FALLBACK_REVIEWS } from "@/lib/google-reviews";
 
 // Dynamic imports para secciones below-the-fold (mejor performance)
 const Promotions = dynamic(() =>
   import("@/components/sections/promotions").then((mod) => mod.Promotions)
 );
-
-const Testimonials = dynamic(() =>
-  import("@/components/sections/testimonials").then((mod) => mod.Testimonials)
-);
-
 
 const Services = dynamic(() =>
   import("@/components/sections/services").then((mod) => mod.Services)
@@ -34,17 +30,23 @@ const Contact = dynamic(() =>
   import("@/components/sections/contact").then((mod) => mod.Contact)
 );
 
-export default function Home() {
+export default async function Home() {
+  // Fetch Google reviews para pasar el rating al Hero
+  const reviews = await getGoogleReviews();
+  const reviewsData = reviews || FALLBACK_REVIEWS;
+
   return (
     <>
       {/* Hero - Carga inmediata (above the fold) */}
-      <Hero />
+      <Hero
+        googleRating={reviewsData.rating}
+        googleReviewsCount={reviewsData.user_ratings_total}
+      />
 
       {/* Secciones below-the-fold - Carga diferida */}
       <Promotions />
-      <Testimonials />
-      <Suspense fallback={<GoogleReviewsSkeleton />}>
-        <GoogleReviewsSection />
+      <Suspense fallback={<TestimonialsSkeleton />}>
+        <Testimonials />
       </Suspense>
       <Services />
       <GreenCard />

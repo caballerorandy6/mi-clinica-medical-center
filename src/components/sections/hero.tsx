@@ -18,6 +18,11 @@ import {
 import { Button } from "@/components/ui/button";
 import { CONTACT_INFO, TRUST_BADGES } from "@/lib/constants";
 
+interface HeroProps {
+  googleRating: number;
+  googleReviewsCount: number;
+}
+
 const trustBadgeIconMap = {
   Shield,
   MessageCircle: ChatCircle,
@@ -42,7 +47,29 @@ const staggerContainer = {
   },
 };
 
-export function Hero() {
+// Componente de estrellas parciales para Hero
+function PartialStarsHero({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-0.5" aria-label={`${rating} de 5 estrellas`}>
+      {[1, 2, 3, 4, 5].map((star) => {
+        const fill = Math.min(Math.max(rating - (star - 1), 0), 1);
+        return (
+          <div key={star} className="relative size-3 sm:size-3.5 lg:size-4">
+            <Star className="absolute inset-0 size-3 sm:size-3.5 lg:size-4 text-white/30" weight="fill" />
+            <div
+              className="absolute inset-0 overflow-hidden"
+              style={{ width: `${fill * 100}%` }}
+            >
+              <Star className="size-3 sm:size-3.5 lg:size-4 text-yellow-400" weight="fill" />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
   const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsappNumber}?text=${encodeURIComponent(
     "Hola, me gustaría agendar una cita en Mi Clínica Medical Center."
   )}`;
@@ -183,25 +210,44 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4"
         >
           {TRUST_BADGES.map((badge) => {
             const Icon = trustBadgeIconMap[badge.icon as keyof typeof trustBadgeIconMap];
+            const isRatingBadge = badge.id === "rating";
+
             return (
               <div
                 key={badge.id}
-                className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-white/10"
+                className="flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 lg:p-4 border border-white/10"
               >
-                <div className="size-8 sm:size-10 md:size-11 bg-primary/20 rounded-full flex items-center justify-center shrink-0">
+                <div className="size-8 sm:size-10 lg:size-11 bg-primary/20 rounded-full flex items-center justify-center shrink-0">
                   <Icon className="size-4 sm:size-5 text-primary" aria-hidden="true" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="font-semibold text-white text-xs sm:text-sm leading-tight">
-                    {badge.title}
-                  </p>
-                  <p className="hidden sm:block text-[10px] md:text-xs text-white/60 truncate">
-                    {badge.description}
-                  </p>
+                  {isRatingBadge ? (
+                    <>
+                      {/* Rating dinámico con estrellas parciales */}
+                      <div className="flex items-center gap-1 sm:gap-1.5">
+                        <span className="font-bold text-white text-xs sm:text-sm lg:text-base leading-none">
+                          {googleRating.toFixed(1)}
+                        </span>
+                        <PartialStarsHero rating={googleRating} />
+                      </div>
+                      <p className="text-[9px] sm:text-[10px] lg:text-xs text-white/60 leading-tight mt-0.5">
+                        {googleReviewsCount} reseñas
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="font-semibold text-white text-xs sm:text-sm leading-tight">
+                        {badge.title}
+                      </p>
+                      <p className="hidden sm:block text-[10px] lg:text-xs text-white/60 truncate">
+                        {badge.description}
+                      </p>
+                    </>
+                  )}
                 </div>
               </div>
             );
