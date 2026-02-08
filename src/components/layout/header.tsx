@@ -29,8 +29,8 @@ export function Header() {
   useEffect(() => {
     // Incluir hero (inicio) para resetear activeSection cuando estamos arriba
     const navSections = NAVIGATION_LINKS
-      .filter(link => link.href.startsWith("#"))
-      .map(link => link.href.replace("#", ""));
+      .filter(link => link.href.includes("#"))
+      .map(link => link.href.split("#")[1]);
 
     const allSections = ["inicio", ...navSections];
 
@@ -71,7 +71,11 @@ export function Header() {
   // Determinar si un link está activo
   const isActiveLink = (href: string) => {
     if (href === "/") return pathname === "/" && !activeSection;
-    if (href.startsWith("#")) return activeSection === href;
+    // Handle both /#section and #section formats
+    if (href.includes("#")) {
+      const hash = `#${href.split("#")[1]}`;
+      return activeSection === hash;
+    }
     return pathname.startsWith(href);
   };
 
