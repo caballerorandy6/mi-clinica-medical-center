@@ -30,9 +30,9 @@ export const WHATSAPP_MESSAGE =
   "Hola, me gustaría agendar una cita en la clínica hispana Mi Clínica Medical Center.";
 
 export const NAVIGATION_LINKS: NavigationLink[] = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Green Card", href: "#green-card" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Green Card", href: "/#green-card" },
+  { label: "Contacto", href: "/#contacto" },
 ];
 
 export const TRUST_BADGES: TrustBadge[] = [

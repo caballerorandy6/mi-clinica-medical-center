@@ -239,7 +239,7 @@ export function Header() {
                   : "bg-white text-secondary hover:bg-white/95 shadow-lg shadow-black/10 hover:scale-105"
               )}
             >
-              <Link href="#contacto">Agendar Cita</Link>
+              <Link href="/#contacto">Agendar Cita</Link>
             </Button>
           </div>
 

@@ -143,7 +143,7 @@ export function Services() {
           className="text-center mt-10"
         >
           <Button asChild size="lg" variant="outline">
-            <Link href="/services">
+            <Link href="/servicios">
               Ver Todos los Servicios →
             </Link>
           </Button>
