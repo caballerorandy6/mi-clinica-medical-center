@@ -43,7 +43,7 @@ export function Promotions() {
         </motion.div>
 
         {/* Promotion Cards */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {PROMOTIONS.map((promo, index) => (
             <motion.div
               key={promo.id}
@@ -53,7 +53,7 @@ export function Promotions() {
               transition={{ delay: index * 0.15 }}
               className={
                 index === PROMOTIONS.length - 1
-                  ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-0.75rem)] xl:col-span-1 xl:w-full"
+                  ? "md:col-span-2 md:justify-self-center md:w-[calc(50%-0.75rem)] lg:col-span-1 lg:w-full"
                   : ""
               }
             >

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import {
   JsonLdMedicalClinic,
   JsonLdFAQ,
@@ -129,6 +130,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <ScrollToTop />
       </body>
     </html>
   );

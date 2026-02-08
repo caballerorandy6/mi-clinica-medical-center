@@ -10,9 +10,6 @@ const Testimonials = dynamic(() =>
   import("@/components/sections/testimonials").then((mod) => mod.Testimonials)
 );
 
-const Specialties = dynamic(() =>
-  import("@/components/sections/specialties").then((mod) => mod.Specialties)
-);
 
 const Services = dynamic(() =>
   import("@/components/sections/services").then((mod) => mod.Services)
@@ -43,7 +40,6 @@ export default function Home() {
       {/* Secciones below-the-fold - Carga diferida */}
       <Promotions />
       <Testimonials />
-      <Specialties />
       <Services />
       <GreenCard />
       <Location />

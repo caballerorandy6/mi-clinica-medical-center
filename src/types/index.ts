@@ -1,12 +1,3 @@
-export interface Specialty {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  keywords: string[];
-  highlighted?: boolean;
-}
-
 export interface Service {
   id: string;
   slug: string;

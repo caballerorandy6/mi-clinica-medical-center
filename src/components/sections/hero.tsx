@@ -121,11 +121,11 @@ export function Hero() {
               className="pt-1 sm:pt-2"
             >
               {/* Botones principales en fila */}
-              <div className="flex flex-wrap gap-2 sm:gap-3">
+              <div className="flex justify-center sm:justify-start gap-2 sm:gap-3">
                 <Button
                   asChild
                   size="lg"
-                  className="text-sm sm:text-base md:text-lg h-10 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30"
+                  className="flex-1 sm:flex-none text-sm sm:text-base md:text-lg h-10 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30"
                 >
                   <a href="#contacto">
                     <Calendar className="size-4 sm:size-5 mr-1.5" aria-hidden="true" />
@@ -135,18 +135,17 @@ export function Hero() {
                 <Button
                   asChild
                   size="lg"
-                  className="text-sm sm:text-base md:text-lg h-10 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 bg-white text-foreground hover:bg-white/90 shadow-xl"
+                  className="flex-1 sm:flex-none text-sm sm:text-base md:text-lg h-10 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 bg-white text-foreground hover:bg-white/90 shadow-xl"
                 >
                   <a href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}>
                     <Phone className="size-4 sm:size-5 mr-1.5" aria-hidden="true" />
-                    <span className="hidden xs:inline">{CONTACT_INFO.phone}</span>
-                    <span className="xs:hidden">Llamar</span>
+                    Llamar
                   </a>
                 </Button>
                 <Button
                   asChild
                   size="lg"
-                  className="text-sm h-10 px-4 bg-whatsapp hover:bg-whatsapp-dark text-white shadow-xl sm:hidden"
+                  className="flex-1 sm:hidden text-sm h-10 px-4 bg-whatsapp hover:bg-whatsapp-dark text-white shadow-xl"
                 >
                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                     <WhatsappLogo className="size-4 mr-1.5" weight="fill" aria-hidden="true" />
@@ -161,7 +160,7 @@ export function Hero() {
 
       {/* Scroll Indicator */}
       <motion.a
-        href="#especialidades"
+        href="#servicios"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}

@@ -1,4 +1,4 @@
-import { SITE_CONFIG, CONTACT_INFO, FAQS, SPECIALTIES } from "@/lib/constants";
+import { SITE_CONFIG, CONTACT_INFO, FAQS, SERVICES } from "@/lib/constants";
 
 export function JsonLdMedicalClinic() {
   const jsonLd = {
@@ -56,10 +56,10 @@ export function JsonLdMedicalClinic() {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Servicios de la Clínica Hispana",
-      itemListElement: SPECIALTIES.map((specialty) => ({
+      itemListElement: SERVICES.slice(0, 10).map((service) => ({
         "@type": "MedicalProcedure",
-        name: specialty.title,
-        description: specialty.description,
+        name: service.title,
+        description: service.description,
       })),
     },
     availableLanguage: [

@@ -42,8 +42,10 @@ export function Header() {
             // Si estamos en el hero, no hay link activo
             if (sectionId === "inicio") {
               setActiveSection("");
+              window.history.replaceState(null, "", window.location.pathname);
             } else {
               setActiveSection(`#${sectionId}`);
+              window.history.replaceState(null, "", `#${sectionId}`);
             }
           }
         });
@@ -93,7 +95,7 @@ export function Header() {
       >
         <div className="bg-secondary/90 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-1.5 sm:py-2">
-            <div className="flex items-center justify-between text-xs sm:text-sm">
+            <div className="flex items-center justify-center lg:justify-between text-xs sm:text-sm">
               {/* Left - Location (hidden on mobile/tablet, visible lg+) */}
               <a
                 href={CONTACT_INFO.googleMapsUrl}
@@ -112,7 +114,7 @@ export function Header() {
               </div>
 
               {/* Right - Contact (always visible, centered on mobile) */}
-              <div className="flex items-center gap-4 mx-auto lg:mx-0">
+              <div className="flex items-center gap-4">
                 <a
                   href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
                   className="flex items-center gap-2 text-white hover:text-green-light transition-colors duration-300 font-semibold"
@@ -124,10 +126,10 @@ export function Header() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hidden sm:flex items-center gap-2 text-white/90 hover:text-green-400 transition-colors duration-300"
+                  className="flex items-center gap-2 text-white/90 hover:text-green-400 transition-colors duration-300"
                 >
                   <WhatsappLogo className="size-4" weight="fill" />
-                  <span>WhatsApp</span>
+                  <span className="hidden sm:inline">WhatsApp</span>
                 </a>
               </div>
             </div>

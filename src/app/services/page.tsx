@@ -189,7 +189,7 @@ export default function ServiciosPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
                   >
-                    <Link href={`/servicios/${service.slug}`}>
+                    <Link href={`/services/${service.slug}`}>
                       <Card
                         className={`h-full hover:shadow-lg transition-all cursor-pointer group ${
                           service.highlighted

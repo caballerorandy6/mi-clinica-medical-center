@@ -1,5 +1,4 @@
 import type {
-  Specialty,
   Service,
   Promotion,
   FAQ,
@@ -31,7 +30,7 @@ export const WHATSAPP_MESSAGE =
   "Hola, me gustaría agendar una cita en la clínica hispana Mi Clínica Medical Center.";
 
 export const NAVIGATION_LINKS: NavigationLink[] = [
-  { label: "Servicios", href: "#especialidades" },
+  { label: "Servicios", href: "#servicios" },
   { label: "Green Card", href: "#green-card" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -60,117 +59,6 @@ export const TRUST_BADGES: TrustBadge[] = [
     title: "Citas Mismo Día",
     description: "Agenda hoy, te atendemos hoy",
     icon: "Clock",
-  },
-];
-
-export const SPECIALTIES: Specialty[] = [
-  {
-    id: "ginecologia",
-    title: "Ginecología",
-    description:
-      "Ginecólogos que hablan español en nuestra clínica hispana de Houston. Atención integral para la salud de la mujer con doctores certificados.",
-    icon: "Heart",
-    keywords: ["clínica hispana", "ginecología Houston", "ginecólogo español"],
-    highlighted: true,
-  },
-  {
-    id: "chequeo-inmigracion",
-    title: "Examen Green Card I-693",
-    description:
-      "Exámenes médicos para inmigración autorizados por USCIS en nuestra clínica hispana. Formulario I-693 completado por médicos Civil Surgeon certificados.",
-    icon: "FileCheck",
-    keywords: ["clínica hispana", "examen Green Card Houston", "I-693"],
-    highlighted: true,
-  },
-  {
-    id: "papanicolaou",
-    title: "Papanicolaou",
-    description:
-      "Examen de Papanicolaou para detección temprana de cáncer cervical. Prevención vital para la salud de la mujer en la clínica hispana.",
-    icon: "Heart",
-    keywords: ["clínica hispana", "papanicolaou Houston"],
-    highlighted: true,
-  },
-  {
-    id: "ultrasonidos",
-    title: "Ultrasonidos",
-    description:
-      "Ultrasonidos de embarazo, abdominales, pélvicos y más. Diagnóstico por imagen seguro y confiable en nuestra clínica hispana.",
-    icon: "Monitor",
-    keywords: ["clínica hispana", "ultrasonido Houston"],
-  },
-  {
-    id: "diabetes",
-    title: "Diabetes",
-    description:
-      "Control y tratamiento de diabetes en la clínica hispana. Monitoreo de glucosa, hemoglobina A1C y orientación nutricional.",
-    icon: "Activity",
-    keywords: ["clínica hispana", "diabetes Houston"],
-    highlighted: true,
-  },
-  {
-    id: "examenes-embarazo",
-    title: "Exámenes de Embarazo",
-    description:
-      "Pruebas de embarazo con resultados rápidos y confidenciales. Orientación y cuidado prenatal en la clínica hispana.",
-    icon: "Baby",
-    keywords: ["clínica hispana", "embarazo Houston"],
-  },
-  {
-    id: "chequeos-salud",
-    title: "Chequeos de Salud",
-    description:
-      "Exámenes físicos completos para detectar condiciones a tiempo. Tu bienestar es nuestra prioridad en la clínica hispana.",
-    icon: "Stethoscope",
-    keywords: ["clínica hispana", "chequeo médico Houston"],
-  },
-  {
-    id: "presion-arterial",
-    title: "Presión Arterial",
-    description:
-      "Control de presión arterial alta en la clínica hispana. Prevención de enfermedades cardíacas y accidentes cerebrovasculares.",
-    icon: "Heart",
-    keywords: ["clínica hispana", "hipertensión Houston"],
-  },
-  {
-    id: "infecciones-urinarias",
-    title: "Infecciones Urinarias",
-    description:
-      "Diagnóstico y tratamiento de infecciones urinarias. Análisis de orina y tratamiento antibiótico efectivo en la clínica hispana.",
-    icon: "Pill",
-    keywords: ["clínica hispana", "infección urinaria Houston"],
-  },
-  {
-    id: "electrocardiogramas",
-    title: "Electrocardiogramas",
-    description:
-      "Electrocardiograma (EKG) para evaluar la salud de tu corazón. Detección de arritmias y condiciones cardíacas.",
-    icon: "Heart",
-    keywords: ["clínica hispana", "EKG Houston"],
-  },
-  {
-    id: "fisicos-escolares",
-    title: "Físicos Escolares",
-    description:
-      "Exámenes físicos para escuela y deportes. Formularios oficiales completados el mismo día en la clínica hispana.",
-    icon: "FileCheck",
-    keywords: ["clínica hispana", "físico escolar Houston"],
-  },
-  {
-    id: "planificacion-familiar",
-    title: "Planificación Familiar",
-    description:
-      "Asesoría sobre métodos anticonceptivos. Anticonceptivos orales, inyecciones, DIU e implantes en la clínica hispana.",
-    icon: "Heart",
-    keywords: ["clínica hispana", "planificación familiar Houston"],
-  },
-  {
-    id: "sutura-heridas",
-    title: "Sutura de Heridas",
-    description:
-      "Atención médica rápida para cortes y laceraciones. Sutura profesional con anestesia local en la clínica hispana.",
-    icon: "AlertCircle",
-    keywords: ["clínica hispana", "sutura Houston"],
   },
 ];
 
@@ -226,22 +114,20 @@ export const SERVICES: Service[] = [
   {
     id: "diabetes",
     slug: "diabetes",
-    title: "Diabetes",
+    title: "Control de Diabetes Cerca de Mi",
     shortTitle: "Diabetes",
     description:
-      "Control y tratamiento de diabetes en la clínica hispana de Houston. Manejo integral de glucosa.",
+      "Control de diabetes en nuestra clínica hispana de Houston. Monitoreo de glucosa, A1C y orientación nutricional. Doctores que hablan español.",
     longDescription:
-      "La diabetes requiere un manejo cuidadoso y constante. En Mi Clínica Medical Center ofrecemos control integral de diabetes con monitoreo de glucosa, ajuste de medicamentos y orientación nutricional en español.",
+      "La diabetes requiere un manejo cuidadoso y constante. En nuestra clínica hispana Mi Clínica Medical Center ofrecemos control integral de diabetes con monitoreo de glucosa, prueba de hemoglobina A1C, ajuste de medicamentos y orientación nutricional 100% en español.",
     icon: "Activity",
     category: "especialidad",
-    keywords: ["diabetes Houston", "glucosa clínica hispana", "azúcar en sangre"],
+    keywords: ["diabetes Houston", "glucosa clínica hispana", "control diabetes cerca de mi"],
     features: [
-      "Control de glucosa",
-      "Hemoglobina A1C",
-      "Ajuste de medicamentos",
+      "Monitoreo de glucosa",
+      "Prueba Hemoglobina A1C",
+      "Doctores en español",
       "Orientación nutricional",
-      "Prevención de complicaciones",
-      "Seguimiento mensual",
     ],
     highlighted: true,
     order: 3,
@@ -455,25 +341,23 @@ export const SERVICES: Service[] = [
   {
     id: "ultrasonidos",
     slug: "ultrasonidos",
-    title: "Ultrasonidos",
+    title: "Ultrasonidos Cerca de Mi",
     shortTitle: "Ultrasonidos",
     description:
-      "Ultrasonidos en la clínica hispana de Houston. Diagnóstico por imagen seguro y confiable.",
+      "Ultrasonidos en nuestra clínica hispana de Houston. Embarazo, abdominal, pélvico y más. Resultados inmediatos con interpretación en español.",
     longDescription:
-      "En Mi Clínica Medical Center ofrecemos servicios de ultrasonido para diagnóstico de diversas condiciones. Ultrasonidos abdominales, pélvicos, de embarazo y más.",
+      "En nuestra clínica hispana Mi Clínica Medical Center ofrecemos ultrasonidos con tecnología moderna y resultados inmediatos. Ultrasonidos de embarazo, abdominales, pélvicos y renales. Todo explicado en español por nuestros especialistas.",
     icon: "Monitor",
     category: "diagnostico",
-    keywords: ["ultrasonido Houston", "ecografía clínica hispana"],
+    keywords: ["ultrasonido Houston", "ecografía clínica hispana", "ultrasonido embarazo cerca de mi"],
     features: [
-      "Ultrasonido abdominal",
-      "Ultrasonido pélvico",
-      "Ultrasonido de embarazo",
-      "Ultrasonido renal",
       "Resultados inmediatos",
-      "Interpretación médica",
+      "Ultrasonido de embarazo",
+      "Interpretación en español",
+      "Tecnología moderna",
     ],
     highlighted: true,
-    order: 13,
+    order: 2,
   },
   {
     id: "electrocardiogramas",
@@ -682,25 +566,23 @@ export const SERVICES: Service[] = [
   {
     id: "chequeo-inmigracion",
     slug: "chequeo-inmigracion",
-    title: "Chequeo de Inmigración",
+    title: "Examen Médico de Inmigración Cerca de Mi",
     shortTitle: "Green Card",
     description:
-      "Examen médico de inmigración (I-693) en la clínica hispana de Houston. Médico Civil Surgeon certificado.",
+      "Clínica hispana autorizada por USCIS para exámenes I-693 en Houston. Médico Civil Surgeon certificado. +500 Green Cards aprobadas. Todo en español.",
     longDescription:
-      "En Mi Clínica Medical Center realizamos exámenes médicos de inmigración autorizados por USCIS. Nuestro médico Civil Surgeon certificado completa el formulario I-693 en español.",
+      "En nuestra clínica hispana Mi Clínica Medical Center realizamos exámenes médicos de inmigración autorizados por USCIS. Nuestro médico Civil Surgeon certificado completa el formulario I-693 100% en español. Más de 500 familias han completado su proceso con nosotros.",
     icon: "FileCheck",
     category: "especial",
-    keywords: ["examen Green Card Houston", "I-693 clínica hispana", "civil surgeon"],
+    keywords: ["examen Green Card Houston", "I-693 clínica hispana", "civil surgeon", "examen inmigración cerca de mi"],
     features: [
-      "Médico Civil Surgeon",
-      "Formulario I-693",
-      "Examen físico completo",
-      "Análisis de sangre",
-      "Revisión de vacunas",
+      "Médico Civil Surgeon certificado",
+      "Formulario I-693 sellado",
+      "100% en español",
       "Resultados en 3-5 días",
     ],
     highlighted: true,
-    order: 23,
+    order: 1,
   },
   {
     id: "chequeos-salud",

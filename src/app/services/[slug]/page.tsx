@@ -67,7 +67,7 @@ export default function ServicePage() {
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Servicio no encontrado</h1>
           <Button asChild>
-            <Link href="/servicios">Ver todos los servicios</Link>
+            <Link href="/services">Ver todos los servicios</Link>
           </Button>
         </div>
       </main>
@@ -94,7 +94,7 @@ export default function ServicePage() {
             animate={{ opacity: 1, y: 0 }}
           >
             <Link
-              href="/servicios"
+              href="/services"
               className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors"
             >
               <ArrowLeft className="size-5" />
@@ -199,7 +199,7 @@ export default function ServicePage() {
                       return (
                         <Link
                           key={related.id}
-                          href={`/servicios/${related.slug}`}
+                          href={`/services/${related.slug}`}
                         >
                           <Card className="h-full hover:shadow-md hover:border-primary/50 transition-all">
                             <CardContent className="p-4">
@@ -341,7 +341,7 @@ export default function ServicePage() {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/servicios">Ver todos los servicios</Link>
+                <Link href="/services">Ver todos los servicios</Link>
               </Button>
             </div>
           </motion.div>
