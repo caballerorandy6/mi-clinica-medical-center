@@ -156,9 +156,9 @@ export function Services() {
           viewport={{ once: true }}
           className="text-center text-sm text-muted-foreground mt-8 max-w-3xl mx-auto"
         >
-          La clínica hispana Mi Clínica Medical Center ofrece más de 27 servicios
-          médicos en español. Ultrasonidos de embarazo, laboratorio clínico, y
-          opciones económicas para familias sin seguro. Abiertos los domingos.
+          La clínica hispana Mi Clínica Medical Center ofrece una amplia variedad de
+          servicios médicos en español. Ultrasonidos, laboratorio clínico, y opciones
+          económicas para familias sin seguro. Abiertos los domingos.
         </motion.p>
       </div>
     </section>

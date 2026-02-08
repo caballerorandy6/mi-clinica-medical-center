@@ -1,4 +1,4 @@
-import { SITE_CONFIG, CONTACT_INFO, FAQS, SERVICES } from "@/lib/constants";
+import { SITE_CONFIG, CONTACT_INFO, FAQS, SERVICES, SOCIAL_LINKS } from "@/lib/constants";
 
 export function JsonLdMedicalClinic() {
   const jsonLd = {
@@ -81,7 +81,7 @@ export function JsonLdMedicalClinic() {
       "DiagnosticLab",
     ],
     isAcceptingNewPatients: true,
-    sameAs: ["https://instagram.com/miclinicamedicalcenter"],
+    sameAs: [SOCIAL_LINKS.instagram, SOCIAL_LINKS.facebook],
   };
 
   return (

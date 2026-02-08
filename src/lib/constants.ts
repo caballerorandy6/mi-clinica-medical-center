@@ -29,6 +29,11 @@ export const CONTACT_INFO: ContactInfo = {
 export const WHATSAPP_MESSAGE =
   "Hola, me gustaría agendar una cita en la clínica hispana Mi Clínica Medical Center.";
 
+export const SOCIAL_LINKS = {
+  instagram: "https://www.instagram.com/miclinicamedicalcenter/",
+  facebook: "https://www.facebook.com/people/Clinica-Hispana-Nueva-Salud-Gessner/61587230040182/",
+} as const;
+
 export const NAVIGATION_LINKS: NavigationLink[] = [
   { label: "Servicios", href: "/#servicios" },
   { label: "Green Card", href: "/#green-card" },
@@ -62,7 +67,7 @@ export const TRUST_BADGES: TrustBadge[] = [
   },
 ];
 
-// SERVICES - 27 servicios basados en clinicahispanaairline.com (excluyendo vacunas)
+// SERVICES - Servicios médicos (excluyendo vacunas)
 export const SERVICES: Service[] = [
   // ============================================
   // ENFERMEDADES CRÓNICAS Y TRATAMIENTOS (7)

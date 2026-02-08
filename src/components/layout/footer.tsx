@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, MapPin, Clock, InstagramLogo } from "@phosphor-icons/react";
-import { CONTACT_INFO, NAVIGATION_LINKS, SITE_CONFIG } from "@/lib/constants";
+import { Phone, MapPin, Clock, InstagramLogo, FacebookLogo } from "@phosphor-icons/react";
+import { CONTACT_INFO, NAVIGATION_LINKS, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -85,16 +85,28 @@ export function Footer() {
           {/* Social & SEO Text */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Síguenos</h3>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
-              aria-label="Seguir a la clínica hispana Mi Clínica Medical Center en Instagram"
-            >
-              <InstagramLogo className="size-6" />
-              <span>@miclinicamedicalcenter</span>
-            </a>
+            <div className="flex flex-col gap-3">
+              <a
+                href={SOCIAL_LINKS.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                aria-label="Seguir a Mi Clínica Medical Center en Instagram"
+              >
+                <InstagramLogo className="size-6" />
+                <span>@miclinicamedicalcenter</span>
+              </a>
+              <a
+                href={SOCIAL_LINKS.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                aria-label="Seguir a Mi Clínica Medical Center en Facebook"
+              >
+                <FacebookLogo className="size-6" />
+                <span>Mi Clínica Medical Center</span>
+              </a>
+            </div>
             <p className="text-white/80 text-sm mt-4">
               Visita nuestra clínica hispana en Houston para recibir atención
               médica de calidad. Somos la clínica hispana autorizada por USCIS
