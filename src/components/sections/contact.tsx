@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, ChatCircle, Clock } from "@phosphor-icons/react";
-import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+import { Phone, WhatsappLogo, Clock, MapPin, CheckCircle } from "@phosphor-icons/react";
 import { ContactForm } from "@/components/forms/contact-form";
 import { CONTACT_INFO, WHATSAPP_MESSAGE } from "@/lib/constants";
 import { generateWhatsAppUrl } from "@/lib/utils";
@@ -14,7 +14,22 @@ export function Contact() {
   );
 
   return (
-    <section id="contacto" className="py-16 bg-green-bg-alt">
+    <section id="contacto" className="relative py-16 lg:py-20 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-20">
+        <Image
+          src="/images/contact/contact-bg.webp"
+          alt="Contacta la clínica hispana Mi Clínica Medical Center"
+          fill
+          className="object-cover"
+          quality={80}
+          sizes="100vw"
+        />
+      </div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-linear-to-br from-secondary/95 via-secondary/90 to-primary/80 -z-10" />
+
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -23,116 +38,109 @@ export function Contact() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Agenda tu Cita en la{" "}
-            <span className="text-primary">Clínica Hispana</span>
+            <span className="text-primary-foreground">Clínica Hispana</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Contáctanos para agendar tu cita en la clínica hispana Mi Clínica
-            Medical Center. Estamos listos para atenderte en español.
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
+            Contáctanos hoy mismo. Estamos listos para atenderte en español.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Contact Options */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+          {/* Contact Options - Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold text-foreground">
-              Contacto Directo
-            </h3>
-            <p className="text-muted-foreground">
-              Puedes contactar nuestra clínica hispana de las siguientes formas:
-            </p>
+            {/* Quick Contact Buttons */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              {/* Phone Button */}
+              <a
+                href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+                className="group flex items-center gap-4 bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="size-14 bg-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Phone className="size-7 text-white" weight="fill" />
+                </div>
+                <div>
+                  <p className="font-bold text-foreground text-lg">Llamar</p>
+                  <p className="text-primary font-semibold">
+                    {CONTACT_INFO.phone}
+                  </p>
+                </div>
+              </a>
 
-            {/* Phone Card */}
-            <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="pt-6">
-                <a
-                  href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
-                  className="flex items-center gap-4"
-                >
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
-                    <Phone className="size-7 text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground text-lg">
-                      Llama Ahora
-                    </p>
-                    <p className="text-primary font-semibold text-xl">
-                      {CONTACT_INFO.phone}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Atención en español en la clínica hispana
-                    </p>
-                  </div>
-                </a>
-              </CardContent>
-            </Card>
+              {/* WhatsApp Button */}
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-4 bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="size-14 bg-whatsapp rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <WhatsappLogo className="size-7 text-white" weight="fill" />
+                </div>
+                <div>
+                  <p className="font-bold text-foreground text-lg">WhatsApp</p>
+                  <p className="text-whatsapp font-semibold">Escríbenos</p>
+                </div>
+              </a>
+            </div>
 
-            {/* WhatsApp Card */}
-            <Card className="hover:shadow-md transition-shadow">
-              <CardContent className="pt-6">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4"
-                >
-                  <div className="w-14 h-14 bg-whatsapp/10 rounded-xl flex items-center justify-center shrink-0">
-                    <ChatCircle className="size-7 text-whatsapp" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground text-lg">WhatsApp</p>
-                    <p className="text-whatsapp font-semibold">
-                      Envía un mensaje
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Respuesta rápida de la clínica hispana
-                    </p>
-                  </div>
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Hours Card */}
-            <Card>
-              <CardContent className="pt-6">
+            {/* Info Cards */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <div className="space-y-5">
+                {/* Hours */}
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center shrink-0">
-                    <Clock className="size-7 text-secondary" />
+                  <div className="size-12 bg-white/20 rounded-xl flex items-center justify-center">
+                    <Clock className="size-6 text-white" weight="fill" />
                   </div>
                   <div>
-                    <p className="font-bold text-foreground text-lg">Horario</p>
-                    <p className="text-secondary font-semibold">
-                      {CONTACT_INFO.hours}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Clínica hispana abierta 7 días
-                    </p>
+                    <p className="font-semibold text-white">Horario</p>
+                    <p className="text-white/80 text-sm">{CONTACT_INFO.hours}</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
 
-            {/* Additional Info */}
-            <div className="bg-green-light rounded-xl p-6">
-              <h4 className="font-bold text-foreground mb-2">
+                {/* Address */}
+                <div className="flex items-center gap-4">
+                  <div className="size-12 bg-white/20 rounded-xl flex items-center justify-center">
+                    <MapPin className="size-6 text-white" weight="fill" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white">Dirección</p>
+                    <p className="text-white/80 text-sm">{CONTACT_INFO.address}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Why Choose Us */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <h4 className="font-bold text-white text-lg mb-4">
                 ¿Por qué elegir nuestra clínica hispana?
               </h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Atención 100% en español</li>
-                <li>• Aceptamos pacientes sin cita</li>
-                <li>• Precios accesibles para la comunidad</li>
-                <li>• Autorizados por USCIS para I-693</li>
+              <ul className="space-y-3">
+                {[
+                  "Atención 100% en español",
+                  "Aceptamos pacientes sin cita",
+                  "Precios accesibles para la comunidad",
+                  "Autorizados por USCIS para I-693",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-white/90">
+                    <div className="size-6 bg-primary rounded-full flex items-center justify-center shrink-0">
+                      <CheckCircle className="size-4 text-white" weight="bold" />
+                    </div>
+                    <span className="text-sm">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Contact Form - Right Side */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -147,7 +155,7 @@ export function Contact() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-sm text-muted-foreground mt-10 max-w-3xl mx-auto"
+          className="text-center text-sm text-white/60 mt-12 max-w-3xl mx-auto"
         >
           Contacta la clínica hispana Mi Clínica Medical Center hoy mismo.
           Nuestra clínica hispana en Houston te espera con atención profesional

@@ -16,7 +16,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   contactFormSchema,
   type ContactFormData,
@@ -57,23 +56,29 @@ export function ContactForm() {
   };
 
   return (
-    <Card className="shadow-lg">
-      <CardHeader>
-        <CardTitle className="text-2xl text-center">
-          Contacta la Clínica Hispana
-        </CardTitle>
-        <p className="text-center text-muted-foreground">
+    <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+      {/* Header */}
+      <div className="bg-linear-to-r from-primary to-primary/80 p-6 text-center">
+        <h3 className="text-xl md:text-2xl font-bold text-white">
+          Solicita tu Cita
+        </h3>
+        <p className="text-white/80 text-sm mt-1">
           Completa el formulario y te contactaremos pronto
         </p>
-      </CardHeader>
-      <CardContent>
+      </div>
+
+      {/* Form */}
+      <div className="p-6">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {/* Name */}
           <div className="space-y-2">
-            <Label htmlFor="nombre">Nombre Completo *</Label>
+            <Label htmlFor="nombre" className="text-foreground font-medium">
+              Nombre Completo *
+            </Label>
             <Input
               id="nombre"
               placeholder="Tu nombre"
+              className="h-12 bg-gray-50 border-gray-200 focus:border-primary focus:ring-primary"
               {...register("nombre")}
               aria-invalid={!!errors.nombre}
             />
@@ -84,11 +89,14 @@ export function ContactForm() {
 
           {/* Phone */}
           <div className="space-y-2">
-            <Label htmlFor="telefono">Teléfono *</Label>
+            <Label htmlFor="telefono" className="text-foreground font-medium">
+              Teléfono *
+            </Label>
             <Input
               id="telefono"
               type="tel"
               placeholder="(123) 456-7890"
+              className="h-12 bg-gray-50 border-gray-200 focus:border-primary focus:ring-primary"
               {...register("telefono")}
               aria-invalid={!!errors.telefono}
             />
@@ -101,11 +109,14 @@ export function ContactForm() {
 
           {/* Email */}
           <div className="space-y-2">
-            <Label htmlFor="email">Correo Electrónico (opcional)</Label>
+            <Label htmlFor="email" className="text-foreground font-medium">
+              Correo Electrónico (opcional)
+            </Label>
             <Input
               id="email"
               type="email"
               placeholder="tu@email.com"
+              className="h-12 bg-gray-50 border-gray-200 focus:border-primary focus:ring-primary"
               {...register("email")}
               aria-invalid={!!errors.email}
             />
@@ -116,11 +127,15 @@ export function ContactForm() {
 
           {/* Service */}
           <div className="space-y-2">
-            <Label htmlFor="servicio">Servicio de Interés *</Label>
-            <Select
-              onValueChange={(value) => setValue("servicio", value)}
-            >
-              <SelectTrigger id="servicio" aria-invalid={!!errors.servicio}>
+            <Label htmlFor="servicio" className="text-foreground font-medium">
+              Servicio de Interés *
+            </Label>
+            <Select onValueChange={(value) => setValue("servicio", value)}>
+              <SelectTrigger
+                id="servicio"
+                className="h-12 bg-gray-50 border-gray-200 focus:border-primary focus:ring-primary"
+                aria-invalid={!!errors.servicio}
+              >
                 <SelectValue placeholder="Selecciona un servicio" />
               </SelectTrigger>
               <SelectContent>
@@ -140,11 +155,14 @@ export function ContactForm() {
 
           {/* Message */}
           <div className="space-y-2">
-            <Label htmlFor="mensaje">Mensaje (opcional)</Label>
+            <Label htmlFor="mensaje" className="text-foreground font-medium">
+              Mensaje (opcional)
+            </Label>
             <Textarea
               id="mensaje"
               placeholder="Cuéntanos más sobre tu consulta..."
-              rows={4}
+              rows={3}
+              className="bg-gray-50 border-gray-200 focus:border-primary focus:ring-primary resize-none"
               {...register("mensaje")}
               aria-invalid={!!errors.mensaje}
             />
@@ -159,7 +177,7 @@ export function ContactForm() {
           <Button
             type="submit"
             size="lg"
-            className="w-full"
+            className="w-full h-14 text-base font-semibold shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
@@ -176,7 +194,7 @@ export function ContactForm() {
             ) : (
               <>
                 <PaperPlaneTilt className="size-5 mr-2" />
-                Enviar Mensaje a la Clínica Hispana
+                Enviar Mensaje
               </>
             )}
           </Button>
@@ -186,12 +204,11 @@ export function ContactForm() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-2 p-4 bg-success/10 text-success rounded-lg"
+              className="flex items-center gap-2 p-4 bg-green-50 text-green-700 rounded-xl border border-green-200"
             >
-              <CheckCircle className="size-5" />
-              <span>
-                ¡Mensaje enviado! Te contactaremos pronto desde la clínica
-                hispana.
+              <CheckCircle className="size-5 shrink-0" weight="fill" />
+              <span className="text-sm">
+                ¡Mensaje enviado! Te contactaremos pronto.
               </span>
             </motion.div>
           )}
@@ -200,17 +217,16 @@ export function ContactForm() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center gap-2 p-4 bg-destructive/10 text-destructive rounded-lg"
+              className="flex items-center gap-2 p-4 bg-red-50 text-red-700 rounded-xl border border-red-200"
             >
-              <WarningCircle className="size-5" />
-              <span>
-                Hubo un error. Por favor intenta de nuevo o llámanos
-                directamente.
+              <WarningCircle className="size-5 shrink-0" weight="fill" />
+              <span className="text-sm">
+                Hubo un error. Por favor intenta de nuevo o llámanos.
               </span>
             </motion.div>
           )}
         </form>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }
