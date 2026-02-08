@@ -1,5 +1,8 @@
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 import { Hero } from "@/components/sections/hero";
+import { GoogleReviewsSection } from "@/components/sections/google-reviews-section";
+import { GoogleReviewsSkeleton } from "@/components/reviews/google-reviews-skeleton";
 
 // Dynamic imports para secciones below-the-fold (mejor performance)
 const Promotions = dynamic(() =>
@@ -40,6 +43,9 @@ export default function Home() {
       {/* Secciones below-the-fold - Carga diferida */}
       <Promotions />
       <Testimonials />
+      <Suspense fallback={<GoogleReviewsSkeleton />}>
+        <GoogleReviewsSection />
+      </Suspense>
       <Services />
       <GreenCard />
       <Location />
