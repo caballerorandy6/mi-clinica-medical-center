@@ -1,14 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Question } from "@phosphor-icons/react";
+import { Question, Phone } from "@phosphor-icons/react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FAQS } from "@/lib/constants";
+import { Button } from "@/components/ui/button";
+import { FAQS, CONTACT_INFO } from "@/lib/constants";
 
 export function FAQ() {
   return (
@@ -46,7 +47,7 @@ export function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-white rounded-xl px-6 shadow-sm border border-border"
+                className="bg-white rounded-xl px-6 shadow-sm border border-border hover:shadow-md hover:border-primary/20 transition-all duration-300"
               >
                 <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary py-5">
                   {faq.question}
@@ -71,12 +72,12 @@ export function FAQ() {
             ahora.
           </p>
           <div className="flex justify-center">
-            <a
-              href={`tel:3462265820`}
-              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-            >
-              Llamar a la Clínica Hispana
-            </a>
+            <Button asChild size="lg" className="shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30">
+              <a href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}>
+                <Phone className="size-5 mr-2" weight="fill" />
+                Llamar a la Clínica Hispana
+              </a>
+            </Button>
           </div>
         </motion.div>
 
