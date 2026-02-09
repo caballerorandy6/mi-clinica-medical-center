@@ -24,7 +24,7 @@ export function Location() {
             <span className="text-primary">Houston</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Visita nuestra clínica hispana Mi Clínica Medical Center en Houston,
+            Visita nuestra clínica hispana Clínica Hispana Nueva Salud Gessner en Houston,
             TX. Estamos ubicados en un lugar conveniente con fácil acceso y
             estacionamiento gratuito.
           </p>
@@ -46,7 +46,7 @@ export function Location() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Ubicación de Mi Clínica Medical Center - Clínica Hispana en Houston TX"
+              title="Ubicación de Clínica Hispana Nueva Salud Gessner - Clínica Hispana en Houston TX"
               className="absolute inset-0"
             />
           </motion.div>
@@ -159,7 +159,7 @@ export function Location() {
           viewport={{ once: true }}
           className="text-center text-sm text-muted-foreground mt-10 max-w-3xl mx-auto"
         >
-          La clínica hispana Mi Clínica Medical Center está ubicada en 1914
+          La clínica hispana Clínica Hispana Nueva Salud Gessner está ubicada en 1914
           Gessner Rd B, Houston, TX 77080. Nuestra clínica hispana es fácil de
           encontrar y cuenta con amplio estacionamiento gratuito para todos
           nuestros pacientes de la comunidad hispana de Houston.

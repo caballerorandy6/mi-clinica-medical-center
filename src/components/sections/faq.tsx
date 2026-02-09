@@ -31,7 +31,7 @@ export function FAQ() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Encuentra respuestas a las preguntas más comunes sobre nuestra
-            clínica hispana Mi Clínica Medical Center en Houston, TX.
+            clínica hispana Clínica Hispana Nueva Salud Gessner en Houston, TX.
           </p>
         </motion.div>
 
@@ -83,7 +83,7 @@ export function FAQ() {
 
         {/* SEO Text */}
         <p className="text-center text-sm text-muted-foreground mt-10 max-w-3xl mx-auto">
-          Mi Clínica Medical Center es la clínica hispana que responde todas tus
+          Clínica Hispana Nueva Salud Gessner es la clínica hispana que responde todas tus
           preguntas en español. Nuestra clínica hispana en Houston está
           comprometida con brindar información clara y transparente a la
           comunidad latina.

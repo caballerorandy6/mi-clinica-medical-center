@@ -110,7 +110,7 @@ export default function ServiciosPage() {
         {/* Background Image */}
         <Image
           src="/images/services/services-hero.webp"
-          alt="Servicios médicos en clínica hispana Houston - Mi Clínica Medical Center"
+          alt="Servicios médicos en clínica hispana Houston - Clínica Hispana Nueva Salud Gessner"
           fill
           className="object-cover object-center -z-20"
           priority
@@ -346,7 +346,7 @@ export default function ServiciosPage() {
         {/* Background Image */}
         <Image
           src="/images/services/services-cta.webp"
-          alt="Contactar clínica hispana Houston - Mi Clínica Medical Center"
+          alt="Contactar clínica hispana Houston - Clínica Hispana Nueva Salud Gessner"
           fill
           className="object-cover object-center -z-20"
           quality={85}

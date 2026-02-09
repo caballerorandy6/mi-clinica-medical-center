@@ -9,10 +9,11 @@ import type {
 } from "@/types";
 
 export const SITE_CONFIG = {
-  name: "Mi Clínica Medical Center",
+  name: "Clínica Hispana Nueva Salud Gessner",
+  shortName: "Nueva Salud Gessner",
   tagline: "Clínica Hispana en Houston, TX",
   description:
-    "Mi Clínica Medical Center es la clínica hispana de confianza en Houston. Atención médica profesional en español para toda la familia. Exámenes médicos para Green Card (I-693) autorizados por USCIS.",
+    "Clínica Hispana Nueva Salud Gessner es la clínica hispana de confianza en Houston. Atención médica profesional en español para toda la familia. Exámenes médicos para Green Card (I-693) autorizados por USCIS.",
   baseUrl: "https://miclinicamedicalcenter.com",
   locale: "es-MX",
 } as const;
@@ -76,7 +77,7 @@ export const SERVICES: Service[] = [
     description:
       "Control de alergias en nuestra clínica hispana de Houston. Diagnóstico y tratamiento para respirar con libertad.",
     longDescription:
-      "¿Sientes que las estaciones del año te afectan? En Mi Clínica Medical Center ofrecemos diagnóstico y tratamiento integral para todo tipo de alergias. Nuestros médicos hispanos te ayudan a identificar los alérgenos y controlar tus síntomas.",
+      "¿Sientes que las estaciones del año te afectan? En Clínica Hispana Nueva Salud Gessner ofrecemos diagnóstico y tratamiento integral para todo tipo de alergias. Nuestros médicos hispanos te ayudan a identificar los alérgenos y controlar tus síntomas.",
     icon: "Activity",
     category: "especialidad",
     keywords: ["alergias Houston", "alergia clínica hispana", "rinitis"],
@@ -98,7 +99,7 @@ export const SERVICES: Service[] = [
     description:
       "Tratamiento de artritis en la clínica hispana. Recupera tu movilidad y vive sin dolor.",
     longDescription:
-      "¿Sientes que el dolor articular limita tu vida diaria? En Mi Clínica Medical Center ofrecemos tratamiento especializado para artritis y enfermedades reumáticas. Nuestro objetivo es ayudarte a recuperar tu movilidad y calidad de vida.",
+      "¿Sientes que el dolor articular limita tu vida diaria? En Clínica Hispana Nueva Salud Gessner ofrecemos tratamiento especializado para artritis y enfermedades reumáticas. Nuestro objetivo es ayudarte a recuperar tu movilidad y calidad de vida.",
     icon: "User",
     category: "especialidad",
     keywords: ["artritis Houston", "dolor articulaciones clínica hispana"],
@@ -120,7 +121,7 @@ export const SERVICES: Service[] = [
     description:
       "Control de diabetes en nuestra clínica hispana de Houston. Monitoreo de glucosa, A1C y orientación nutricional. Doctores que hablan español.",
     longDescription:
-      "La diabetes requiere un manejo cuidadoso y constante. En nuestra clínica hispana Mi Clínica Medical Center ofrecemos control integral de diabetes con monitoreo de glucosa, prueba de hemoglobina A1C, ajuste de medicamentos y orientación nutricional 100% en español.",
+      "La diabetes requiere un manejo cuidadoso y constante. En nuestra clínica hispana Clínica Hispana Nueva Salud Gessner ofrecemos control integral de diabetes con monitoreo de glucosa, prueba de hemoglobina A1C, ajuste de medicamentos y orientación nutricional 100% en español.",
     icon: "Activity",
     category: "especialidad",
     keywords: ["diabetes Houston", "glucosa clínica hispana", "control diabetes cerca de mi"],
@@ -141,7 +142,7 @@ export const SERVICES: Service[] = [
     description:
       "Control de presión arterial alta en la clínica hispana. Prevención de enfermedades cardíacas.",
     longDescription:
-      "La presión arterial alta puede causar enfermedades cardíacas y accidentes cerebrovasculares. En Mi Clínica Medical Center monitoreamos y controlamos tu presión arterial con tratamiento personalizado.",
+      "La presión arterial alta puede causar enfermedades cardíacas y accidentes cerebrovasculares. En Clínica Hispana Nueva Salud Gessner monitoreamos y controlamos tu presión arterial con tratamiento personalizado.",
     icon: "Heart",
     category: "especialidad",
     keywords: ["presión arterial Houston", "hipertensión clínica hispana"],
@@ -163,7 +164,7 @@ export const SERVICES: Service[] = [
     description:
       "Control de colesterol y triglicéridos en la clínica hispana de Houston.",
     longDescription:
-      "El colesterol alto es un factor de riesgo para enfermedades del corazón. En Mi Clínica Medical Center realizamos análisis de perfil lipídico y ofrecemos tratamiento para mantener tus niveles saludables.",
+      "El colesterol alto es un factor de riesgo para enfermedades del corazón. En Clínica Hispana Nueva Salud Gessner realizamos análisis de perfil lipídico y ofrecemos tratamiento para mantener tus niveles saludables.",
     icon: "TestTube",
     category: "especialidad",
     keywords: ["colesterol Houston", "triglicéridos clínica hispana"],
@@ -185,7 +186,7 @@ export const SERVICES: Service[] = [
     description:
       "Control de tiroides en la clínica hispana. Equilibra tu energía y tu salud.",
     longDescription:
-      "¿Te sientes cansado sin razón aparente? Los problemas de tiroides pueden afectar tu energía y metabolismo. En Mi Clínica Medical Center diagnosticamos y tratamos trastornos de la tiroides.",
+      "¿Te sientes cansado sin razón aparente? Los problemas de tiroides pueden afectar tu energía y metabolismo. En Clínica Hispana Nueva Salud Gessner diagnosticamos y tratamos trastornos de la tiroides.",
     icon: "Pill",
     category: "especialidad",
     keywords: ["tiroides Houston", "hipotiroidismo clínica hispana"],
@@ -207,7 +208,7 @@ export const SERVICES: Service[] = [
     description:
       "Tratamiento de anemias en la clínica hispana. Recupera tu fuerza y vitalidad.",
     longDescription:
-      "¿Te sientes cansado todo el tiempo? La anemia puede ser la causa. En Mi Clínica Medical Center diagnosticamos el tipo de anemia y ofrecemos tratamiento para recuperar tu energía.",
+      "¿Te sientes cansado todo el tiempo? La anemia puede ser la causa. En Clínica Hispana Nueva Salud Gessner diagnosticamos el tipo de anemia y ofrecemos tratamiento para recuperar tu energía.",
     icon: "TestTube",
     category: "especialidad",
     keywords: ["anemia Houston", "hierro bajo clínica hispana"],
@@ -232,7 +233,7 @@ export const SERVICES: Service[] = [
     description:
       "Papanicolaou en la clínica hispana de Houston. Prevención vital para la salud de la mujer.",
     longDescription:
-      "El Papanicolaou es un examen esencial para la detección temprana de cáncer cervical. En Mi Clínica Medical Center realizamos este procedimiento en un ambiente cómodo y confidencial.",
+      "El Papanicolaou es un examen esencial para la detección temprana de cáncer cervical. En Clínica Hispana Nueva Salud Gessner realizamos este procedimiento en un ambiente cómodo y confidencial.",
     icon: "FileCheck",
     category: "mujer",
     keywords: ["papanicolaou Houston", "pap smear clínica hispana"],
@@ -255,7 +256,7 @@ export const SERVICES: Service[] = [
     description:
       "Planificación familiar en la clínica hispana. Tu futuro, tu decisión.",
     longDescription:
-      "En Mi Clínica Medical Center ofrecemos asesoría completa sobre métodos anticonceptivos. Nuestros especialistas te orientan sobre las mejores opciones para tu estilo de vida.",
+      "En Clínica Hispana Nueva Salud Gessner ofrecemos asesoría completa sobre métodos anticonceptivos. Nuestros especialistas te orientan sobre las mejores opciones para tu estilo de vida.",
     icon: "Heart",
     category: "mujer",
     keywords: ["planificación familiar Houston", "anticonceptivos clínica hispana"],
@@ -277,7 +278,7 @@ export const SERVICES: Service[] = [
     description:
       "Exámenes de embarazo en la clínica hispana. Resultados rápidos y confidenciales.",
     longDescription:
-      "En Mi Clínica Medical Center realizamos pruebas de embarazo con resultados rápidos y confidenciales. Ofrecemos orientación y seguimiento para tu cuidado prenatal.",
+      "En Clínica Hispana Nueva Salud Gessner realizamos pruebas de embarazo con resultados rápidos y confidenciales. Ofrecemos orientación y seguimiento para tu cuidado prenatal.",
     icon: "Baby",
     category: "mujer",
     keywords: ["prueba embarazo Houston", "test embarazo clínica hispana"],
@@ -300,7 +301,7 @@ export const SERVICES: Service[] = [
     description:
       "Tratamiento de infecciones vaginales en la clínica hispana. Cuidado especializado y confidencial.",
     longDescription:
-      "En Mi Clínica Medical Center ofrecemos diagnóstico y tratamiento de infecciones vaginales en un ambiente de confianza. Nuestro equipo médico femenino está disponible para atenderte.",
+      "En Clínica Hispana Nueva Salud Gessner ofrecemos diagnóstico y tratamiento de infecciones vaginales en un ambiente de confianza. Nuestro equipo médico femenino está disponible para atenderte.",
     icon: "Heart",
     category: "mujer",
     keywords: ["infección vaginal Houston", "candidiasis clínica hispana"],
@@ -322,7 +323,7 @@ export const SERVICES: Service[] = [
     description:
       "Extracción de implante hormonal en la clínica hispana. Procedimiento rápido y seguro.",
     longDescription:
-      "En Mi Clínica Medical Center realizamos la extracción de implantes hormonales anticonceptivos de forma segura y profesional. Procedimiento rápido con mínimas molestias.",
+      "En Clínica Hispana Nueva Salud Gessner realizamos la extracción de implantes hormonales anticonceptivos de forma segura y profesional. Procedimiento rápido con mínimas molestias.",
     icon: "Pill",
     category: "mujer",
     keywords: ["extracción implante Houston", "Nexplanon clínica hispana"],
@@ -347,7 +348,7 @@ export const SERVICES: Service[] = [
     description:
       "Ultrasonidos en nuestra clínica hispana de Houston. Embarazo, abdominal, pélvico y más. Resultados inmediatos con interpretación en español.",
     longDescription:
-      "En nuestra clínica hispana Mi Clínica Medical Center ofrecemos ultrasonidos con tecnología moderna y resultados inmediatos. Ultrasonidos de embarazo, abdominales, pélvicos y renales. Todo explicado en español por nuestros especialistas.",
+      "En nuestra clínica hispana Clínica Hispana Nueva Salud Gessner ofrecemos ultrasonidos con tecnología moderna y resultados inmediatos. Ultrasonidos de embarazo, abdominales, pélvicos y renales. Todo explicado en español por nuestros especialistas.",
     icon: "Monitor",
     category: "diagnostico",
     keywords: ["ultrasonido Houston", "ecografía clínica hispana", "ultrasonido embarazo cerca de mi"],
@@ -368,7 +369,7 @@ export const SERVICES: Service[] = [
     description:
       "Electrocardiograma (EKG) en la clínica hispana. Cuida el ritmo de tu corazón.",
     longDescription:
-      "En Mi Clínica Medical Center realizamos electrocardiogramas para evaluar la salud de tu corazón. Diagnóstico rápido de arritmias y otras condiciones cardíacas.",
+      "En Clínica Hispana Nueva Salud Gessner realizamos electrocardiogramas para evaluar la salud de tu corazón. Diagnóstico rápido de arritmias y otras condiciones cardíacas.",
     icon: "Heart",
     category: "diagnostico",
     keywords: ["electrocardiograma Houston", "EKG clínica hispana"],
@@ -390,7 +391,7 @@ export const SERVICES: Service[] = [
     description:
       "Servicio de cultivos y pruebas microbiológicas en la clínica hispana de Houston.",
     longDescription:
-      "En Mi Clínica Medical Center realizamos cultivos para identificar infecciones bacterianas y determinar el tratamiento antibiótico más efectivo.",
+      "En Clínica Hispana Nueva Salud Gessner realizamos cultivos para identificar infecciones bacterianas y determinar el tratamiento antibiótico más efectivo.",
     icon: "TestTube",
     category: "diagnostico",
     keywords: ["cultivo Houston", "prueba microbiológica clínica hispana"],
@@ -412,7 +413,7 @@ export const SERVICES: Service[] = [
     description:
       "Pruebas y cuidado de COVID-19 en la clínica hispana de Houston.",
     longDescription:
-      "En Mi Clínica Medical Center ofrecemos pruebas de COVID-19 rápidas y PCR. Resultados confiables para diagnóstico, viajes y trabajo.",
+      "En Clínica Hispana Nueva Salud Gessner ofrecemos pruebas de COVID-19 rápidas y PCR. Resultados confiables para diagnóstico, viajes y trabajo.",
     icon: "TestTube",
     category: "diagnostico",
     keywords: ["prueba COVID Houston", "test coronavirus clínica hispana"],
@@ -437,7 +438,7 @@ export const SERVICES: Service[] = [
     description:
       "Tratamiento de infecciones respiratorias en la clínica hispana de Houston.",
     longDescription:
-      "En Mi Clínica Medical Center tratamos infecciones respiratorias como gripa, bronquitis, sinusitis y neumonía. Diagnóstico rápido y tratamiento efectivo.",
+      "En Clínica Hispana Nueva Salud Gessner tratamos infecciones respiratorias como gripa, bronquitis, sinusitis y neumonía. Diagnóstico rápido y tratamiento efectivo.",
     icon: "Activity",
     category: "otro",
     keywords: ["gripa Houston", "bronquitis clínica hispana"],
@@ -459,7 +460,7 @@ export const SERVICES: Service[] = [
     description:
       "Tratamiento de infecciones urinarias en la clínica hispana. Diagnóstico preciso y alivio rápido.",
     longDescription:
-      "En Mi Clínica Medical Center diagnosticamos y tratamos infecciones del tracto urinario con análisis de orina y tratamiento antibiótico efectivo.",
+      "En Clínica Hispana Nueva Salud Gessner diagnosticamos y tratamos infecciones del tracto urinario con análisis de orina y tratamiento antibiótico efectivo.",
     icon: "Pill",
     category: "otro",
     keywords: ["infección urinaria Houston", "cistitis clínica hispana"],
@@ -481,7 +482,7 @@ export const SERVICES: Service[] = [
     description:
       "Pruebas y tratamiento de ETS en la clínica hispana. Privacidad y cuidado para tu salud.",
     longDescription:
-      "En Mi Clínica Medical Center realizamos pruebas confidenciales de enfermedades de transmisión sexual. Diagnóstico y tratamiento en un ambiente de respeto y privacidad.",
+      "En Clínica Hispana Nueva Salud Gessner realizamos pruebas confidenciales de enfermedades de transmisión sexual. Diagnóstico y tratamiento en un ambiente de respeto y privacidad.",
     icon: "TestTube",
     category: "otro",
     keywords: ["prueba ETS Houston", "VIH clínica hispana"],
@@ -503,7 +504,7 @@ export const SERVICES: Service[] = [
     description:
       "Cuidado y cura de heridas en la clínica hispana de Houston. Sanación profesional y segura.",
     longDescription:
-      "En Mi Clínica Medical Center ofrecemos cuidado profesional de heridas. Limpieza, vendaje y seguimiento para una sanación óptima.",
+      "En Clínica Hispana Nueva Salud Gessner ofrecemos cuidado profesional de heridas. Limpieza, vendaje y seguimiento para una sanación óptima.",
     icon: "AlertCircle",
     category: "otro",
     keywords: ["cura heridas Houston", "curación clínica hispana"],
@@ -525,7 +526,7 @@ export const SERVICES: Service[] = [
     description:
       "Sutura de heridas en la clínica hispana de Houston. Atención médica rápida para cortes.",
     longDescription:
-      "En Mi Clínica Medical Center realizamos suturas para cortes y laceraciones que requieren cierre. Procedimiento profesional con anestesia local.",
+      "En Clínica Hispana Nueva Salud Gessner realizamos suturas para cortes y laceraciones que requieren cierre. Procedimiento profesional con anestesia local.",
     icon: "AlertCircle",
     category: "otro",
     keywords: ["sutura Houston", "puntos clínica hispana"],
@@ -547,7 +548,7 @@ export const SERVICES: Service[] = [
     description:
       "Extracción de uñas en la clínica hispana de Houston. Alivio inmediato para dolor e infección.",
     longDescription:
-      "¿Tienes una uña enterrada o infectada? En Mi Clínica Medical Center realizamos extracción de uñas de forma segura para aliviar el dolor y prevenir complicaciones.",
+      "¿Tienes una uña enterrada o infectada? En Clínica Hispana Nueva Salud Gessner realizamos extracción de uñas de forma segura para aliviar el dolor y prevenir complicaciones.",
     icon: "Pill",
     category: "otro",
     keywords: ["uña enterrada Houston", "extracción uña clínica hispana"],
@@ -572,7 +573,7 @@ export const SERVICES: Service[] = [
     description:
       "Clínica hispana autorizada por USCIS para exámenes I-693 en Houston. Médico Civil Surgeon certificado. +500 Green Cards aprobadas. Todo en español.",
     longDescription:
-      "En nuestra clínica hispana Mi Clínica Medical Center realizamos exámenes médicos de inmigración autorizados por USCIS. Nuestro médico Civil Surgeon certificado completa el formulario I-693 100% en español. Más de 500 familias han completado su proceso con nosotros.",
+      "En nuestra clínica hispana Clínica Hispana Nueva Salud Gessner realizamos exámenes médicos de inmigración autorizados por USCIS. Nuestro médico Civil Surgeon certificado completa el formulario I-693 100% en español. Más de 500 familias han completado su proceso con nosotros.",
     icon: "FileCheck",
     category: "especial",
     keywords: ["examen Green Card Houston", "I-693 clínica hispana", "civil surgeon", "examen inmigración cerca de mi"],
@@ -593,7 +594,7 @@ export const SERVICES: Service[] = [
     description:
       "Chequeos de salud y exámenes físicos en la clínica hispana de Houston.",
     longDescription:
-      "En Mi Clínica Medical Center realizamos chequeos de salud completos para detectar condiciones a tiempo. Tu bienestar es nuestra prioridad.",
+      "En Clínica Hispana Nueva Salud Gessner realizamos chequeos de salud completos para detectar condiciones a tiempo. Tu bienestar es nuestra prioridad.",
     icon: "Stethoscope",
     category: "especial",
     keywords: ["chequeo médico Houston", "examen físico clínica hispana"],
@@ -615,7 +616,7 @@ export const SERVICES: Service[] = [
     description:
       "Examen médico de DOT en la clínica hispana de Houston. Mantén tu licencia comercial al día.",
     longDescription:
-      "En Mi Clínica Medical Center realizamos exámenes médicos DOT para conductores comerciales. Certificación requerida para licencias CDL.",
+      "En Clínica Hispana Nueva Salud Gessner realizamos exámenes médicos DOT para conductores comerciales. Certificación requerida para licencias CDL.",
     icon: "FileCheck",
     category: "especial",
     keywords: ["examen DOT Houston", "físico CDL clínica hispana"],
@@ -637,7 +638,7 @@ export const SERVICES: Service[] = [
     description:
       "Físicos escolares y deportivos en la clínica hispana de Houston. Prepara a tus hijos para el éxito.",
     longDescription:
-      "En Mi Clínica Medical Center realizamos exámenes físicos para escuela y deportes. Formularios oficiales completados el mismo día.",
+      "En Clínica Hispana Nueva Salud Gessner realizamos exámenes físicos para escuela y deportes. Formularios oficiales completados el mismo día.",
     icon: "FileCheck",
     category: "especial",
     keywords: ["físico escolar Houston", "examen deportivo clínica hispana"],
@@ -754,9 +755,9 @@ export const GREEN_CARD_FEATURES: GreenCardFeature[] = [
 export const FAQS: FAQ[] = [
   {
     question:
-      "¿Mi Clínica Medical Center es una clínica hispana con atención en español?",
+      "¿Clínica Hispana Nueva Salud Gessner es una clínica hispana con atención en español?",
     answer:
-      "Sí, Mi Clínica Medical Center es una clínica hispana ubicada en Houston, TX. Todo nuestro personal habla español y ofrecemos atención médica completamente en tu idioma para que te sientas cómodo y comprendido durante tu visita.",
+      "Sí, Clínica Hispana Nueva Salud Gessner es una clínica hispana ubicada en Houston, TX. Todo nuestro personal habla español y ofrecemos atención médica completamente en tu idioma para que te sientas cómodo y comprendido durante tu visita.",
   },
   {
     question: "¿Qué servicios ofrece esta clínica hispana en Houston?",
@@ -765,7 +766,7 @@ export const FAQS: FAQ[] = [
   },
   {
     question:
-      "¿Necesito cita para visitar la clínica hispana Mi Clínica Medical Center?",
+      "¿Necesito cita para visitar la clínica hispana Clínica Hispana Nueva Salud Gessner?",
     answer:
       "Aceptamos pacientes con y sin cita en nuestra clínica hispana. Sin embargo, recomendamos agendar una cita para reducir el tiempo de espera. Puede llamar al (346) 226-5820 o enviar un mensaje por WhatsApp.",
   },
@@ -778,11 +779,11 @@ export const FAQS: FAQ[] = [
     question:
       "¿La clínica hispana está autorizada para exámenes de Green Card I-693?",
     answer:
-      "Sí, Mi Clínica Medical Center es una clínica hispana autorizada por USCIS para realizar exámenes médicos de inmigración I-693. Contamos con un médico Civil Surgeon certificado que completa y sella el formulario oficial.",
+      "Sí, Clínica Hispana Nueva Salud Gessner es una clínica hispana autorizada por USCIS para realizar exámenes médicos de inmigración I-693. Contamos con un médico Civil Surgeon certificado que completa y sella el formulario oficial.",
   },
   {
     question:
-      "¿Cuánto cuesta una consulta médica en la clínica hispana Mi Clínica Medical Center?",
+      "¿Cuánto cuesta una consulta médica en la clínica hispana Clínica Hispana Nueva Salud Gessner?",
     answer:
       "Las consultas médicas generales en nuestra clínica hispana comienzan desde $50. Ofrecemos precios accesibles y planes de pago para que toda la comunidad hispana de Houston tenga acceso a atención médica de calidad.",
   },
@@ -792,7 +793,7 @@ export const FAQS: FAQ[] = [
       "Nuestra clínica hispana trabaja con varios seguros médicos. Le recomendamos llamarnos al (346) 226-5820 para verificar si aceptamos su seguro. También ofrecemos precios especiales para pacientes sin seguro.",
   },
   {
-    question: "¿Dónde está ubicada la clínica hispana Mi Clínica Medical Center?",
+    question: "¿Dónde está ubicada la clínica hispana Clínica Hispana Nueva Salud Gessner?",
     answer:
       "Nuestra clínica hispana está ubicada en 1914 Gessner Rd B, Houston, TX 77080. Estamos en una ubicación conveniente con amplio estacionamiento gratuito para nuestros pacientes.",
   },

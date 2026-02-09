@@ -77,7 +77,7 @@ export const getGoogleReviews = unstable_cache(
 
 // Fallback data in case API fails
 export const FALLBACK_REVIEWS: GooglePlaceDetails = {
-  name: "Mi Clínica Medical Center",
+  name: "Clínica Hispana Nueva Salud Gessner",
   rating: 5.0,
   user_ratings_total: 50,
   reviews: [
@@ -105,7 +105,7 @@ export const FALLBACK_REVIEWS: GooglePlaceDetails = {
     {
       author_name: "Carlos López",
       rating: 5,
-      text: "La mejor clínica hispana en Houston. Precios justos, atención rápida y personal muy amable. Siempre recomiendo Mi Clínica Medical Center.",
+      text: "La mejor clínica hispana en Houston. Precios justos, atención rápida y personal muy amable. Siempre recomiendo Clínica Hispana Nueva Salud Gessner.",
       time: Date.now() / 1000,
       relative_time_description: "hace un mes",
     },

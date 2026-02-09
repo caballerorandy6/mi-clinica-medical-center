@@ -21,7 +21,7 @@ export async function Testimonials() {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Lo que dicen nuestros pacientes en Google sobre la atención en Mi
-              Clínica Medical Center.
+              Clínica Hispana Nueva Salud Gessner.
             </p>
           </div>
 
@@ -31,7 +31,7 @@ export async function Testimonials() {
           {/* SEO Text */}
           <p className="text-center text-sm text-muted-foreground mt-10 max-w-3xl mx-auto">
             Miles de pacientes confían en nuestra clínica hispana en Houston. Mi
-            Clínica Medical Center es la clínica hispana preferida por la
+            Clínica Hispana Nueva Salud Gessner es la clínica hispana preferida por la
             comunidad latina gracias a nuestra atención 100% en español y precios
             accesibles.
           </p>

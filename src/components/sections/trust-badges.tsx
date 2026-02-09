@@ -41,7 +41,7 @@ export function TrustBadges() {
 
         {/* SEO Text */}
         <p className="text-center text-sm text-muted-foreground mt-8 max-w-3xl mx-auto">
-          Mi Clínica Medical Center es la clínica hispana de confianza para la
+          Clínica Hispana Nueva Salud Gessner es la clínica hispana de confianza para la
           comunidad latina en Houston. Nuestra clínica hispana ofrece atención
           médica completa con personal que habla español.
         </p>

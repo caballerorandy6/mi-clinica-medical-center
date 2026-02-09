@@ -239,7 +239,7 @@ export function GreenCard() {
           viewport={{ once: true }}
           className="text-center text-sm text-white/70 mt-16 max-w-3xl mx-auto leading-relaxed"
         >
-          Mi Clínica Medical Center es la clínica hispana de preferencia en
+          Clínica Hispana Nueva Salud Gessner es la clínica hispana de preferencia en
           Houston para exámenes de Green Card I-693. Nuestra clínica hispana
           cuenta con médicos Civil Surgeon certificados por USCIS que completan
           todo el proceso en español.

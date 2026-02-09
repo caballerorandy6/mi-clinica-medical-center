@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   title: {
     default:
       "Clínica Hispana Cerca de Ti en Houston | Ginecología en Español",
-    template: "%s | Clínica Hispana Houston - Mi Clínica Medical Center",
+    template: "%s | Clínica Hispana Houston - Clínica Hispana Nueva Salud Gessner",
   },
   other: {
     "theme-color": "#F7FDF9",
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
     "clínica latina Houston",
     "USCIS civil surgeon Houston",
   ],
-  authors: [{ name: "Mi Clínica Medical Center" }],
-  creator: "Mi Clínica Medical Center",
-  publisher: "Mi Clínica Medical Center",
+  authors: [{ name: "Clínica Hispana Nueva Salud Gessner" }],
+  creator: "Clínica Hispana Nueva Salud Gessner",
+  publisher: "Clínica Hispana Nueva Salud Gessner",
   formatDetection: {
     email: false,
     address: false,
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_MX",
     url: "https://miclinicamedicalcenter.com",
-    siteName: "Clínica Hispana Mi Clínica Medical Center",
+    siteName: "Clínica Hispana Nueva Salud Gessner",
     title:
       "Clínica Hispana Cerca de Ti en Houston | Ginecología en Español",
     description:
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Clínica Hispana cerca de mi en Houston TX - Mi Clínica Medical Center",
+        alt: "Clínica Hispana cerca de mi en Houston TX - Clínica Hispana Nueva Salud Gessner",
       },
     ],
   },

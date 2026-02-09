@@ -17,18 +17,18 @@ export function Footer() {
             <Link href="/" className="group flex items-center gap-3">
               <Image
                 src="/images/logo.webp"
-                alt="Logo Mi Clínica Medical Center - Clínica hispana en Houston TX"
+                alt="Logo Clínica Hispana Nueva Salud Gessner - Clínica hispana en Houston TX"
                 width={60}
                 height={60}
                 className="w-14 h-14 bg-white rounded-lg p-1 transition-transform duration-300 group-hover:scale-105"
               />
               <div>
-                <p className="text-lg font-bold group-hover:text-primary transition-colors duration-300">Mi Clínica</p>
-                <p className="text-sm text-white/90">Medical Center</p>
+                <p className="text-lg font-bold group-hover:text-primary transition-colors duration-300">Nueva Salud</p>
+                <p className="text-sm text-white/90">Gessner</p>
               </div>
             </Link>
             <p className="text-white/90 text-sm">
-              Mi Clínica Medical Center es tu clínica hispana de confianza en
+              Clínica Hispana Nueva Salud Gessner es tu clínica hispana de confianza en
               Houston, TX. Ofrecemos atención médica profesional 100% en español
               para toda la comunidad hispana.
             </p>
@@ -91,7 +91,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 text-white/90 hover:text-white transition-all duration-300"
-                aria-label="Seguir a Mi Clínica Medical Center en Instagram"
+                aria-label="Seguir a Clínica Hispana Nueva Salud Gessner en Instagram"
               >
                 <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-linear-to-br group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-orange-400 transition-all duration-300 group-hover:scale-110">
                   <InstagramLogo className="size-5 text-white" weight="fill" />
@@ -103,12 +103,12 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 text-white/90 hover:text-white transition-all duration-300"
-                aria-label="Seguir a Mi Clínica Medical Center en Facebook"
+                aria-label="Seguir a Clínica Hispana Nueva Salud Gessner en Facebook"
               >
                 <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
                   <FacebookLogo className="size-5 text-white" weight="fill" />
                 </span>
-                <span className="group-hover:translate-x-1 transition-transform duration-300">Mi Clínica Medical Center</span>
+                <span className="group-hover:translate-x-1 transition-transform duration-300">Clínica Hispana Nueva Salud Gessner</span>
               </a>
             </div>
             <p className="text-white/90 text-sm mt-4">

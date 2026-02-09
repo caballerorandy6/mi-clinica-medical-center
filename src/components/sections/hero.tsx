@@ -78,7 +78,7 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
       <div className="absolute inset-0 -z-20">
         <Image
           src="/images/hero.webp"
-          alt="Clínica Hispana con Ginecología en Español - Mi Clínica Medical Center Houston TX"
+          alt="Clínica Hispana con Ginecología en Español - Clínica Hispana Nueva Salud Gessner Houston TX"
           fill
           className="object-cover object-center"
           priority

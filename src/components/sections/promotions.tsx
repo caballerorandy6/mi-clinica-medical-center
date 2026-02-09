@@ -37,7 +37,7 @@ export function Promotions() {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Aprovecha nuestros precios especiales en la clínica hispana Mi
-            Clínica Medical Center. Atención médica de calidad a precios
+            Clínica Hispana Nueva Salud Gessner. Atención médica de calidad a precios
             accesibles para la comunidad hispana de Houston.
           </p>
         </motion.div>
@@ -137,7 +137,7 @@ export function Promotions() {
 
         {/* Bottom text */}
         <p className="text-center text-sm text-muted-foreground mt-8">
-          * Precios válidos en nuestra clínica hispana Mi Clínica Medical Center
+          * Precios válidos en nuestra clínica hispana Clínica Hispana Nueva Salud Gessner
           en Houston, TX. Sujetos a cambio sin previo aviso.
         </p>
       </div>

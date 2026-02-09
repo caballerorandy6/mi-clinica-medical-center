@@ -138,7 +138,7 @@ export function Header() {
           <Link
             href="/"
             className="flex items-center gap-3 group shrink-0"
-            aria-label="Mi Clínica Medical Center - Inicio"
+            aria-label="Clínica Hispana Nueva Salud Gessner - Inicio"
           >
             <div
               className={cn(
@@ -150,7 +150,7 @@ export function Header() {
             >
               <Image
                 src="/images/logo.webp"
-                alt="Logo Mi Clínica Medical Center"
+                alt="Logo Clínica Hispana Nueva Salud Gessner"
                 fill
                 className="object-contain p-1 transition-all duration-500 group-hover:scale-105"
                 priority
@@ -164,7 +164,7 @@ export function Header() {
                   isScrolled ? "text-secondary" : "text-white drop-shadow-lg"
                 )}
               >
-                Mi Clínica
+                Nueva Salud
               </p>
               <p
                 className={cn(
@@ -172,7 +172,7 @@ export function Header() {
                   isScrolled ? "text-muted-foreground" : "text-white/90 drop-shadow-md"
                 )}
               >
-                MEDICAL CENTER
+                GESSNER
               </p>
             </div>
           </Link>
@@ -266,7 +266,7 @@ export function Header() {
                     <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/10 p-1">
                       <Image
                         src="/images/logo.webp"
-                        alt="Logo Mi Clínica Medical Center"
+                        alt="Logo Clínica Hispana Nueva Salud Gessner"
                         width={56}
                         height={56}
                         className="w-full h-full object-contain"
@@ -274,10 +274,10 @@ export function Header() {
                     </div>
                     <div>
                       <SheetTitle className="text-lg font-bold text-white text-left">
-                        Mi Clínica
+                        Nueva Salud
                       </SheetTitle>
                       <p className="text-[10px] text-white/80 font-semibold tracking-widest">
-                        MEDICAL CENTER
+                        GESSNER
                       </p>
                     </div>
                   </Link>

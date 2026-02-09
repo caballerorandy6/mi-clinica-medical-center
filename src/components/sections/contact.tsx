@@ -13,7 +13,7 @@ export function Contact() {
       <div className="absolute inset-0 -z-20">
         <Image
           src="/images/contact/contact-bg.webp"
-          alt="Contacta la clínica hispana Mi Clínica Medical Center"
+          alt="Contacta la clínica hispana Clínica Hispana Nueva Salud Gessner"
           fill
           className="object-cover"
           quality={80}
@@ -151,7 +151,7 @@ export function Contact() {
           viewport={{ once: true }}
           className="text-center text-sm text-white/60 mt-12 max-w-3xl mx-auto"
         >
-          Contacta la clínica hispana Mi Clínica Medical Center hoy mismo.
+          Contacta la clínica hispana Clínica Hispana Nueva Salud Gessner hoy mismo.
           Nuestra clínica hispana en Houston te espera con atención profesional
           en español para ti y toda tu familia.
         </motion.p>

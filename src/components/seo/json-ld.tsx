@@ -7,7 +7,8 @@ export function JsonLdMedicalClinic() {
     "@id": `${SITE_CONFIG.baseUrl}/#medicalclinic`,
     name: SITE_CONFIG.name,
     alternateName: [
-      "Clínica Hispana Mi Clínica Medical Center",
+      "Clínica Hispana Nueva Salud Gessner",
+      "Nueva Salud Gessner",
       "Clínica Hispana Houston",
     ],
     description: SITE_CONFIG.description,
