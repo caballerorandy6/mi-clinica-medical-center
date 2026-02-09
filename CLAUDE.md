@@ -1,8 +1,8 @@
-# CLAUDE.md - Mi Clínica Medical Center
+# CLAUDE.md - Clínica Hispana Nueva Salud Gessner
 
 ## Proyecto
 
-**Sitio web para Mi Clínica Medical Center** - Clínica hispana en Houston, TX con servicios médicos en español.
+**Sitio web para Clínica Hispana Nueva Salud Gessner** - Clínica hispana en Houston, TX con servicios médicos en español.
 
 **Tech Stack:** Next.js 16, React 19, TypeScript, Tailwind CSS v4, shadcn/ui, Zod, React Hook Form, Framer Motion, Phosphor Icons, Health Icons
 
@@ -183,7 +183,7 @@ import Image from 'next/image';
 
 <Image
   src="/images/logo.png"
-  alt="Mi Clínica Medical Center - Clínica hispana en Houston"
+  alt="Clínica Hispana Nueva Salud Gessner - Clínica hispana en Houston"
   width={200}
   height={200}
   priority // Para LCP images
@@ -202,7 +202,7 @@ import Image from 'next/image';
 ```typescript
 // ✅ Metadata estática
 export const metadata: Metadata = {
-  title: 'Mi Clínica Medical Center | Clínica Hispana Houston',
+  title: 'Clínica Hispana Nueva Salud Gessner | Clínica Hispana Houston',
   description: 'Clínica hispana en Houston, TX. Atención médica en español.',
 };
 
@@ -210,7 +210,7 @@ export const metadata: Metadata = {
 export async function generateMetadata({ params }): Promise<Metadata> {
   const service = await getService(params.slug);
   return {
-    title: `${service.title} | Mi Clínica Medical Center`,
+    title: `${service.title} | Clínica Hispana Nueva Salud Gessner`,
     description: service.description,
   };
 }
@@ -401,7 +401,7 @@ const buttonVariants = cva(
 - Nombre de marca al final
 
 // Ejemplo
-"Ginecología en Español Houston | Mi Clínica Medical Center"
+"Ginecología en Español Houston | Clínica Hispana Nueva Salud Gessner"
 ```
 
 ### 5.4 Meta Descriptions
@@ -422,7 +422,7 @@ const buttonVariants = cva(
 
 ```html
 <!-- ✅ Estructura correcta -->
-<h1>Clínica Hispana en Houston - Mi Clínica Medical Center</h1>
+<h1>Clínica Hispana en Houston - Clínica Hispana Nueva Salud Gessner</h1>
   <h2>Nuestros Servicios</h2>
     <h3>Ginecología</h3>
     <h3>Pediatría</h3>
@@ -449,7 +449,7 @@ const buttonVariants = cva(
 {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
-  "name": "Mi Clínica Medical Center",
+  "name": "Clínica Hispana Nueva Salud Gessner",
   "url": "https://miclinicamedicalcenter.com",
   "telephone": "+1-346-226-5820",
   "address": {
@@ -752,7 +752,7 @@ function Component() {
 ```typescript
 // ✅ Cada página necesita title único
 export const metadata: Metadata = {
-  title: 'Servicios Médicos | Mi Clínica Medical Center',
+  title: 'Servicios Médicos | Clínica Hispana Nueva Salud Gessner',
   description: 'Descubre nuestros servicios médicos en español...',
 };
 ```
@@ -780,10 +780,10 @@ export const metadata: Metadata = {
 ```typescript
 export const metadata: Metadata = {
   openGraph: {
-    title: 'Mi Clínica Medical Center',
+    title: 'Clínica Hispana Nueva Salud Gessner',
     description: 'Clínica hispana en Houston, TX',
     url: 'https://miclinicamedicalcenter.com', // Debe coincidir con canonical
-    siteName: 'Mi Clínica Medical Center',
+    siteName: 'Clínica Hispana Nueva Salud Gessner',
     images: [
       {
         url: 'https://miclinicamedicalcenter.com/og-image.jpg', // URL ABSOLUTA
