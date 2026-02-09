@@ -3,7 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { FloatingButtons } from "@/components/layout/floating-buttons";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import {
   JsonLdMedicalClinic,
@@ -129,7 +129,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <WhatsAppButton />
+        <FloatingButtons />
         <ScrollToTop />
       </body>
     </html>

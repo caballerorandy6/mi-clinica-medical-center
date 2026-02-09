@@ -23,11 +23,7 @@ export const CONTACT_INFO: ContactInfo = {
   hours: "Lunes a Domingo: 9:00 AM - 9:00 PM",
   googleMapsUrl:
     "https://www.google.com/maps/place/Mi+Clinica+Medical+Center/@29.8066856,-95.5467939,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c4de999b36b5:0xdc9d14200d006777!8m2!3d29.806681!4d-95.5442136!16s%2Fg%2F11c58dkqrc",
-  whatsappNumber: "13462265820",
 };
-
-export const WHATSAPP_MESSAGE =
-  "Hola, me gustaría agendar una cita en la clínica hispana Mi Clínica Medical Center.";
 
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/miclinicamedicalcenter/",

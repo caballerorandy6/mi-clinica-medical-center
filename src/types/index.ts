@@ -42,7 +42,6 @@ export interface ContactInfo {
   phone: string;
   hours: string;
   googleMapsUrl: string;
-  whatsappNumber: string;
 }
 
 export interface TrustBadge {

@@ -2,17 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Phone, WhatsappLogo, Clock, MapPin, CheckCircle } from "@phosphor-icons/react";
+import { Phone, Clock, MapPin, CheckCircle } from "@phosphor-icons/react";
 import { ContactForm } from "@/components/forms/contact-form";
-import { CONTACT_INFO, WHATSAPP_MESSAGE } from "@/lib/constants";
-import { generateWhatsAppUrl } from "@/lib/utils";
+import { CONTACT_INFO } from "@/lib/constants";
 
 export function Contact() {
-  const whatsappUrl = generateWhatsAppUrl(
-    CONTACT_INFO.whatsappNumber,
-    WHATSAPP_MESSAGE
-  );
-
   return (
     <section id="contacto" className="relative py-16 lg:py-20 overflow-hidden">
       {/* Background Image */}
@@ -73,19 +67,19 @@ export function Contact() {
                 </div>
               </a>
 
-              {/* WhatsApp Button */}
+              {/* Maps Button */}
               <a
-                href={whatsappUrl}
+                href={CONTACT_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="size-14 bg-whatsapp rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <WhatsappLogo className="size-7 text-white" weight="fill" />
+                <div className="size-14 bg-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <MapPin className="size-7 text-white" weight="fill" />
                 </div>
                 <div>
-                  <p className="font-bold text-foreground text-lg">WhatsApp</p>
-                  <p className="text-whatsapp font-semibold">Escríbenos</p>
+                  <p className="font-bold text-foreground text-lg">Ubicación</p>
+                  <p className="text-secondary font-semibold">Ver en Maps</p>
                 </div>
               </a>
             </div>

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { List, Phone, MapPin, Clock, WhatsappLogo } from "@phosphor-icons/react";
+import { List, Phone, MapPin, Clock } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { NAVIGATION_LINKS, CONTACT_INFO } from "@/lib/constants";
@@ -66,7 +66,6 @@ export function Header() {
     return () => observer.disconnect();
   }, []);
 
-  const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsappNumber}`;
 
   // Determinar si un link está activo
   const isActiveLink = (href: string) => {
@@ -125,15 +124,6 @@ export function Header() {
                 >
                   <Phone className="size-4" weight="fill" />
                   <span>{CONTACT_INFO.phone}</span>
-                </a>
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/90 hover:text-green-400 transition-colors duration-300"
-                >
-                  <WhatsappLogo className="size-4" weight="fill" />
-                  <span className="hidden sm:inline">WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -330,15 +320,15 @@ export function Header() {
                       <span className="text-sm font-semibold text-foreground">Llamar</span>
                     </a>
                     <a
-                      href={whatsappUrl}
+                      href={CONTACT_INFO.googleMapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex flex-col items-center gap-2 p-3 bg-white rounded-xl shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-300"
                     >
-                      <div className="w-10 h-10 bg-green-500/10 rounded-full flex items-center justify-center">
-                        <WhatsappLogo className="size-5 text-green-600" weight="fill" />
+                      <div className="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center">
+                        <MapPin className="size-5 text-secondary" weight="fill" />
                       </div>
-                      <span className="text-sm font-semibold text-foreground">WhatsApp</span>
+                      <span className="text-sm font-semibold text-foreground">Ubicación</span>
                     </a>
                   </div>
                   <Button asChild className="w-full h-12 text-sm font-semibold" size="lg">

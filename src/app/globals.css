@@ -27,10 +27,6 @@
   --warning: #D97706;
   --warning-light: #FEF3C7;
 
-  /* WhatsApp */
-  --whatsapp: #25D366;
-  --whatsapp-dark: #128C7E;
-
   /* ========================================
      shadcn/ui theme - VERDE MONOCROMÁTICO
      ======================================== */
@@ -114,10 +110,6 @@
   --color-teal-primary: var(--teal-primary);
   --color-teal-light: var(--teal-light);
 
-  /* WhatsApp */
-  --color-whatsapp: var(--whatsapp);
-  --color-whatsapp-dark: var(--whatsapp-dark);
-
   /* Estados */
   --color-error: var(--error);
   --color-error-light: var(--error-light);
@@ -150,20 +142,20 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
 }
 
-/* WhatsApp pulse animation */
-@keyframes pulse-whatsapp {
+/* Floating button pulse animation */
+@keyframes pulse-float {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.7);
   }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    box-shadow: 0 0 0 15px rgba(21, 128, 61, 0);
   }
 }
 
-.animate-pulse-whatsapp {
-  animation: pulse-whatsapp 2s ease-in-out infinite;
+.animate-pulse-float {
+  animation: pulse-float 2s ease-in-out infinite;
 }
 
 /* Focus visible styles */

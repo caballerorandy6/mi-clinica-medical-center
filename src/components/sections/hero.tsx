@@ -11,7 +11,6 @@ import {
   Users,
   Clock,
   Star,
-  WhatsappLogo,
   CaretDown,
 } from "@phosphor-icons/react";
 
@@ -70,10 +69,6 @@ function PartialStarsHero({ rating }: { rating: number }) {
 }
 
 export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
-  const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsappNumber}?text=${encodeURIComponent(
-    "Hola, me gustaría agendar una cita en Mi Clínica Medical Center."
-  )}`;
-
   return (
     <section
       id="inicio"
@@ -167,16 +162,6 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
                   <a href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}>
                     <Phone className="size-4 sm:size-5 mr-1.5" aria-hidden="true" />
                     Llamar
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  className="flex-1 sm:hidden text-sm h-10 px-4 bg-whatsapp hover:bg-whatsapp-dark text-white shadow-xl"
-                >
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                    <WhatsappLogo className="size-4 mr-1.5" weight="fill" aria-hidden="true" />
-                    WhatsApp
                   </a>
                 </Button>
               </div>
