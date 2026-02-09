@@ -70,18 +70,12 @@ export function FAQ() {
             ¿Tienes más preguntas sobre nuestra clínica hispana? Contáctanos
             ahora.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <a
               href={`tel:3462265820`}
               className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
             >
               Llamar a la Clínica Hispana
-            </a>
-            <a
-              href="#contacto"
-              className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white rounded-lg font-semibold hover:bg-secondary/90 transition-colors"
-            >
-              Enviar Mensaje
             </a>
           </div>
         </motion.div>
