@@ -14,16 +14,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="group flex items-center gap-3">
               <Image
                 src="/images/logo.webp"
                 alt="Logo Mi Clínica Medical Center - Clínica hispana en Houston TX"
                 width={60}
                 height={60}
-                className="w-14 h-14 bg-white rounded-lg p-1"
+                className="w-14 h-14 bg-white rounded-lg p-1 transition-transform duration-300 group-hover:scale-105"
               />
               <div>
-                <p className="text-lg font-bold">Mi Clínica</p>
+                <p className="text-lg font-bold group-hover:text-primary transition-colors duration-300">Mi Clínica</p>
                 <p className="text-sm text-white/80">Medical Center</p>
               </div>
             </Link>
@@ -41,9 +41,9 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
-                  className="flex items-start gap-3 text-white/80 hover:text-white transition-colors"
+                  className="group flex items-start gap-3 text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1"
                 >
-                  <Phone className="size-5 mt-0.5 shrink-0" />
+                  <Phone className="size-5 mt-0.5 shrink-0 group-hover:text-primary transition-colors duration-300" weight="fill" />
                   <span>{CONTACT_INFO.phone}</span>
                 </a>
               </li>
@@ -52,14 +52,14 @@ export function Footer() {
                   href={CONTACT_INFO.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-white/80 hover:text-white transition-colors"
+                  className="group flex items-start gap-3 text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1"
                 >
-                  <MapPin className="size-5 mt-0.5 shrink-0" />
+                  <MapPin className="size-5 mt-0.5 shrink-0 group-hover:text-primary transition-colors duration-300" weight="fill" />
                   <span>{CONTACT_INFO.address}</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/80">
-                <Clock className="size-5 mt-0.5 shrink-0" />
+                <Clock className="size-5 mt-0.5 shrink-0 text-primary/80" weight="fill" />
                 <span>{CONTACT_INFO.hours}</span>
               </li>
             </ul>
@@ -73,7 +73,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1 hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -90,21 +90,25 @@ export function Footer() {
                 href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                className="group inline-flex items-center gap-3 text-white/80 hover:text-white transition-all duration-300"
                 aria-label="Seguir a Mi Clínica Medical Center en Instagram"
               >
-                <InstagramLogo className="size-6" />
-                <span>@miclinicamedicalcenter</span>
+                <span className="flex items-center justify-center size-10 rounded-full bg-white/10 group-hover:bg-linear-to-br group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-orange-400 transition-all duration-300 group-hover:scale-110">
+                  <InstagramLogo className="size-5 text-white" weight="fill" />
+                </span>
+                <span className="group-hover:translate-x-1 transition-transform duration-300">@miclinicamedicalcenter</span>
               </a>
               <a
                 href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+                className="group inline-flex items-center gap-3 text-white/80 hover:text-white transition-all duration-300"
                 aria-label="Seguir a Mi Clínica Medical Center en Facebook"
               >
-                <FacebookLogo className="size-6" />
-                <span>Mi Clínica Medical Center</span>
+                <span className="flex items-center justify-center size-10 rounded-full bg-white/10 group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
+                  <FacebookLogo className="size-5 text-white" weight="fill" />
+                </span>
+                <span className="group-hover:translate-x-1 transition-transform duration-300">Mi Clínica Medical Center</span>
               </a>
             </div>
             <p className="text-white/80 text-sm mt-4">
@@ -116,12 +120,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60 text-sm">
+        <div className="relative mt-10 pt-8 text-center text-white/60 text-sm">
+          {/* Gradient separator */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
           <p>
             &copy; {currentYear} {SITE_CONFIG.name}. Todos los derechos
             reservados.
           </p>
-          <p className="mt-2">
+          <p className="mt-2 text-white/40">
             Clínica Hispana en Houston, TX | Atención Médica en Español
           </p>
         </div>
