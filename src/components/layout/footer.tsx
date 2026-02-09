@@ -9,7 +9,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary text-white" id="contacto">
+    <footer className="bg-teal-dark text-white" id="contacto">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
@@ -24,10 +24,10 @@ export function Footer() {
               />
               <div>
                 <p className="text-lg font-bold group-hover:text-primary transition-colors duration-300">Mi Clínica</p>
-                <p className="text-sm text-white/80">Medical Center</p>
+                <p className="text-sm text-white/90">Medical Center</p>
               </div>
             </Link>
-            <p className="text-white/80 text-sm">
+            <p className="text-white/90 text-sm">
               Mi Clínica Medical Center es tu clínica hispana de confianza en
               Houston, TX. Ofrecemos atención médica profesional 100% en español
               para toda la comunidad hispana.
@@ -41,7 +41,7 @@ export function Footer() {
               <li>
                 <a
                   href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
-                  className="group flex items-start gap-3 text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1"
+                  className="group flex items-start gap-3 text-white/90 hover:text-white transition-all duration-300 hover:translate-x-1"
                 >
                   <Phone className="size-5 mt-0.5 shrink-0 group-hover:text-primary transition-colors duration-300" weight="fill" />
                   <span>{CONTACT_INFO.phone}</span>
@@ -52,14 +52,14 @@ export function Footer() {
                   href={CONTACT_INFO.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-start gap-3 text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1"
+                  className="group flex items-start gap-3 text-white/90 hover:text-white transition-all duration-300 hover:translate-x-1"
                 >
                   <MapPin className="size-5 mt-0.5 shrink-0 group-hover:text-primary transition-colors duration-300" weight="fill" />
                   <span>{CONTACT_INFO.address}</span>
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-white/80">
-                <Clock className="size-5 mt-0.5 shrink-0 text-primary/80" weight="fill" />
+              <li className="flex items-start gap-3 text-white/90">
+                <Clock className="size-5 mt-0.5 shrink-0" weight="fill" />
                 <span>{CONTACT_INFO.hours}</span>
               </li>
             </ul>
@@ -73,7 +73,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-flex items-center text-white/80 hover:text-white transition-all duration-300 hover:translate-x-1 hover:text-primary"
+                    className="inline-flex items-center text-white/90 hover:text-white transition-all duration-300 hover:translate-x-1 hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -90,10 +90,10 @@ export function Footer() {
                 href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 text-white/80 hover:text-white transition-all duration-300"
+                className="group inline-flex items-center gap-3 text-white/90 hover:text-white transition-all duration-300"
                 aria-label="Seguir a Mi Clínica Medical Center en Instagram"
               >
-                <span className="flex items-center justify-center size-10 rounded-full bg-white/10 group-hover:bg-linear-to-br group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-orange-400 transition-all duration-300 group-hover:scale-110">
+                <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-linear-to-br group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-orange-400 transition-all duration-300 group-hover:scale-110">
                   <InstagramLogo className="size-5 text-white" weight="fill" />
                 </span>
                 <span className="group-hover:translate-x-1 transition-transform duration-300">@miclinicamedicalcenter</span>
@@ -102,16 +102,16 @@ export function Footer() {
                 href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 text-white/80 hover:text-white transition-all duration-300"
+                className="group inline-flex items-center gap-3 text-white/90 hover:text-white transition-all duration-300"
                 aria-label="Seguir a Mi Clínica Medical Center en Facebook"
               >
-                <span className="flex items-center justify-center size-10 rounded-full bg-white/10 group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
+                <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
                   <FacebookLogo className="size-5 text-white" weight="fill" />
                 </span>
                 <span className="group-hover:translate-x-1 transition-transform duration-300">Mi Clínica Medical Center</span>
               </a>
             </div>
-            <p className="text-white/80 text-sm mt-4">
+            <p className="text-white/90 text-sm mt-4">
               Visita nuestra clínica hispana en Houston para recibir atención
               médica de calidad. Somos la clínica hispana autorizada por USCIS
               para exámenes de Green Card I-693.
@@ -120,14 +120,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="relative mt-10 pt-8 text-center text-white/60 text-sm">
+        <div className="relative mt-10 pt-8 text-center text-white/70 text-sm">
           {/* Gradient separator */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-px bg-linear-to-r from-transparent via-white/40 to-transparent" />
           <p>
             &copy; {currentYear} {SITE_CONFIG.name}. Todos los derechos
             reservados.
           </p>
-          <p className="mt-2 text-white/40">
+          <p className="mt-2 text-white/60">
             Clínica Hispana en Houston, TX | Atención Médica en Español
           </p>
         </div>
