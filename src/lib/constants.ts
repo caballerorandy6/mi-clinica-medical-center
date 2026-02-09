@@ -449,28 +449,6 @@ export const SERVICES: Service[] = [
     order: 17,
   },
   {
-    id: "suero-vitaminado",
-    slug: "suero-vitaminado",
-    title: "Suero Vitaminado",
-    shortTitle: "Sueros IV",
-    description:
-      "Sueros vitaminados e infusiones IV en la clínica hispana de Houston. Energía y bienestar inmediato.",
-    longDescription:
-      "En Clínica Hispana Nueva Salud Gessner ofrecemos terapia de sueros vitaminados intravenosos. Hidratación, vitaminas y minerales directamente al torrente sanguíneo para mayor energía y bienestar.",
-    icon: "Activity",
-    category: "especialidad",
-    keywords: ["suero vitaminado Houston", "terapia IV clínica hispana", "infusión vitaminas Houston"],
-    features: [
-      "Hidratación IV",
-      "Vitaminas B12 y complejo B",
-      "Vitamina C alta dosis",
-      "Alivio de fatiga",
-      "Recuperación rápida",
-      "Procedimiento seguro",
-    ],
-    order: 18,
-  },
-  {
     id: "dolores-musculares",
     slug: "dolores-musculares",
     title: "Dolores Musculares",
@@ -490,7 +468,7 @@ export const SERVICES: Service[] = [
       "Terapia de calor/frío",
       "Recomendaciones de ejercicio",
     ],
-    order: 19,
+    order: 18,
   },
 ];
 

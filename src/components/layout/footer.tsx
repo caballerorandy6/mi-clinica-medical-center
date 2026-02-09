@@ -108,7 +108,29 @@ export function Footer() {
                 <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
                   <FacebookLogo className="size-5 text-white" weight="fill" />
                 </span>
-                <span className="group-hover:translate-x-1 transition-transform duration-300">Clínica Hispana Nueva Salud Gessner</span>
+                <span className="group-hover:translate-x-1 transition-transform duration-300">Nueva Salud Gessner</span>
+              </a>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex gap-3 pt-2">
+              <a
+                href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
+                className="group flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-medium px-4 py-2.5 rounded-full transition-all duration-300 hover:scale-105"
+                aria-label="Llamar a la clínica"
+              >
+                <Phone className="size-5" weight="fill" />
+                <span className="text-sm">Llamar</span>
+              </a>
+              <a
+                href={CONTACT_INFO.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-medium px-4 py-2.5 rounded-full transition-all duration-300 hover:scale-105"
+                aria-label="Ver ubicación en Google Maps"
+              >
+                <MapPin className="size-5" weight="fill" />
+                <span className="text-sm">Ubicación</span>
               </a>
             </div>
             <p className="text-white/90 text-sm mt-4">
