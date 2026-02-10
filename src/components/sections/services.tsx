@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { SERVICES } from "@/lib/constants";
 
 // IDs de los 3 servicios destacados para el landing
-const FEATURED_SERVICE_IDS = ["chequeo-inmigracion", "ultrasonidos", "diabetes"];
+const FEATURED_SERVICE_IDS = ["examenes-inmigracion", "servicios-ginecologia", "ultrasonido"];
 
 // Obtener los servicios destacados del array SERVICES
 const FEATURED_SERVICES = SERVICES.filter((service) =>
@@ -22,16 +22,16 @@ const FEATURED_SERVICES = SERVICES.filter((service) =>
 
 // Imágenes de fondo para los servicios destacados
 const serviceImages: Record<string, string> = {
-  "chequeo-inmigracion": "/images/services/immigration-exam.webp",
-  ultrasonidos: "/images/services/ultrasound.webp",
-  diabetes: "/images/services/diabetes.webp",
+  "examenes-inmigracion": "/images/services/immigration-exam.webp",
+  "servicios-ginecologia": "/images/services/gynecology.webp",
+  "ultrasonido": "/images/services/ultrasound.webp",
 };
 
 // Alt text para SEO
 const serviceAltText: Record<string, string> = {
-  "chequeo-inmigracion": "Examen médico de inmigración I-693 Green Card - Clínica Hispana Houston",
-  ultrasonidos: "Ultrasonido diagnóstico en clínica hispana - Houston TX",
-  diabetes: "Control de diabetes con médico hispano - Clínica Hispana Houston",
+  "examenes-inmigracion": "Examen médico de inmigración I-693 Green Card - Clínica Hispana Houston",
+  "servicios-ginecologia": "Ginecología en español - Clínica Hispana Nueva Salud Gessner Houston TX",
+  "ultrasonido": "Ultrasonido diagnóstico en clínica hispana - Houston TX",
 };
 
 export function Services() {
