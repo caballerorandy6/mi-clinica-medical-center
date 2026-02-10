@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import {
   Phone,
-  Calendar,
+  MapPin,
   CheckCircle,
   Shield,
   ChatCircle,
@@ -149,9 +149,9 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
                   size="lg"
                   className="flex-1 sm:flex-none text-sm sm:text-base md:text-lg h-10 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 bg-primary hover:bg-primary/90 shadow-xl shadow-primary/30"
                 >
-                  <a href="#contacto">
-                    <Calendar className="size-4 sm:size-5 mr-1.5" aria-hidden="true" />
-                    Agenda Hoy
+                  <a href={CONTACT_INFO.googleMapsUrl} target="_blank" rel="noopener noreferrer">
+                    <MapPin className="size-4 sm:size-5 mr-1.5" aria-hidden="true" weight="fill" />
+                    Ubicación
                   </a>
                 </Button>
                 <Button
