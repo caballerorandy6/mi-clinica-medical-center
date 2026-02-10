@@ -135,7 +135,7 @@ export default function ServiciosPage() {
             >
               <span className="size-2 bg-primary rounded-full animate-pulse" />
               <span className="text-sm font-medium text-white/90">
-                {SERVICES.length} Servicios Médicos Disponibles
+                Servicios Médicos Disponibles
               </span>
             </motion.div>
 
@@ -199,11 +199,17 @@ export default function ServiciosPage() {
             {/* Results count */}
             <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
               <p className="text-sm text-muted-foreground">
-                Mostrando{" "}
-                <span className="font-semibold text-foreground">
-                  {filteredServices.length}
-                </span>{" "}
-                de {SERVICES.length} servicios
+                {filteredServices.length === SERVICES.length ? (
+                  "Mostrando todos los servicios"
+                ) : (
+                  <>
+                    Mostrando{" "}
+                    <span className="font-semibold text-foreground">
+                      {filteredServices.length}
+                    </span>{" "}
+                    servicios
+                  </>
+                )}
               </p>
               {searchTerm && (
                 <Button
