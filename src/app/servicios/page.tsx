@@ -273,7 +273,20 @@ export default function ServiciosPage() {
                           : "border border-gray-100 hover:border-primary/30 hover:shadow-xl hover:shadow-gray-200/50 bg-white"
                       }`}
                     >
-                      <CardHeader className="pb-3">
+                      {/* Background Image */}
+                      {service.image && (
+                        <>
+                          <Image
+                            src={service.image}
+                            alt={service.title}
+                            fill
+                            className="object-cover object-center z-0"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                          />
+                          <div className="absolute inset-0 bg-linear-to-t from-white via-white/90 to-white/70 z-0" />
+                        </>
+                      )}
+                      <CardHeader className="pb-3 relative z-10">
                         {/* Badges row */}
                         <div className="flex items-center justify-between mb-3">
                           <Badge
@@ -304,7 +317,7 @@ export default function ServiciosPage() {
                         </CardTitle>
                       </CardHeader>
 
-                      <CardContent className="pt-0">
+                      <CardContent className="pt-0 relative z-10">
                         <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
                           {service.description}
                         </p>

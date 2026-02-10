@@ -79,6 +79,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner ofrecemos medicina familiar completa para pacientes de todas las edades. Nuestros médicos hispanos brindan atención preventiva, diagnóstico y tratamiento de enfermedades comunes, todo 100% en español.",
     icon: "Stethoscope",
+    image: "/images/services/family-medicine.webp",
     category: "especial",
     keywords: ["medicina familiar Houston", "médico familiar clínica hispana", "doctor de familia cerca de mi"],
     features: [
@@ -102,6 +103,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner realizamos exámenes médicos de inmigración autorizados por USCIS. Nuestro médico Civil Surgeon certificado completa el formulario I-693 100% en español. Más de 500 familias han completado su proceso con nosotros.",
     icon: "FileCheck",
+    image: "/images/services/immigration-exam.webp",
     category: "especial",
     keywords: ["examen Green Card Houston", "I-693 clínica hispana", "civil surgeon", "examen inmigración cerca de mi"],
     features: [
@@ -125,6 +127,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner realizamos pruebas confidenciales de enfermedades de transmisión sexual. Diagnóstico y tratamiento en un ambiente de respeto y privacidad total.",
     icon: "TestTube",
+    image: "/images/services/std-testing.webp",
     category: "diagnostico",
     keywords: ["prueba ETS Houston", "STD clínica hispana", "VIH test Houston"],
     features: [
@@ -147,6 +150,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner ofrecemos servicios de urología para el cuidado de la salud masculina. Diagnóstico y tratamiento de condiciones urinarias y reproductivas.",
     icon: "User",
+    image: "/images/services/urology.webp",
     category: "especialidad",
     keywords: ["urología Houston", "urólogo clínica hispana", "salud masculina Houston"],
     features: [
@@ -169,6 +173,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner ofrecemos manejo integral de condiciones crónicas como diabetes, hipertensión, colesterol alto y tiroides. Seguimiento personalizado en español.",
     icon: "Activity",
+    image: "/images/services/chronic-conditions.webp",
     category: "especialidad",
     keywords: ["diabetes Houston", "hipertensión clínica hispana", "enfermedades crónicas Houston"],
     features: [

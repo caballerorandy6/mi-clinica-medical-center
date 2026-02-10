@@ -6,6 +6,7 @@ export interface Service {
   description: string;
   longDescription: string;
   icon: string;
+  image?: string;
   category: "especialidad" | "diagnostico" | "mujer" | "especial" | "otro";
   keywords: string[];
   features: string[];
