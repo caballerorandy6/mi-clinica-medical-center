@@ -23,7 +23,9 @@ export const CONTACT_INFO: ContactInfo = {
   phone: "+1 (346) 226-5820",
   hours: "Lunes a Domingo: 9:00 AM - 9:00 PM",
   googleMapsUrl:
-    "https://www.google.com/maps/place/Mi+Clinica+Medical+Center/@29.8066856,-95.5467939,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c4de999b36b5:0xdc9d14200d006777!8m2!3d29.806681!4d-95.5442136!16s%2Fg%2F11c58dkqrc",
+    "https://www.google.com/maps/place/CLINICA+HISPANA+NUEVA+SALUD+GESSNER/@29.806681,-95.5442136,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c4de999b36b5:0xdc9d14200d006777!8m2!3d29.806681!4d-95.5442136!16s%2Fg%2F11c58dkqrc?entry=ttu",
+  googleReviewUrl:
+    "https://search.google.com/local/writereview?placeid=ChIJtTabmd7EQIYRd2cADSAUndw",
 };
 
 export const SOCIAL_LINKS = {

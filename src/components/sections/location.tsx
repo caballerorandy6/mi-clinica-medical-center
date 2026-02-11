@@ -39,7 +39,7 @@ export function Location() {
             className="relative aspect-video lg:aspect-auto lg:h-full min-h-[400px] rounded-xl overflow-hidden shadow-lg"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3463.8!2d-95.5567!3d29.8067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s1914+Gessner+Rd+B%2C+Houston%2C+TX+77080!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3463.8!2d-95.5442136!3d29.806681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c4de999b36b5%3A0xdc9d14200d006777!2sCLINICA+HISPANA+NUEVA+SALUD+GESSNER!5e0!3m2!1ses!2sus!4v1700000000000!5m2!1ses!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}

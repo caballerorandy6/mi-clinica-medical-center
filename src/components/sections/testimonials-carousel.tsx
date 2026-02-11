@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import type { GooglePlaceDetails } from "@/lib/google-reviews";
+import { CONTACT_INFO } from "@/lib/constants";
 
 interface TestimonialsCarouselProps {
   reviews: GooglePlaceDetails;
@@ -190,7 +191,7 @@ export function TestimonialsCarousel({ reviews }: TestimonialsCarouselProps) {
       {/* CTA to Leave Review */}
       <div className="flex flex-col items-center gap-2">
         <a
-          href="https://g.page/r/CdydIBQAJwdtEBM/review"
+          href={CONTACT_INFO.googleReviewUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-medium px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300"

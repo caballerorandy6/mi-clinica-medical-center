@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { SERVICES } from "@/lib/constants";
 
 export const contactFormSchema = z.object({
   nombre: z
@@ -22,13 +23,11 @@ export const contactFormSchema = z.object({
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
+// Generar opciones de servicios directamente desde SERVICES
 export const serviceOptions = [
-  { value: "consulta-general", label: "Consulta Médica General" },
-  { value: "ginecologia", label: "Ginecología" },
-  { value: "pediatria", label: "Pediatría" },
-  { value: "laboratorio", label: "Laboratorio Clínico" },
-  { value: "ultrasonido", label: "Ultrasonido" },
-  { value: "green-card", label: "Examen Green Card I-693" },
-  { value: "urgencias", label: "Urgencias Menores" },
+  ...SERVICES.map((service) => ({
+    value: service.id,
+    label: service.title,
+  })),
   { value: "otro", label: "Otro Servicio" },
 ];

@@ -43,6 +43,7 @@ export interface ContactInfo {
   phone: string;
   hours: string;
   googleMapsUrl: string;
+  googleReviewUrl: string;
 }
 
 export interface TrustBadge {
