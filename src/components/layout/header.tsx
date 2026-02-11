@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +15,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
   const pathname = usePathname();
+  const isNavigating = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,9 +26,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Intersection Observer para detectar sección activa
+  // Intersection Observer para detectar sección activa (solo en homepage)
   useEffect(() => {
-    // Incluir hero (inicio) para resetear activeSection cuando estamos arriba
+    if (pathname !== "/") {
+      setActiveSection("");
+      return;
+    }
+
     const navSections = NAVIGATION_LINKS
       .filter(link => link.href.includes("#"))
       .map(link => link.href.split("#")[1]);
@@ -36,23 +41,28 @@ export function Header() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const sectionId = entry.target.id;
-            // Si estamos en el hero, no hay link activo
-            if (sectionId === "inicio") {
-              setActiveSection("");
-              window.history.replaceState(null, "", window.location.pathname);
-            } else {
-              setActiveSection(`#${sectionId}`);
-              window.history.replaceState(null, "", `#${sectionId}`);
-            }
+        // No actualizar si estamos navegando a un hash específico
+        if (isNavigating.current) return;
+
+        const visibleEntries = entries.filter(entry => entry.isIntersecting);
+        if (visibleEntries.length > 0) {
+          const mostVisible = visibleEntries.sort(
+            (a, b) => b.intersectionRatio - a.intersectionRatio
+          )[0];
+          const sectionId = mostVisible.target.id;
+
+          if (sectionId === "inicio") {
+            setActiveSection("");
+            window.history.replaceState(null, "", window.location.pathname);
+          } else {
+            setActiveSection(`#${sectionId}`);
+            window.history.replaceState(null, "", `#${sectionId}`);
           }
-        });
+        }
       },
       {
-        rootMargin: "-10% 0px -60% 0px",
-        threshold: 0.1,
+        rootMargin: "-20% 0px -50% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1],
       }
     );
 
@@ -64,13 +74,23 @@ export function Header() {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
+  // Manejar click en nav links - setear inmediatamente y pausar observer
+  const handleNavClick = (href: string) => {
+    if (href.includes("#")) {
+      const hash = `#${href.split("#")[1]}`;
+      setActiveSection(hash);
+      isNavigating.current = true;
+      setTimeout(() => {
+        isNavigating.current = false;
+      }, 1500);
+    }
+  };
 
   // Determinar si un link está activo
   const isActiveLink = (href: string) => {
     if (href === "/") return pathname === "/" && !activeSection;
-    // Handle both /#section and #section formats
     if (href.includes("#")) {
       const hash = `#${href.split("#")[1]}`;
       return activeSection === hash;
@@ -185,6 +205,7 @@ export function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={() => handleNavClick(link.href)}
                   className={cn(
                     "relative px-4 xl:px-5 py-2.5 text-sm xl:text-base font-medium transition-all duration-300 rounded-xl whitespace-nowrap",
                     isScrolled
@@ -298,7 +319,10 @@ export function Header() {
                               ? "bg-primary/10 text-primary border-l-4 border-primary"
                               : "text-foreground hover:bg-muted hover:text-primary hover:translate-x-1"
                           )}
-                          onClick={() => setIsOpen(false)}
+                          onClick={() => {
+                            handleNavClick(link.href);
+                            setIsOpen(false);
+                          }}
                         >
                           {link.label}
                         </Link>
