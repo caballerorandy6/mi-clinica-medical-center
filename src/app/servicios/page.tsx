@@ -273,7 +273,6 @@ export default function ServiciosPage() {
                           : "border border-gray-100 hover:border-primary/30 hover:shadow-xl hover:shadow-gray-200/50 bg-white"
                       }`}
                     >
-                      {/* Background Image */}
                       {service.image && (
                         <>
                           <Image

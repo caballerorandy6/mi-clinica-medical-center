@@ -87,6 +87,7 @@ export const FALLBACK_REVIEWS: GooglePlaceDetails = {
       text: "Excelente atención en esta clínica hispana. Me sentí muy cómoda porque todo el personal habla español. La doctora fue muy profesional y amable.",
       time: Date.now() / 1000,
       relative_time_description: "hace una semana",
+      profile_photo_url: "https://ui-avatars.com/api/?name=Maria+Garcia&background=22c55e&color=fff&size=128",
     },
     {
       author_name: "Juan Rodríguez",
@@ -94,6 +95,7 @@ export const FALLBACK_REVIEWS: GooglePlaceDetails = {
       text: "Necesitaba mi examen I-693 para inmigración y en esta clínica hispana me atendieron rápido. El doctor explicó todo en español y el proceso fue muy sencillo.",
       time: Date.now() / 1000,
       relative_time_description: "hace dos semanas",
+      profile_photo_url: "https://ui-avatars.com/api/?name=Juan+Rodriguez&background=3b82f6&color=fff&size=128",
     },
     {
       author_name: "Ana Martínez",
@@ -101,6 +103,7 @@ export const FALLBACK_REVIEWS: GooglePlaceDetails = {
       text: "Llevo a mis hijos a esta clínica hispana desde hace años. Los doctores son muy buenos con los niños y siempre nos atienden en español.",
       time: Date.now() / 1000,
       relative_time_description: "hace un mes",
+      profile_photo_url: "https://ui-avatars.com/api/?name=Ana+Martinez&background=ec4899&color=fff&size=128",
     },
     {
       author_name: "Carlos López",
@@ -108,6 +111,7 @@ export const FALLBACK_REVIEWS: GooglePlaceDetails = {
       text: "La mejor clínica hispana en Houston. Precios justos, atención rápida y personal muy amable. Siempre recomiendo Clínica Hispana Nueva Salud Gessner.",
       time: Date.now() / 1000,
       relative_time_description: "hace un mes",
+      profile_photo_url: "https://ui-avatars.com/api/?name=Carlos+Lopez&background=f59e0b&color=fff&size=128",
     },
   ],
 };

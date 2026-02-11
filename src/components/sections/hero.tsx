@@ -117,7 +117,7 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
               variants={fadeInUp}
               className="text-[15px] sm:text-lg md:text-xl lg:text-2xl text-white/90 font-medium max-w-xl leading-snug"
             >
-              Tu Clínica Hispana Familiar con Ginecólogos que Hablan Español
+              En nuestra clínica hispana recibirá atención médica de calidad en español para toda su familia
             </motion.p>
 
             {/* Features - 3 diferenciadores */}

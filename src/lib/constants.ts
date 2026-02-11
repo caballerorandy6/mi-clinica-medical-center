@@ -197,6 +197,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner contamos con laboratorio clínico completo. Análisis de sangre, orina, perfil lipídico y más con resultados rápidos.",
     icon: "TestTube",
+    image: "/images/services/laboratorio.webp",
     category: "diagnostico",
     keywords: ["laboratorio Houston", "análisis de sangre clínica hispana", "exámenes de laboratorio Houston"],
     features: [
@@ -219,6 +220,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner ofrecemos ultrasonidos con tecnología moderna. Ultrasonidos de embarazo, abdominales, pélvicos y renales con interpretación en español.",
     icon: "Monitor",
+    image: "/images/services/ultrasound.webp",
     category: "diagnostico",
     keywords: ["ultrasonido Houston", "ecografía clínica hispana", "ultrasonido embarazo Houston"],
     features: [
@@ -242,6 +244,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner ofrecemos servicios ginecológicos completos. Papanicolaou, exámenes de mama, salud reproductiva y más con ginecólogos que hablan español.",
     icon: "Heart",
+    image: "/images/services/gynecology.webp",
     category: "mujer",
     keywords: ["ginecología Houston", "ginecólogo español Houston", "salud femenina clínica hispana"],
     features: [
@@ -265,6 +268,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner ofrecemos asesoría completa sobre métodos anticonceptivos. Nuestros especialistas te orientan sobre las mejores opciones para tu estilo de vida.",
     icon: "Heart",
+    image: "/images/services/family-planning.webp",
     category: "mujer",
     keywords: ["planificación familiar Houston", "anticonceptivos clínica hispana", "métodos anticonceptivos Houston"],
     features: [
@@ -287,6 +291,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner aplicamos inyecciones anticonceptivas como Depo-Provera. Método seguro, efectivo y discreto para el control de la natalidad.",
     icon: "Pill",
+    image: "/images/services/contraceptive-injection.webp",
     category: "mujer",
     keywords: ["inyección anticonceptiva Houston", "Depo-Provera clínica hispana", "anticonceptivo inyectable Houston"],
     features: [
@@ -309,6 +314,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner realizamos extracción de implantes hormonales anticonceptivos como Nexplanon de forma segura y profesional.",
     icon: "Pill",
+    image: "/images/services/implant-removal.webp",
     category: "mujer",
     keywords: ["extracción implante Houston", "Nexplanon clínica hispana", "remover implante anticonceptivo Houston"],
     features: [
@@ -331,6 +337,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner realizamos electrocardiogramas para evaluar la salud de tu corazón. Diagnóstico rápido de arritmias y otras condiciones cardíacas.",
     icon: "Heart",
+    image: "/images/services/electrocardiogram.webp",
     category: "diagnostico",
     keywords: ["electrocardiograma Houston", "EKG clínica hispana", "examen cardíaco Houston"],
     features: [
@@ -353,6 +360,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner tratamos enfermedades respiratorias como gripa, bronquitis, sinusitis, neumonía y asma. Diagnóstico rápido y tratamiento efectivo.",
     icon: "Activity",
+    image: "/images/services/respiratory.webp",
     category: "otro",
     keywords: ["gripa Houston", "bronquitis clínica hispana", "enfermedades respiratorias Houston"],
     features: [
@@ -375,6 +383,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner diagnosticamos y tratamos infecciones del tracto urinario con análisis de orina y tratamiento antibiótico efectivo.",
     icon: "Pill",
+    image: "/images/services/urinary-infections.webp",
     category: "otro",
     keywords: ["infección urinaria Houston", "cistitis clínica hispana", "UTI Houston"],
     features: [
@@ -397,6 +406,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner ofrecemos diagnóstico y tratamiento de infecciones vaginales en un ambiente de confianza y privacidad.",
     icon: "Heart",
+    image: "/images/services/vaginal-infections.webp",
     category: "mujer",
     keywords: ["infección vaginal Houston", "candidiasis clínica hispana", "vaginitis Houston"],
     features: [
@@ -419,6 +429,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner realizamos exámenes médicos DOT para conductores comerciales. Certificación requerida para licencias CDL.",
     icon: "FileCheck",
+    image: "/images/services/dot-exam.webp",
     category: "especial",
     keywords: ["examen DOT Houston", "físico CDL clínica hispana", "certificación DOT Houston"],
     features: [
@@ -441,6 +452,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner realizamos exámenes médicos generales y chequeos de salud completos. Físicos escolares, deportivos y de empleo.",
     icon: "Stethoscope",
+    image: "/images/services/general-exams.webp",
     category: "especial",
     keywords: ["examen médico Houston", "chequeo de salud clínica hispana", "físico escolar Houston"],
     features: [
@@ -463,6 +475,7 @@ export const SERVICES: Service[] = [
     longDescription:
       "En Clínica Hispana Nueva Salud Gessner tratamos dolores musculares, esguinces y lesiones menores. Diagnóstico preciso y tratamiento para tu pronta recuperación.",
     icon: "User",
+    image: "/images/services/muscle-pain.webp",
     category: "otro",
     keywords: ["dolor muscular Houston", "esguince clínica hispana", "dolor de espalda Houston"],
     features: [
