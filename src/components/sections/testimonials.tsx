@@ -1,10 +1,12 @@
-import { getGoogleReviews, FALLBACK_REVIEWS } from "@/lib/google-reviews";
 import { TestimonialsCarousel } from "./testimonials-carousel";
 import { JsonLdAggregateRating } from "@/components/seo/json-ld-reviews";
+import type { GooglePlaceDetails } from "@/lib/google-reviews";
 
-export async function Testimonials() {
-  const reviews = await getGoogleReviews();
-  const reviewsData = reviews || FALLBACK_REVIEWS;
+interface TestimonialsProps {
+  reviewsData: GooglePlaceDetails;
+}
+
+export function Testimonials({ reviewsData }: TestimonialsProps) {
 
   return (
     <>

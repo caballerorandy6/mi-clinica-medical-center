@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { List, Phone, MapPin, Clock } from "@phosphor-icons/react";
+import { List, Phone, MapPin, Clock } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { NAVIGATION_LINKS, CONTACT_INFO } from "@/lib/constants";
@@ -170,7 +170,7 @@ export function Header() {
             >
               <Image
                 src="/images/logo.webp"
-                alt="Logo Clínica Hispana Nueva Salud Gessner"
+                alt="logo clinica hispana nueva salud gessner houston"
                 fill
                 className="object-contain p-1 transition-all duration-500 group-hover:scale-105"
                 priority
@@ -287,7 +287,7 @@ export function Header() {
                     <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/10 p-1">
                       <Image
                         src="/images/logo.webp"
-                        alt="Logo Clínica Hispana Nueva Salud Gessner"
+                        alt="logo clinica hispana nueva salud gessner houston"
                         width={56}
                         height={56}
                         className="w-full h-full object-contain"

@@ -1,13 +1,6 @@
-"use client";
-
-import { Phone, MapPin } from "@phosphor-icons/react";
+import { Phone, MapPin } from "@phosphor-icons/react/dist/ssr";
 import { CONTACT_INFO } from "@/lib/constants";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { TooltipLink } from "./tooltip-link";
 
 export function FloatingButtons() {
   const phoneUrl = `tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`;
@@ -15,42 +8,25 @@ export function FloatingButtons() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       {/* Maps Button */}
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <a
-              href={CONTACT_INFO.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-14 h-14 bg-secondary rounded-full shadow-lg hover:bg-teal-dark transition-colors"
-              aria-label="Ver ubicación en Google Maps"
-            >
-              <MapPin className="size-7 text-white" weight="fill" />
-            </a>
-          </TooltipTrigger>
-          <TooltipContent side="left">
-            <p>Ver ubicación</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+      <TooltipLink
+        href={CONTACT_INFO.googleMapsUrl}
+        label="Ver ubicación en Google Maps"
+        tooltipText="Ver ubicación"
+        external
+        className="flex items-center justify-center size-14 bg-secondary rounded-full shadow-lg hover:bg-teal-dark transition-colors"
+      >
+        <MapPin className="size-7 text-white" weight="fill" />
+      </TooltipLink>
 
       {/* Phone Button */}
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <a
-              href={phoneUrl}
-              className="flex items-center justify-center w-14 h-14 bg-primary rounded-full shadow-lg hover:bg-green-dark transition-colors animate-pulse-float"
-              aria-label="Llamar a la clínica"
-            >
-              <Phone className="size-7 text-white" weight="fill" />
-            </a>
-          </TooltipTrigger>
-          <TooltipContent side="left">
-            <p>Llamar ahora</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+      <TooltipLink
+        href={phoneUrl}
+        label="Llamar a la clínica"
+        tooltipText="Llamar ahora"
+        className="flex items-center justify-center size-14 bg-primary rounded-full shadow-lg hover:bg-green-dark transition-colors animate-pulse-float"
+      >
+        <Phone className="size-7 text-white" weight="fill" />
+      </TooltipLink>
     </div>
   );
 }

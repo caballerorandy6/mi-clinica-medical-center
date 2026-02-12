@@ -1,8 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, MapPin, Clock, InstagramLogo, FacebookLogo } from "@phosphor-icons/react";
+import { Phone, MapPin, Clock, InstagramLogo, FacebookLogo } from "@phosphor-icons/react/dist/ssr";
 import { CONTACT_INFO, NAVIGATION_LINKS, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
 
 export function Footer() {
@@ -17,10 +15,10 @@ export function Footer() {
             <Link href="/" className="group flex items-center gap-3">
               <Image
                 src="/images/logo.webp"
-                alt="Logo Clínica Hispana Nueva Salud Gessner - Clínica hispana en Houston TX"
+                alt="logo clinica hispana nueva salud gessner houston"
                 width={60}
                 height={60}
-                className="w-14 h-14 bg-white rounded-lg p-1 transition-transform duration-300 group-hover:scale-105"
+                className="size-14 bg-white rounded-lg p-1 transition-transform duration-300 group-hover:scale-105"
               />
               <div>
                 <p className="text-lg font-bold group-hover:text-primary transition-colors duration-300">Nueva Salud</p>

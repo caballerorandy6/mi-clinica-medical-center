@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Phone, Clock, MapPin, CheckCircle } from "@phosphor-icons/react";
+import { Phone, Clock, MapPin, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { ContactForm } from "@/components/forms/contact-form";
 import { CONTACT_INFO } from "@/lib/constants";
 
@@ -13,7 +13,7 @@ export function Contact() {
       <div className="absolute inset-0 -z-20">
         <Image
           src="/images/contact/contact-bg.webp"
-          alt="Contacta la clínica hispana Clínica Hispana Nueva Salud Gessner"
+          alt="contacto clinica hispana houston"
           fill
           className="object-cover"
           quality={80}

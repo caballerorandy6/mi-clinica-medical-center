@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Check } from "@phosphor-icons/react";
+import { Check, Phone, MapPin } from "@phosphor-icons/react/dist/ssr";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { SERVICES } from "@/lib/constants";
+import { SERVICES, CONTACT_INFO } from "@/lib/constants";
 
 // IDs de los 3 servicios destacados para el landing
 const FEATURED_SERVICE_IDS = ["examenes-inmigracion", "servicios-ginecologia", "ultrasonido"];
@@ -29,9 +29,9 @@ const serviceImages: Record<string, string> = {
 
 // Alt text para SEO
 const serviceAltText: Record<string, string> = {
-  "examenes-inmigracion": "Examen médico de inmigración I-693 Green Card - Clínica Hispana Houston",
-  "servicios-ginecologia": "Ginecología en español - Clínica Hispana Nueva Salud Gessner Houston TX",
-  "ultrasonido": "Ultrasonido diagnóstico en clínica hispana - Houston TX",
+  "examenes-inmigracion": "examen inmigracion i-693 clinica hispana houston",
+  "servicios-ginecologia": "consulta ginecologia clinica hispana houston",
+  "ultrasonido": "ultrasonido embarazo clinica hispana houston",
 };
 
 export function Services() {
@@ -123,12 +123,31 @@ export function Services() {
                     ))}
                   </ul>
 
-                  <Button
-                    asChild
-                    className="w-full mt-4 bg-white text-secondary hover:bg-white/90 font-semibold"
-                  >
-                    <a href="#contacto">Agendar Cita</a>
-                  </Button>
+                  <div className="flex gap-2 mt-4">
+                    <Button
+                      asChild
+                      className="flex-1 bg-white text-secondary hover:bg-white/90 font-semibold"
+                    >
+                      <a href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}>
+                        <Phone className="size-4 mr-1.5" weight="fill" />
+                        Llamar
+                      </a>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="flex-1 bg-transparent border-white text-white hover:bg-white/20 font-semibold"
+                    >
+                      <a
+                        href={CONTACT_INFO.googleMapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MapPin className="size-4 mr-1.5" weight="fill" />
+                        Ubicación
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

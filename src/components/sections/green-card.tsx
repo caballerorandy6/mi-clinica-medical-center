@@ -8,7 +8,7 @@ import {
   FileText,
   Clock,
   Phone,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react/dist/ssr";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -51,7 +51,7 @@ export function GreenCard() {
       {/* Background Image */}
       <Image
         src="/images/green-card-bg.webp"
-        alt="Examen médico de inmigración I-693 en clínica hispana Houston"
+        alt="examen medico inmigracion i-693 clinica hispana houston"
         fill
         className="object-cover object-top sm:object-center lg:object-[center_30%] -z-20"
         quality={85}
@@ -221,7 +221,7 @@ export function GreenCard() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="flex-1 border-2 border-white/40 text-white hover:bg-white hover:text-secondary transition-all duration-300 hover:scale-[1.02] h-14 text-base font-semibold"
+                className="flex-1 border-2 border-white/40 text-white hover:bg-white/20 hover:border-white/60 transition-all duration-300 hover:scale-[1.02] h-14 text-base font-semibold"
               >
                 <a href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}>
                   <Phone className="size-5 mr-2" weight="fill" />

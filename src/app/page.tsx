@@ -1,8 +1,6 @@
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 import { Hero } from "@/components/sections/hero";
 import { Testimonials } from "@/components/sections/testimonials";
-import { TestimonialsSkeleton } from "@/components/sections/testimonials-skeleton";
 import { getGoogleReviews, FALLBACK_REVIEWS } from "@/lib/google-reviews";
 
 // Dynamic imports para secciones below-the-fold (mejor performance)
@@ -31,7 +29,7 @@ const Contact = dynamic(() =>
 );
 
 export default async function Home() {
-  // Fetch Google reviews para pasar el rating al Hero
+  // Single fetch de Google reviews - se pasa a Hero y Testimonials (elimina waterfall)
   const reviews = await getGoogleReviews();
   const reviewsData = reviews || FALLBACK_REVIEWS;
 
@@ -45,9 +43,7 @@ export default async function Home() {
 
       {/* Secciones below-the-fold - Carga diferida */}
       <Promotions />
-      <Suspense fallback={<TestimonialsSkeleton />}>
-        <Testimonials />
-      </Suspense>
+      <Testimonials reviewsData={reviewsData} />
       <Services />
       <GreenCard />
       <Location />

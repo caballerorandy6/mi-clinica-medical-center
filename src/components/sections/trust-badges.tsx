@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, ChatCircle, Users, Clock } from "@phosphor-icons/react";
+import { Shield, ChatCircle, Users, Clock } from "@phosphor-icons/react/dist/ssr";
 import { TRUST_BADGES } from "@/lib/constants";
 
 const iconMap = {
@@ -27,7 +27,7 @@ export function TrustBadges() {
                 transition={{ delay: index * 0.1 }}
                 className="flex flex-col items-center text-center p-4"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <div className="size-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Icon className="size-8 text-primary" />
                 </div>
                 <h3 className="font-bold text-foreground mb-1">{badge.title}</h3>

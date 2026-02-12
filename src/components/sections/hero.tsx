@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import {
   Phone,
@@ -12,7 +12,7 @@ import {
   Clock,
   Star,
   CaretDown,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react/dist/ssr";
 
 import { Button } from "@/components/ui/button";
 import { CONTACT_INFO, TRUST_BADGES } from "@/lib/constants";
@@ -69,6 +69,8 @@ function PartialStarsHero({ rating }: { rating: number }) {
 }
 
 export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section
       id="inicio"
@@ -78,7 +80,7 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
       <div className="absolute inset-0 -z-20">
         <Image
           src="/images/hero.webp"
-          alt="Clínica Hispana con Ginecología en Español - Clínica Hispana Nueva Salud Gessner Houston TX"
+          alt="doctora atendiendo paciente clinica hispana houston"
           fill
           className="object-cover object-center"
           priority
@@ -180,12 +182,16 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
       >
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 group-hover:bg-white/20 group-hover:text-white transition-all">
           <span className="text-[11px] sm:text-xs font-medium tracking-wide uppercase">Ver servicios</span>
-          <motion.span
-            animate={{ y: [0, 3, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
+          {shouldReduceMotion ? (
             <CaretDown className="size-3.5 sm:size-4" aria-hidden="true" />
-          </motion.span>
+          ) : (
+            <motion.span
+              animate={{ y: [0, 3, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <CaretDown className="size-3.5 sm:size-4" aria-hidden="true" />
+            </motion.span>
+          )}
         </span>
       </motion.a>
 

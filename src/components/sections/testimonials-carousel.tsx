@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Star, Quotes, GoogleLogo } from "@phosphor-icons/react";
+import { Star, Quotes, GoogleLogo } from "@phosphor-icons/react/dist/ssr";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -61,12 +61,9 @@ export function TestimonialsCarousel({ reviews }: TestimonialsCarouselProps) {
     });
   }, [api]);
 
-  const scrollTo = useCallback(
-    (index: number) => {
-      api?.scrollTo(index);
-    },
-    [api]
-  );
+  const scrollTo = (index: number) => {
+    api?.scrollTo(index);
+  };
 
   return (
     <div className="space-y-6">

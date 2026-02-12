@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { CheckCircle } from "@phosphor-icons/react";
+import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -15,9 +15,9 @@ const promoImages: Record<string, string> = {
 };
 
 const promoAltText: Record<string, string> = {
-  ginecologia: "Ginecóloga hispana atendiendo paciente en consulta - Clínica Hispana Houston",
-  inmigracion: "Examen médico de inmigración I-693 en clínica hispana Houston",
-  "ultrasonido-embarazo": "Ultrasonido de embarazo en clínica hispana - Atención prenatal Houston",
+  ginecologia: "consulta ginecologia clinica hispana houston",
+  inmigracion: "examen inmigracion green card clinica hispana houston",
+  "ultrasonido-embarazo": "ultrasonido embarazo clinica hispana houston",
 };
 
 export function Promotions() {

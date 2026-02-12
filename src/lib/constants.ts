@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
   tagline: "Clínica Hispana en Houston, TX",
   description:
     "Clínica Hispana Nueva Salud Gessner es la clínica hispana de confianza en Houston. Atención médica profesional en español para toda la familia. Exámenes médicos para Green Card (I-693) autorizados por USCIS.",
-  baseUrl: "https://miclinicamedicalcenter.com",
+  baseUrl: "https://clinicagessner.com",
   locale: "es-MX",
 } as const;
 
@@ -584,7 +584,7 @@ export const FAQS: FAQ[] = [
     question:
       "¿Necesito cita para visitar la clínica hispana Clínica Hispana Nueva Salud Gessner?",
     answer:
-      "Aceptamos pacientes con y sin cita en nuestra clínica hispana. Sin embargo, recomendamos agendar una cita para reducir el tiempo de espera. Puede llamar al (346) 226-5820 o enviar un mensaje por WhatsApp.",
+      "Aceptamos pacientes con y sin cita en nuestra clínica hispana. Sin embargo, recomendamos agendar una cita para reducir el tiempo de espera. Puede llamar al +1 (346) 226-5820.",
   },
   {
     question: "¿Cuál es el horario de atención de la clínica hispana?",
@@ -606,7 +606,7 @@ export const FAQS: FAQ[] = [
   {
     question: "¿La clínica hispana acepta seguro médico?",
     answer:
-      "Nuestra clínica hispana trabaja con varios seguros médicos. Le recomendamos llamarnos al (346) 226-5820 para verificar si aceptamos su seguro. También ofrecemos precios especiales para pacientes sin seguro.",
+      "Nuestra clínica hispana trabaja con varios seguros médicos. Le recomendamos llamarnos al +1 (346) 226-5820 para verificar si aceptamos su seguro. También ofrecemos precios especiales para pacientes sin seguro.",
   },
   {
     question: "¿Dónde está ubicada la clínica hispana Clínica Hispana Nueva Salud Gessner?",

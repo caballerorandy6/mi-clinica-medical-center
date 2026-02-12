@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { Phone, Calendar, CheckCircle, X } from "@phosphor-icons/react/dist/ssr";
+import { Phone, MapPin, CheckCircle, X } from "@phosphor-icons/react/dist/ssr";
 import {
   Gynecology,
   Stethoscope,
@@ -80,7 +79,7 @@ export function ServiceDetailDialog({
           <DialogHeader>
             <div className="flex items-start gap-4">
               <div
-                className={`w-14 h-14 rounded-xl flex items-center justify-center shrink-0 ${
+                className={`size-14 rounded-xl flex items-center justify-center shrink-0 ${
                   service.highlighted
                     ? "bg-primary text-white"
                     : "bg-white/20 text-white"
@@ -167,12 +166,15 @@ export function ServiceDetailDialog({
               size="lg"
               variant="outline"
               className="flex-1"
-              onClick={() => onOpenChange(false)}
             >
-              <Link href="/#contacto">
-                <Calendar className="size-5 mr-2" weight="fill" />
-                Agendar Cita
-              </Link>
+              <a
+                href={CONTACT_INFO.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MapPin className="size-5 mr-2" weight="fill" />
+                Ubicación
+              </a>
             </Button>
           </div>
         </div>

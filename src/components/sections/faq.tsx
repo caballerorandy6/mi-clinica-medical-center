@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Question, Phone } from "@phosphor-icons/react";
+import { Question, Phone } from "@phosphor-icons/react/dist/ssr";
 import {
   Accordion,
   AccordionContent,
@@ -22,7 +22,7 @@ export function FAQ() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+          <div className="inline-flex items-center justify-center size-16 bg-primary/10 rounded-full mb-4">
             <Question className="size-8 text-primary" weight="duotone" />
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

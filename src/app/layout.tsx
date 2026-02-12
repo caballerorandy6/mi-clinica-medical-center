@@ -27,7 +27,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://miclinicamedicalcenter.com"),
+  metadataBase: new URL("https://clinicagessner.com"),
   title: {
     default:
       "Clínica Hispana Cerca de Ti en Houston | Ginecología en Español",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   description:
-    "Clínica hispana cerca de ti en Houston. Ginecólogos que hablan español, exámenes médicos de inmigración, ultrasonidos de embarazo. Clínica familiar hispana. Llama: (346) 226-5820",
+    "Clínica hispana cerca de ti en Houston. Ginecólogos que hablan español, exámenes médicos de inmigración, ultrasonidos de embarazo. Clínica familiar hispana. Llama: +1 (346) 226-5820",
   keywords: [
     "clinica hispana",
     "clinica hispana cerca de mi",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_MX",
-    url: "https://miclinicamedicalcenter.com",
+    url: "https://clinicagessner.com",
     siteName: "Clínica Hispana Nueva Salud Gessner",
     title:
       "Clínica Hispana Cerca de Ti en Houston | Ginecología en Español",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
       "Clínica hispana cerca de ti en Houston. Ginecólogos que hablan español, exámenes médicos de inmigración, ultrasonidos de embarazo. Clínica familiar hispana con opciones gratuitas. Abierto domingos.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "https://clinicagessner.com/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Clínica Hispana cerca de mi en Houston TX - Clínica Hispana Nueva Salud Gessner",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     title: "Clínica Hispana Cerca de Ti en Houston | Ginecología en Español",
     description:
       "Clínica hispana cerca de ti en Houston. Ginecólogos que hablan español, exámenes médicos de inmigración. Clínica familiar hispana.",
-    images: ["/images/og-image.jpg"],
+    images: ["https://clinicagessner.com/images/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -105,10 +105,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://miclinicamedicalcenter.com",
+    canonical: "https://clinicagessner.com",
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "0e75VFJfRJHj87jse_2qkMBJ6I78XsHEBeUHuB3yJlY",
   },
   category: "Medical Clinic",
 };

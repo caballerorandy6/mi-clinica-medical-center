@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, Car, Wheelchair, Bus, Shield } from "@phosphor-icons/react";
+import { MapPin, Phone, Clock, Car, Wheelchair, Bus, Shield } from "@phosphor-icons/react/dist/ssr";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CONTACT_INFO, LOCATION_FEATURES } from "@/lib/constants";
@@ -63,7 +63,7 @@ export function Location() {
               <CardContent className="pt-6 space-y-6">
                 {/* Address */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="size-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                     <MapPin className="size-6 text-primary" />
                   </div>
                   <div>
@@ -83,7 +83,7 @@ export function Location() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="size-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                     <Phone className="size-6 text-primary" />
                   </div>
                   <div>
@@ -102,7 +102,7 @@ export function Location() {
 
                 {/* Hours */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="size-12 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
                     <Clock className="size-6 text-primary" />
                   </div>
                   <div>
