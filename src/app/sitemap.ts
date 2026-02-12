@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE_CONFIG } from "@/lib/constants";
+import { SITE_CONFIG, SERVICES } from "@/lib/constants";
 import { locales } from "@/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -37,6 +37,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
           en: `${baseUrl}/en/services`,
         },
       },
+    });
+
+    // Individual service pages
+    SERVICES.forEach((service) => {
+      routes.push({
+        url: `${baseUrl}${prefix}/services/${service.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.8,
+        alternates: {
+          languages: {
+            es: `${baseUrl}/services/${service.slug}`,
+            en: `${baseUrl}/en/services/${service.slug}`,
+          },
+        },
+      });
     });
   });
 

@@ -199,3 +199,43 @@ export function JsonLdBreadcrumb({ items }: JsonLdBreadcrumbProps = {}) {
     />
   );
 }
+
+interface JsonLdServiceProps {
+  name: string;
+  description: string;
+  provider: {
+    name: string;
+    url: string;
+  };
+}
+
+export function JsonLdService({ name, description, provider }: JsonLdServiceProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    name,
+    description,
+    provider: {
+      "@type": "MedicalClinic",
+      name: provider.name,
+      url: provider.url,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "1914 Gessner Rd B",
+        addressLocality: "Houston",
+        addressRegion: "TX",
+        postalCode: "77080",
+        addressCountry: "US",
+      },
+      telephone: CONTACT_INFO.phone,
+    },
+    availableLanguage: ["Spanish", "English"],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}

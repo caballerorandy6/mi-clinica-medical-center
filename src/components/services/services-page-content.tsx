@@ -26,11 +26,11 @@ import {
   Alert,
 } from "healthicons-react/outline";
 import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ServiceDetailDialog } from "@/components/services/service-detail-dialog";
 import { SERVICES } from "@/lib/constants";
 import type { Service } from "@/types";
 
@@ -51,13 +51,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   General: HealthWorker,
 };
 
-const categoryLabels: Record<Service["category"], string> = {
-  especialidad: "Enfermedades Crónicas",
-  diagnostico: "Diagnóstico",
-  mujer: "Salud de la Mujer",
-  especial: "Servicios Especiales",
-  otro: "Tratamientos",
-};
+// Category labels are now handled via translations
 
 const categoryColors: Record<Service["category"], string> = {
   especialidad: "bg-teal-50 text-teal-700 border-teal-200",
@@ -94,12 +88,13 @@ export function ServicesPageContent() {
   const [selectedCategory, setSelectedCategory] = useState<
     Service["category"] | "all"
   >("all");
-  const [selectedService, setSelectedService] = useState<Service | null>(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const locale = useLocale();
+  const t = useTranslations();
+  const tCategories = useTranslations("categories");
+  const tServices = useTranslations("servicesPage");
 
-  const handleServiceClick = (service: Service) => {
-    setSelectedService(service);
-    setDialogOpen(true);
+  const getServiceUrl = (slug: string) => {
+    return locale === "es" ? `/services/${slug}` : `/${locale}/services/${slug}`;
   };
 
   const filteredServices = SERVICES.filter((service) => {
@@ -138,7 +133,7 @@ export function ServicesPageContent() {
               {/* Search */}
               <div className="relative w-full lg:w-96">
                 <label htmlFor="services-search" className="sr-only">
-                  Buscar servicios
+                  {tServices("searchPlaceholder")}
                 </label>
                 <MagnifyingGlass
                   className="absolute left-4 top-1/2 -translate-y-1/2 size-5 text-muted-foreground"
@@ -147,7 +142,7 @@ export function ServicesPageContent() {
                 <Input
                   id="services-search"
                   type="search"
-                  placeholder="Buscar servicios..."
+                  placeholder={tServices("searchPlaceholder")}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-12 h-12 rounded-xl border-gray-200 focus:border-primary focus:ring-primary/20 bg-gray-50/50"
@@ -158,7 +153,7 @@ export function ServicesPageContent() {
               <div
                 className="flex items-center gap-2 flex-wrap justify-center"
                 role="group"
-                aria-label="Filtrar por categoría"
+                aria-label={locale === "es" ? "Filtrar por categoría" : "Filter by category"}
               >
                 <Funnel className="size-5 text-muted-foreground hidden sm:block" aria-hidden="true" />
                 {categories.map((category) => (
@@ -174,7 +169,7 @@ export function ServicesPageContent() {
                         : "hover:bg-gray-100"
                     }`}
                   >
-                    {category === "all" ? "Todos" : categoryLabels[category]}
+                    {category === "all" ? tServices("filterAll") : tCategories(category)}
                   </Button>
                 ))}
               </div>
@@ -184,14 +179,14 @@ export function ServicesPageContent() {
             <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
               <p className="text-sm text-muted-foreground">
                 {filteredServices.length === SERVICES.length ? (
-                  "Mostrando todos los servicios"
+                  locale === "es" ? "Mostrando todos los servicios" : "Showing all services"
                 ) : (
                   <>
-                    Mostrando{" "}
+                    {locale === "es" ? "Mostrando" : "Showing"}{" "}
                     <span className="font-semibold text-foreground">
                       {filteredServices.length}
                     </span>{" "}
-                    servicios
+                    {locale === "es" ? "servicios" : "services"}
                   </>
                 )}
               </p>
@@ -202,7 +197,7 @@ export function ServicesPageContent() {
                   onClick={() => setSearchTerm("")}
                   className="text-xs text-muted-foreground hover:text-foreground"
                 >
-                  Limpiar búsqueda
+                  {locale === "es" ? "Limpiar búsqueda" : "Clear search"}
                 </Button>
               )}
             </div>
@@ -223,10 +218,10 @@ export function ServicesPageContent() {
                 <MagnifyingGlass className="size-8 text-gray-400" />
               </div>
               <p className="text-lg text-muted-foreground mb-2">
-                No se encontraron servicios
+                {tServices("noResults")}
               </p>
               <p className="text-sm text-muted-foreground mb-6">
-                Intenta con otros términos de búsqueda
+                {tServices("tryAgain")}
               </p>
               <Button
                 variant="outline"
@@ -235,7 +230,7 @@ export function ServicesPageContent() {
                   setSelectedCategory("all");
                 }}
               >
-                Limpiar filtros
+                {locale === "es" ? "Limpiar filtros" : "Clear filters"}
               </Button>
             </motion.div>
           ) : (
@@ -250,101 +245,94 @@ export function ServicesPageContent() {
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ delay: Math.min(index * 0.03, 0.15) }}
                   >
-                    <Card
-                      role="button"
-                      tabIndex={0}
-                      onClick={() => handleServiceClick(service)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          handleServiceClick(service);
-                        }
-                      }}
-                      aria-label={`Ver detalles de ${service.title}`}
-                      className={`h-full cursor-pointer group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
-                        service.highlighted
-                          ? "border-2 border-primary shadow-lg shadow-primary/10 bg-linear-to-br from-white via-white to-green-50"
-                          : "border border-gray-100 hover:border-primary/30 hover:shadow-xl hover:shadow-gray-200/50 bg-white"
-                      }`}
-                    >
-                      {service.image && (
-                        <>
-                          <Image
-                            src={service.image}
-                            alt={serviceAltText[service.id] || `${service.title} clinica hispana houston`}
-                            fill
-                            className="object-cover object-center z-0"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                          />
-                          <div className="absolute inset-0 bg-linear-to-t from-white via-white/90 to-white/70 z-0" />
-                        </>
-                      )}
-                      <CardHeader className="pb-3 relative z-10">
-                        {/* Badges row */}
-                        <div className="flex items-center justify-between mb-3">
-                          <Badge
-                            variant="outline"
-                            className={`text-xs font-medium ${categoryColors[service.category]}`}
-                          >
-                            {categoryLabels[service.category]}
-                          </Badge>
-                          {service.highlighted && (
-                            <Badge className="bg-primary text-white text-xs">
-                              Destacado
-                            </Badge>
-                          )}
-                        </div>
-
-                        {/* Icon */}
-                        <div
-                          className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 ${
-                            service.highlighted
-                              ? "bg-primary text-white shadow-lg shadow-primary/30"
-                              : "bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-white group-hover:shadow-lg group-hover:shadow-secondary/20 group-hover:scale-110"
-                          }`}
-                        >
-                          <Icon className="size-7" />
-                        </div>
-                        <CardTitle className="text-lg mt-4 group-hover:text-primary transition-colors leading-snug">
-                          {service.title}
-                        </CardTitle>
-                      </CardHeader>
-
-                      <CardContent className="pt-0 relative z-10">
-                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
-                          {service.description}
-                        </p>
-
-                        {/* Features */}
-                        <div className="flex flex-wrap gap-1.5 mb-4">
-                          {service.features.slice(0, 3).map((feature) => (
-                            <span
-                              key={feature}
-                              className="text-xs bg-gray-50 text-gray-600 px-2.5 py-1 rounded-full border border-gray-100"
+                    <Link href={getServiceUrl(service.slug)} className="block h-full">
+                      <Card
+                        aria-label={t("accessibility.openServiceDetails")}
+                        className={`h-full cursor-pointer group relative overflow-hidden transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+                          service.highlighted
+                            ? "border-2 border-primary shadow-lg shadow-primary/10 bg-linear-to-br from-white via-white to-green-50"
+                            : "border border-gray-100 hover:border-primary/30 hover:shadow-xl hover:shadow-gray-200/50 bg-white"
+                        }`}
+                      >
+                        {service.image && (
+                          <>
+                            <Image
+                              src={service.image}
+                              alt={serviceAltText[service.id] || `${service.title} clinica hispana houston`}
+                              fill
+                              className="object-cover object-center z-0"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-white via-white/90 to-white/70 z-0" />
+                          </>
+                        )}
+                        <CardHeader className="pb-3 relative z-10">
+                          {/* Badges row */}
+                          <div className="flex items-center justify-between mb-3">
+                            <Badge
+                              variant="outline"
+                              className={`text-xs font-medium ${categoryColors[service.category]}`}
                             >
-                              {feature}
-                            </span>
-                          ))}
-                          {service.features.length > 3 && (
-                            <span className="text-xs text-primary font-medium px-2.5 py-1">
-                              +{service.features.length - 3} más
-                            </span>
-                          )}
-                        </div>
+                              {tCategories(service.category)}
+                            </Badge>
+                            {service.highlighted && (
+                              <Badge className="bg-primary text-white text-xs">
+                                {locale === "es" ? "Destacado" : "Featured"}
+                              </Badge>
+                            )}
+                          </div>
 
-                        <Button
-                          variant={service.highlighted ? "default" : "outline"}
-                          size="sm"
-                          className={`w-full transition-all ${
-                            service.highlighted
-                              ? "shadow-md shadow-primary/25"
-                              : "group-hover:bg-primary group-hover:text-white group-hover:border-primary"
-                          }`}
-                        >
-                          Ver Detalles
-                        </Button>
-                      </CardContent>
-                    </Card>
+                          {/* Icon */}
+                          <div
+                            className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 ${
+                              service.highlighted
+                                ? "bg-primary text-white shadow-lg shadow-primary/30"
+                                : "bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-white group-hover:shadow-lg group-hover:shadow-secondary/20 group-hover:scale-110"
+                            }`}
+                          >
+                            <Icon className="size-7" />
+                          </div>
+                          <CardTitle className="text-lg mt-4 group-hover:text-primary transition-colors leading-snug">
+                            {service.title}
+                          </CardTitle>
+                        </CardHeader>
+
+                        <CardContent className="pt-0 relative z-10">
+                          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4">
+                            {service.description}
+                          </p>
+
+                          {/* Features */}
+                          <div className="flex flex-wrap gap-1.5 mb-4">
+                            {service.features.slice(0, 3).map((feature) => (
+                              <span
+                                key={feature}
+                                className="text-xs bg-gray-50 text-gray-600 px-2.5 py-1 rounded-full border border-gray-100"
+                              >
+                                {feature}
+                              </span>
+                            ))}
+                            {service.features.length > 3 && (
+                              <span className="text-xs text-primary font-medium px-2.5 py-1">
+                                +{service.features.length - 3} {locale === "es" ? "más" : "more"}
+                              </span>
+                            )}
+                          </div>
+
+                          <Button
+                            variant={service.highlighted ? "default" : "outline"}
+                            size="sm"
+                            className={`w-full transition-all ${
+                              service.highlighted
+                                ? "shadow-md shadow-primary/25"
+                                : "group-hover:bg-primary group-hover:text-white group-hover:border-primary"
+                            }`}
+                          >
+                            {t("common.learnMore")}
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </Link>
                   </motion.div>
                 );
               })}
@@ -386,16 +374,15 @@ export function ServicesPageContent() {
             >
               <span className="size-2.5 bg-primary rounded-full animate-pulse" />
               <span className="text-sm font-medium text-white/90">
-                Estamos para ayudarte
+                {locale === "es" ? "Estamos para ayudarte" : "We're here to help"}
               </span>
             </motion.div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight">
-              ¿No encuentras lo que buscas?
+              {tServices("ctaTitle")}
             </h2>
             <p className="text-white/90 mb-10 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Llámanos y te ayudamos a encontrar el servicio que necesitas.
-              Nuestra clínica hispana está lista para atenderte.
+              {tServices("ctaDescription")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -406,7 +393,7 @@ export function ServicesPageContent() {
               >
                 <a href="tel:+13462265820">
                   <Phone className="size-5 mr-2" weight="fill" />
-                  Llamar Ahora
+                  {t("common.callNow")}
                 </a>
               </Button>
               <Button
@@ -415,9 +402,9 @@ export function ServicesPageContent() {
                 size="lg"
                 className="border-2 border-white/50 text-white hover:bg-white hover:text-secondary backdrop-blur-sm transition-all duration-300 hover:scale-105 h-14 px-8 text-base font-semibold"
               >
-                <Link href="/#contacto">
+                <Link href={locale === "es" ? "/#contacto" : `/${locale}/#contacto`}>
                   <Chat className="size-5 mr-2" />
-                  Enviar Mensaje
+                  {locale === "es" ? "Enviar Mensaje" : "Send Message"}
                 </Link>
               </Button>
             </div>
@@ -426,27 +413,20 @@ export function ServicesPageContent() {
             <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-white/80 text-sm">
               <div className="flex items-center gap-2">
                 <span className="size-1.5 bg-primary rounded-full" />
-                <span>Atención en español</span>
+                <span>{locale === "es" ? "Atención en español" : "Spanish-speaking care"}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="size-1.5 bg-primary rounded-full" />
-                <span>Sin cita previa</span>
+                <span>{locale === "es" ? "Sin cita previa" : "Walk-ins welcome"}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="size-1.5 bg-primary rounded-full" />
-                <span>Abierto 7 días</span>
+                <span>{locale === "es" ? "Abierto 7 días" : "Open 7 days"}</span>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
-
-      {/* Service Detail Dialog */}
-      <ServiceDetailDialog
-        service={selectedService}
-        open={dialogOpen}
-        onOpenChange={setDialogOpen}
-      />
     </>
   );
 }

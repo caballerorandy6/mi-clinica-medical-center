@@ -189,5 +189,133 @@
     "followInstagram": "Seguir a Clínica Hispana Nueva Salud Gessner en Instagram",
     "followFacebook": "Seguir a Clínica Hispana Nueva Salud Gessner en Facebook",
     "openServiceDetails": "Ver detalles del servicio"
+  },
+  "serviceData": {
+    "medicina-familiar": {
+      "title": "Medicina Familiar Cerca de Mi",
+      "shortTitle": "Medicina Familiar",
+      "description": "Medicina familiar en nuestra clínica hispana de Houston. Atención médica integral para toda la familia en español.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner ofrecemos medicina familiar completa para pacientes de todas las edades. Nuestros médicos hispanos brindan atención preventiva, diagnóstico y tratamiento de enfermedades comunes, todo 100% en español.",
+      "features": ["Atención para toda la familia", "Consultas en español", "Medicina preventiva", "Diagnóstico y tratamiento", "Seguimiento personalizado", "Sin cita previa"]
+    },
+    "examenes-inmigracion": {
+      "title": "Exámenes Médicos de Inmigración",
+      "shortTitle": "Inmigración",
+      "description": "Clínica hispana autorizada por USCIS para exámenes I-693 en Houston. Médico Civil Surgeon certificado. Todo el proceso en español.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner realizamos exámenes médicos de inmigración autorizados por USCIS. Nuestro médico Civil Surgeon certificado completa el formulario I-693 100% en español. Más de 500 familias han completado su proceso con nosotros.",
+      "features": ["Médico Civil Surgeon certificado", "Formulario I-693 sellado", "100% en español", "Resultados en 3-5 días", "Análisis de sangre incluidos", "Revisión de vacunas"]
+    },
+    "enfermedades-transmision-sexual": {
+      "title": "Enfermedades de Transmisión Sexual (STD)",
+      "shortTitle": "ETS/STD",
+      "description": "Pruebas y tratamiento de ETS/STD en la clínica hispana de Houston. Diagnóstico confidencial y tratamiento efectivo.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner realizamos pruebas confidenciales de enfermedades de transmisión sexual. Diagnóstico y tratamiento en un ambiente de respeto y privacidad total.",
+      "features": ["Pruebas confidenciales", "VIH y Sífilis", "Clamidia y Gonorrea", "Herpes", "Resultados rápidos", "Tratamiento disponible"]
+    },
+    "servicios-urologia": {
+      "title": "Servicios de Urología",
+      "shortTitle": "Urología",
+      "description": "Servicios de urología en la clínica hispana de Houston. Atención especializada para hombres en español.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner ofrecemos servicios de urología para el cuidado de la salud masculina. Diagnóstico y tratamiento de condiciones urinarias y reproductivas.",
+      "features": ["Examen de próstata", "Infecciones urinarias", "Problemas de vejiga", "Salud reproductiva masculina", "Atención en español", "Consulta confidencial"]
+    },
+    "condiciones-cronicas": {
+      "title": "Manejo de Condiciones Crónicas",
+      "shortTitle": "Crónicas",
+      "description": "Control de enfermedades crónicas en la clínica hispana. Diabetes, hipertensión, colesterol y más.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner ofrecemos manejo integral de condiciones crónicas como diabetes, hipertensión, colesterol alto y tiroides. Seguimiento personalizado en español.",
+      "features": ["Control de diabetes", "Manejo de hipertensión", "Control de colesterol", "Problemas de tiroides", "Monitoreo regular", "Orientación nutricional"]
+    },
+    "laboratorio": {
+      "title": "Chequeo y Análisis de Laboratorio",
+      "shortTitle": "Laboratorio",
+      "description": "Análisis de laboratorio en la clínica hispana de Houston. Resultados rápidos y precisos.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner contamos con laboratorio clínico completo. Análisis de sangre, orina, perfil lipídico y más con resultados rápidos.",
+      "features": ["Análisis de sangre completo", "Perfil lipídico", "Glucosa y A1C", "Análisis de orina", "Resultados rápidos", "Interpretación en español"]
+    },
+    "ultrasonido": {
+      "title": "Ultrasonido",
+      "shortTitle": "Ultrasonido",
+      "description": "Ultrasonidos en la clínica hispana de Houston. Embarazo, abdominal, pélvico y más con resultados inmediatos.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner ofrecemos ultrasonidos con tecnología moderna. Ultrasonidos de embarazo, abdominales, pélvicos y renales con interpretación en español.",
+      "features": ["Ultrasonido de embarazo", "Ultrasonido abdominal", "Ultrasonido pélvico", "Resultados inmediatos", "Tecnología moderna", "Interpretación en español"]
+    },
+    "servicios-ginecologia": {
+      "title": "Servicios de Ginecología",
+      "shortTitle": "Ginecología",
+      "description": "Ginecología en la clínica hispana de Houston. Atención integral para la salud de la mujer en español.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner ofrecemos servicios ginecológicos completos. Papanicolaou, exámenes de mama, salud reproductiva y más con ginecólogos que hablan español.",
+      "features": ["Papanicolaou", "Examen de mama", "Salud reproductiva", "Consulta ginecológica", "Ginecólogos en español", "Ambiente confidencial"]
+    },
+    "planificacion-familiar": {
+      "title": "Planificación Familiar",
+      "shortTitle": "Planificación",
+      "description": "Planificación familiar en la clínica hispana de Houston. Asesoría sobre métodos anticonceptivos.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner ofrecemos asesoría completa sobre métodos anticonceptivos. Nuestros especialistas te orientan sobre las mejores opciones para tu estilo de vida.",
+      "features": ["Asesoría personalizada", "Anticonceptivos orales", "Inyecciones anticonceptivas", "DIU", "Implantes hormonales", "Seguimiento médico"]
+    },
+    "vacunas-anticonceptivas": {
+      "title": "Vacunas Anticonceptivas",
+      "shortTitle": "Anticonceptivas",
+      "description": "Inyecciones anticonceptivas en la clínica hispana de Houston. Método seguro y efectivo.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner aplicamos inyecciones anticonceptivas como Depo-Provera. Método seguro, efectivo y discreto para el control de la natalidad.",
+      "features": ["Inyección Depo-Provera", "Protección por 3 meses", "Método discreto", "Alta efectividad", "Aplicación rápida", "Seguimiento médico"]
+    },
+    "extraccion-implantes": {
+      "title": "Extracción de Implantes",
+      "shortTitle": "Implantes",
+      "description": "Extracción de implantes anticonceptivos en la clínica hispana de Houston. Procedimiento rápido y seguro.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner realizamos extracción de implantes hormonales anticonceptivos como Nexplanon de forma segura y profesional.",
+      "features": ["Procedimiento seguro", "Personal capacitado", "Mínimas molestias", "Anestesia local", "Cuidados post-extracción", "Opciones anticonceptivas"]
+    },
+    "electrocardiograma": {
+      "title": "Electrocardiograma",
+      "shortTitle": "EKG",
+      "description": "Electrocardiograma (EKG) en la clínica hispana de Houston. Evaluación del ritmo cardíaco.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner realizamos electrocardiogramas para evaluar la salud de tu corazón. Diagnóstico rápido de arritmias y otras condiciones cardíacas.",
+      "features": ["EKG de 12 derivaciones", "Resultados inmediatos", "Detección de arritmias", "Evaluación cardíaca", "Interpretación médica", "Referido si es necesario"]
+    },
+    "enfermedades-respiratorias": {
+      "title": "Enfermedades Respiratorias",
+      "shortTitle": "Respiratorias",
+      "description": "Tratamiento de enfermedades respiratorias en la clínica hispana de Houston. Gripa, bronquitis, sinusitis y más.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner tratamos enfermedades respiratorias como gripa, bronquitis, sinusitis, neumonía y asma. Diagnóstico rápido y tratamiento efectivo.",
+      "features": ["Diagnóstico rápido", "Tratamiento de gripa", "Bronquitis y sinusitis", "Neumonía", "Control de asma", "Medicamentos recetados"]
+    },
+    "infecciones-urinarias": {
+      "title": "Infecciones Urinarias",
+      "shortTitle": "Urinarias",
+      "description": "Tratamiento de infecciones urinarias en la clínica hispana de Houston. Diagnóstico preciso y alivio rápido.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner diagnosticamos y tratamos infecciones del tracto urinario con análisis de orina y tratamiento antibiótico efectivo.",
+      "features": ["Análisis de orina", "Diagnóstico rápido", "Tratamiento antibiótico", "Alivio de síntomas", "Prevención de recurrencia", "Seguimiento médico"]
+    },
+    "infecciones-vaginales": {
+      "title": "Infecciones Vaginales",
+      "shortTitle": "Vaginales",
+      "description": "Tratamiento de infecciones vaginales en la clínica hispana de Houston. Atención confidencial y efectiva.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner ofrecemos diagnóstico y tratamiento de infecciones vaginales en un ambiente de confianza y privacidad.",
+      "features": ["Diagnóstico preciso", "Tratamiento efectivo", "Candidiasis", "Vaginosis bacteriana", "Atención confidencial", "Seguimiento médico"]
+    },
+    "examen-dot": {
+      "title": "Examen Médico DOT",
+      "shortTitle": "DOT",
+      "description": "Examen médico DOT en la clínica hispana de Houston. Certificación para conductores comerciales.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner realizamos exámenes médicos DOT para conductores comerciales. Certificación requerida para licencias CDL.",
+      "features": ["Examen DOT completo", "Certificación médica", "Evaluación de vista", "Evaluación de audición", "Análisis de orina", "Tarjeta médica DOT"]
+    },
+    "examenes-generales": {
+      "title": "Exámenes Generales",
+      "shortTitle": "Generales",
+      "description": "Exámenes médicos generales en la clínica hispana de Houston. Chequeos de salud completos.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner realizamos exámenes médicos generales y chequeos de salud completos. Físicos escolares, deportivos y de empleo.",
+      "features": ["Examen físico completo", "Físicos escolares", "Físicos deportivos", "Exámenes de empleo", "Análisis de sangre", "Resultados el mismo día"]
+    },
+    "dolores-musculares": {
+      "title": "Dolores Musculares",
+      "shortTitle": "Musculares",
+      "description": "Tratamiento de dolores musculares en la clínica hispana de Houston. Alivio rápido y efectivo.",
+      "longDescription": "En Clínica Hispana Nueva Salud Gessner tratamos dolores musculares, esguinces y lesiones menores. Diagnóstico preciso y tratamiento para tu pronta recuperación.",
+      "features": ["Evaluación del dolor", "Tratamiento antiinflamatorio", "Inyecciones para el dolor", "Relajantes musculares", "Terapia de calor/frío", "Recomendaciones de ejercicio"]
+    }
   }
 }

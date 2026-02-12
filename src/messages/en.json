@@ -189,5 +189,133 @@
     "followInstagram": "Follow Clínica Hispana Nueva Salud Gessner on Instagram",
     "followFacebook": "Follow Clínica Hispana Nueva Salud Gessner on Facebook",
     "openServiceDetails": "View service details"
+  },
+  "serviceData": {
+    "medicina-familiar": {
+      "title": "Family Medicine Near Me",
+      "shortTitle": "Family Medicine",
+      "description": "Family medicine at our Hispanic clinic in Houston. Comprehensive medical care for the whole family in Spanish.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we offer complete family medicine for patients of all ages. Our Hispanic doctors provide preventive care, diagnosis and treatment of common illnesses, all 100% in Spanish.",
+      "features": ["Care for the whole family", "Consultations in Spanish", "Preventive medicine", "Diagnosis and treatment", "Personalized follow-up", "Walk-ins welcome"]
+    },
+    "examenes-inmigracion": {
+      "title": "Immigration Medical Exams",
+      "shortTitle": "Immigration",
+      "description": "USCIS authorized Hispanic clinic for I-693 exams in Houston. Certified Civil Surgeon. Entire process in Spanish.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we perform USCIS authorized immigration medical exams. Our certified Civil Surgeon completes the I-693 form 100% in Spanish. Over 500 families have completed their process with us.",
+      "features": ["Certified Civil Surgeon", "Sealed I-693 form", "100% in Spanish", "Results in 3-5 days", "Blood tests included", "Vaccine review"]
+    },
+    "enfermedades-transmision-sexual": {
+      "title": "Sexually Transmitted Diseases (STD)",
+      "shortTitle": "STD/STI",
+      "description": "STD/STI testing and treatment at our Hispanic clinic in Houston. Confidential diagnosis and effective treatment.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we perform confidential sexually transmitted disease testing. Diagnosis and treatment in an environment of respect and total privacy.",
+      "features": ["Confidential testing", "HIV and Syphilis", "Chlamydia and Gonorrhea", "Herpes", "Fast results", "Treatment available"]
+    },
+    "servicios-urologia": {
+      "title": "Urology Services",
+      "shortTitle": "Urology",
+      "description": "Urology services at our Hispanic clinic in Houston. Specialized care for men in Spanish.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we offer urology services for men's health care. Diagnosis and treatment of urinary and reproductive conditions.",
+      "features": ["Prostate exam", "Urinary infections", "Bladder problems", "Male reproductive health", "Care in Spanish", "Confidential consultation"]
+    },
+    "condiciones-cronicas": {
+      "title": "Chronic Condition Management",
+      "shortTitle": "Chronic",
+      "description": "Chronic disease control at our Hispanic clinic. Diabetes, hypertension, cholesterol and more.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we offer comprehensive management of chronic conditions such as diabetes, hypertension, high cholesterol and thyroid. Personalized follow-up in Spanish.",
+      "features": ["Diabetes control", "Hypertension management", "Cholesterol control", "Thyroid problems", "Regular monitoring", "Nutritional guidance"]
+    },
+    "laboratorio": {
+      "title": "Laboratory Tests & Analysis",
+      "shortTitle": "Laboratory",
+      "description": "Laboratory analysis at our Hispanic clinic in Houston. Fast and accurate results.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we have a complete clinical laboratory. Blood tests, urine analysis, lipid profile and more with fast results.",
+      "features": ["Complete blood analysis", "Lipid profile", "Glucose and A1C", "Urine analysis", "Fast results", "Interpretation in Spanish"]
+    },
+    "ultrasonido": {
+      "title": "Ultrasound",
+      "shortTitle": "Ultrasound",
+      "description": "Ultrasounds at our Hispanic clinic in Houston. Pregnancy, abdominal, pelvic and more with immediate results.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we offer ultrasounds with modern technology. Pregnancy, abdominal, pelvic and renal ultrasounds with interpretation in Spanish.",
+      "features": ["Pregnancy ultrasound", "Abdominal ultrasound", "Pelvic ultrasound", "Immediate results", "Modern technology", "Interpretation in Spanish"]
+    },
+    "servicios-ginecologia": {
+      "title": "Gynecology Services",
+      "shortTitle": "Gynecology",
+      "description": "Gynecology at our Hispanic clinic in Houston. Comprehensive women's health care in Spanish.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we offer complete gynecological services. Pap smears, breast exams, reproductive health and more with Spanish-speaking gynecologists.",
+      "features": ["Pap smear", "Breast exam", "Reproductive health", "Gynecological consultation", "Spanish-speaking gynecologists", "Confidential environment"]
+    },
+    "planificacion-familiar": {
+      "title": "Family Planning",
+      "shortTitle": "Planning",
+      "description": "Family planning at our Hispanic clinic in Houston. Counseling on contraceptive methods.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we offer complete counseling on contraceptive methods. Our specialists guide you on the best options for your lifestyle.",
+      "features": ["Personalized counseling", "Oral contraceptives", "Contraceptive injections", "IUD", "Hormonal implants", "Medical follow-up"]
+    },
+    "vacunas-anticonceptivas": {
+      "title": "Contraceptive Injections",
+      "shortTitle": "Contraceptives",
+      "description": "Contraceptive injections at our Hispanic clinic in Houston. Safe and effective method.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we administer contraceptive injections such as Depo-Provera. A safe, effective and discreet method for birth control.",
+      "features": ["Depo-Provera injection", "3-month protection", "Discreet method", "High effectiveness", "Quick application", "Medical follow-up"]
+    },
+    "extraccion-implantes": {
+      "title": "Implant Removal",
+      "shortTitle": "Implants",
+      "description": "Contraceptive implant removal at our Hispanic clinic in Houston. Quick and safe procedure.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we perform safe and professional removal of hormonal contraceptive implants such as Nexplanon.",
+      "features": ["Safe procedure", "Trained staff", "Minimal discomfort", "Local anesthesia", "Post-removal care", "Contraceptive options"]
+    },
+    "electrocardiograma": {
+      "title": "Electrocardiogram",
+      "shortTitle": "EKG",
+      "description": "Electrocardiogram (EKG) at our Hispanic clinic in Houston. Heart rhythm evaluation.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we perform electrocardiograms to evaluate heart health. Quick diagnosis of arrhythmias and other cardiac conditions.",
+      "features": ["12-lead EKG", "Immediate results", "Arrhythmia detection", "Cardiac evaluation", "Medical interpretation", "Referral if needed"]
+    },
+    "enfermedades-respiratorias": {
+      "title": "Respiratory Diseases",
+      "shortTitle": "Respiratory",
+      "description": "Respiratory disease treatment at our Hispanic clinic in Houston. Flu, bronchitis, sinusitis and more.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we treat respiratory diseases such as flu, bronchitis, sinusitis, pneumonia and asthma. Quick diagnosis and effective treatment.",
+      "features": ["Quick diagnosis", "Flu treatment", "Bronchitis and sinusitis", "Pneumonia", "Asthma control", "Prescription medications"]
+    },
+    "infecciones-urinarias": {
+      "title": "Urinary Infections",
+      "shortTitle": "Urinary",
+      "description": "Urinary infection treatment at our Hispanic clinic in Houston. Accurate diagnosis and fast relief.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we diagnose and treat urinary tract infections with urine analysis and effective antibiotic treatment.",
+      "features": ["Urine analysis", "Quick diagnosis", "Antibiotic treatment", "Symptom relief", "Recurrence prevention", "Medical follow-up"]
+    },
+    "infecciones-vaginales": {
+      "title": "Vaginal Infections",
+      "shortTitle": "Vaginal",
+      "description": "Vaginal infection treatment at our Hispanic clinic in Houston. Confidential and effective care.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we offer diagnosis and treatment of vaginal infections in an environment of trust and privacy.",
+      "features": ["Accurate diagnosis", "Effective treatment", "Candidiasis", "Bacterial vaginosis", "Confidential care", "Medical follow-up"]
+    },
+    "examen-dot": {
+      "title": "DOT Medical Exam",
+      "shortTitle": "DOT",
+      "description": "DOT medical exam at our Hispanic clinic in Houston. Certification for commercial drivers.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we perform DOT medical exams for commercial drivers. Required certification for CDL licenses.",
+      "features": ["Complete DOT exam", "Medical certification", "Vision evaluation", "Hearing evaluation", "Urine analysis", "DOT medical card"]
+    },
+    "examenes-generales": {
+      "title": "General Exams",
+      "shortTitle": "General",
+      "description": "General medical exams at our Hispanic clinic in Houston. Complete health checkups.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we perform general medical exams and complete health checkups. School, sports and employment physicals.",
+      "features": ["Complete physical exam", "School physicals", "Sports physicals", "Employment exams", "Blood tests", "Same-day results"]
+    },
+    "dolores-musculares": {
+      "title": "Muscle Pain",
+      "shortTitle": "Muscle",
+      "description": "Muscle pain treatment at our Hispanic clinic in Houston. Fast and effective relief.",
+      "longDescription": "At Clínica Hispana Nueva Salud Gessner we treat muscle pain, sprains and minor injuries. Accurate diagnosis and treatment for your quick recovery.",
+      "features": ["Pain evaluation", "Anti-inflammatory treatment", "Pain injections", "Muscle relaxants", "Heat/cold therapy", "Exercise recommendations"]
+    }
   }
 }
