@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
+import { useTranslations } from "next-intl";
+import { CheckCircle, Phone, MapPin } from "@phosphor-icons/react/dist/ssr";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { PROMOTIONS } from "@/lib/constants";
+import { PROMOTIONS, CONTACT_INFO } from "@/lib/constants";
 
 const promoImages: Record<string, string> = {
   ginecologia: "/images/promotions/gynecology-promo.webp",
@@ -21,6 +22,8 @@ const promoAltText: Record<string, string> = {
 };
 
 export function Promotions() {
+  const t = useTranslations();
+
   return (
     <section className="py-16 bg-linear-to-b from-green-bg to-green-bg-alt">
       <div className="container mx-auto px-4">
@@ -32,13 +35,11 @@ export function Promotions() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Promociones de la{" "}
-            <span className="text-primary">Clínica Hispana</span> en Houston
+            {t("promotions.title")}{" "}
+            <span className="text-primary">{t("promotions.titleHighlight")}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Aprovecha nuestros precios especiales en la clínica hispana Mi
-            Clínica Hispana Nueva Salud Gessner. Atención médica de calidad a precios
-            accesibles para la comunidad hispana de Houston.
+            {t("promotions.description")}
           </p>
         </motion.div>
 
@@ -122,13 +123,32 @@ export function Promotions() {
                     ))}
                   </ul>
 
-                  {/* CTA */}
-                  <Button
-                    asChild
-                    className="w-full mt-4 bg-white text-secondary hover:bg-white/90 font-semibold"
-                  >
-                    <a href="#contacto">Agendar Cita</a>
-                  </Button>
+                  {/* CTA Buttons */}
+                  <div className="flex gap-2 mt-4">
+                    <Button
+                      asChild
+                      className="flex-1 bg-white text-secondary hover:bg-white/90 font-semibold"
+                    >
+                      <a href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}>
+                        <Phone className="size-4 mr-1.5" weight="fill" />
+                        {t("common.call")}
+                      </a>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="flex-1 bg-transparent border-white text-white hover:bg-white/20 font-semibold"
+                    >
+                      <a
+                        href={CONTACT_INFO.googleMapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MapPin className="size-4 mr-1.5" weight="fill" />
+                        {t("common.location")}
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
