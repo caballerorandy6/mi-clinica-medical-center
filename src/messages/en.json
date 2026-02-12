@@ -1,0 +1,193 @@
+{
+  "metadata": {
+    "title": "Hispanic Clinic Near You in Houston | Spanish-Speaking Doctors",
+    "titleTemplate": "{title} | Hispanic Clinic Houston - Clínica Hispana Nueva Salud Gessner",
+    "description": "Hispanic clinic near you in Houston. Spanish-speaking gynecologists, immigration medical exams, pregnancy ultrasounds. Family clinic. Call: +1 (346) 226-5820",
+    "ogDescription": "Hispanic clinic near you in Houston. Spanish-speaking gynecologists, immigration medical exams, pregnancy ultrasounds. Family clinic with affordable options. Open Sundays."
+  },
+  "common": {
+    "callNow": "Call Now",
+    "location": "Location",
+    "call": "Call",
+    "schedule": "Schedule Appointment",
+    "viewServices": "View Services",
+    "viewAllServices": "View All Services",
+    "learnMore": "Learn More",
+    "close": "Close",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "nav": {
+    "services": "Services",
+    "greenCard": "Green Card",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge1": "Walk-ins Welcome",
+    "badge2": "Open 7 Days",
+    "badge3": "USCIS Authorized",
+    "title": "Hispanic Clinic",
+    "titleHighlight": "Near You",
+    "titleEnd": "in Houston",
+    "description": "Quality medical care 100% in Spanish. Immigration exams I-693, gynecology, ultrasounds and more. Doctors who speak your language."
+  },
+  "services": {
+    "title": "Featured Services at Our",
+    "titleHighlight": "Hispanic Clinic",
+    "description": "Quality medical care 100% in Spanish. Immigration exams, ultrasounds and chronic disease management with doctors who speak your language.",
+    "uscisAuthorized": "USCIS Authorized",
+    "featured": "Featured",
+    "seoText": "Clínica Hispana Nueva Salud Gessner offers a wide variety of medical services in Spanish. Ultrasounds, clinical laboratory, and affordable options for uninsured families. Open Sundays."
+  },
+  "servicesPage": {
+    "title": "Medical Services",
+    "titleHighlight": "in Spanish",
+    "description": "We offer a wide range of medical services with 100% Spanish-speaking care. Find the service you need.",
+    "badge": "18+ Services",
+    "allServices": "All Services",
+    "filterAll": "All",
+    "searchPlaceholder": "Search service...",
+    "noResults": "No services found",
+    "tryAgain": "Try another search",
+    "ctaTitle": "Need Medical Care?",
+    "ctaDescription": "We're here to help. Call us or visit us today.",
+    "seoText": "Clínica Hispana Nueva Salud Gessner offers complete medical services in Spanish in Houston, TX. From immigration exams to chronic disease care, our team is ready to serve you."
+  },
+  "serviceDetail": {
+    "aboutService": "About this service",
+    "includes": "What's included?",
+    "additionalInfo": "100% Spanish care • Walk-ins welcome • Open 7 days"
+  },
+  "greenCard": {
+    "badge": "USCIS Authorized",
+    "title": "Immigration Medical",
+    "titleHighlight": "Exams I-693",
+    "description": "We are a USCIS authorized Hispanic clinic with certified Civil Surgeons. Complete your immigration medical exam for your Green Card quickly, reliably and 100% in Spanish.",
+    "step1Title": "Schedule Your Appointment",
+    "step1Desc": "Call us or visit us - walk-ins welcome",
+    "step2Title": "Medical Exam",
+    "step2Desc": "Complete evaluation with certified Civil Surgeon",
+    "step3Title": "Required Vaccines",
+    "step3Desc": "We verify and administer necessary vaccines",
+    "step4Title": "Lab Tests",
+    "step4Desc": "Blood tests and required screenings",
+    "step5Title": "Form I-693",
+    "step5Desc": "Receive your sealed and signed form",
+    "feature1": "Certified Civil Surgeon",
+    "feature2": "Fast Results",
+    "feature3": "100% in Spanish",
+    "feature4": "Affordable Prices",
+    "seoText": "Clínica Hispana Nueva Salud Gessner is your USCIS authorized Hispanic clinic for I-693 immigration medical exams in Houston. Our certified Civil Surgeons help you with your Green Card process quickly and in Spanish."
+  },
+  "promotions": {
+    "title": "Promotions at the",
+    "titleHighlight": "Hispanic Clinic",
+    "description": "Take advantage of our special prices on medical services. Quality care at affordable prices for the whole family.",
+    "seoText": "Clínica Hispana Nueva Salud Gessner has special promotions on medical services for Houston's Hispanic community. Affordable prices on ultrasounds, exams and consultations."
+  },
+  "contact": {
+    "title": "Schedule Your Appointment at Our",
+    "titleHighlight": "Hispanic Clinic",
+    "description": "Fill out the form and we'll contact you soon. You can also call us directly or visit us without an appointment.",
+    "infoTitle": "Why choose our Hispanic clinic?",
+    "benefit1": "100% Spanish-speaking care",
+    "benefit2": "Walk-ins accepted",
+    "benefit3": "Affordable prices",
+    "benefit4": "Open 7 days a week",
+    "hoursLabel": "Hours",
+    "addressLabel": "Address",
+    "seoText": "Contact Clínica Hispana Nueva Salud Gessner in Houston to schedule your medical appointment. Spanish-speaking care, walk-ins welcome and affordable prices for the whole family."
+  },
+  "contactForm": {
+    "title": "Request Your Appointment",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Your name",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "(123) 456-7890",
+    "emailLabel": "Email (optional)",
+    "emailPlaceholder": "your@email.com",
+    "serviceLabel": "Service of Interest",
+    "servicePlaceholder": "Select a service",
+    "messageLabel": "Message (optional)",
+    "messagePlaceholder": "How can we help you?",
+    "submit": "Submit Request",
+    "submitting": "Submitting...",
+    "successTitle": "Request Sent!",
+    "successMessage": "We'll contact you soon.",
+    "errorTitle": "Error",
+    "errorMessage": "There was a problem submitting your request. Please try again."
+  },
+  "location": {
+    "title": "Hispanic Clinic Near You in",
+    "titleHighlight": "Houston",
+    "description": "Visit our Hispanic clinic Clínica Hispana Nueva Salud Gessner in Houston, TX. We're conveniently located with easy access and free parking.",
+    "addressTitle": "Address",
+    "phoneTitle": "Phone",
+    "hoursTitle": "Hours",
+    "openNow": "Open now - 7 days a week",
+    "viewOnMaps": "View on Google Maps",
+    "callClinic": "Call the Hispanic clinic now",
+    "facilitiesTitle": "Hispanic Clinic Facilities",
+    "howToGet": "How to Get to the Hispanic Clinic",
+    "seoText": "Clínica Hispana Nueva Salud Gessner is located at 1914 Gessner Rd B, Houston, TX 77080. Our Hispanic clinic is easy to find and has ample free parking for all our patients from Houston's Hispanic community."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions About the",
+    "titleHighlight": "Hispanic Clinic",
+    "description": "Find answers to the most common questions about our Hispanic clinic Clínica Hispana Nueva Salud Gessner in Houston, TX.",
+    "moreQuestions": "Have more questions about our Hispanic clinic? Contact us now.",
+    "callButton": "Call the Hispanic Clinic",
+    "seoText": "Clínica Hispana Nueva Salud Gessner is the Hispanic clinic that answers all your questions in Spanish. Our Hispanic clinic in Houston is committed to providing clear and transparent information to the Latino community."
+  },
+  "testimonials": {
+    "title": "What Our",
+    "titleHighlight": "Patients Say",
+    "description": "Learn about the experiences of those who have trusted our Hispanic clinic for their medical care.",
+    "reviewsOn": "reviews on",
+    "basedOn": "Based on",
+    "seoText": "Read reviews from satisfied patients of Clínica Hispana Nueva Salud Gessner in Houston. Our Hispanic community trusts us for their medical care."
+  },
+  "trustBadges": {
+    "seoText": "Clínica Hispana Nueva Salud Gessner is the trusted Hispanic clinic for the Latino community in Houston. Our Hispanic clinic offers complete medical care with Spanish-speaking staff."
+  },
+  "footer": {
+    "description": "Clínica Hispana Nueva Salud Gessner is your trusted Hispanic clinic in Houston, TX. We offer professional medical care 100% in Spanish for the entire Hispanic community.",
+    "contactTitle": "Contact",
+    "quickLinksTitle": "Quick Links",
+    "followUsTitle": "Follow Us",
+    "copyright": "All rights reserved.",
+    "tagline": "Hispanic Clinic in Houston, TX | Medical Care in Spanish",
+    "seoText": "Visit our Hispanic clinic in Houston for quality medical care. We are the USCIS authorized Hispanic clinic for Green Card I-693 exams."
+  },
+  "errors": {
+    "notFoundTitle": "Page Not Found",
+    "notFoundDescription": "Sorry, the page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home",
+    "errorTitle": "Something went wrong",
+    "errorDescription": "Sorry, an unexpected error has occurred.",
+    "tryAgain": "Try again"
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "nameMin": "Name must be at least 2 characters",
+    "phoneRequired": "Phone is required",
+    "phoneInvalid": "Enter a valid phone number",
+    "emailInvalid": "Enter a valid email address",
+    "serviceRequired": "Select a service",
+    "messageMax": "Message cannot exceed 500 characters"
+  },
+  "categories": {
+    "especialidad": "Chronic Diseases",
+    "diagnostico": "Diagnostics",
+    "mujer": "Women's Health",
+    "especial": "Special Services",
+    "otro": "Treatments"
+  },
+  "accessibility": {
+    "callClinic": "Call the clinic",
+    "viewLocation": "View location on Google Maps",
+    "followInstagram": "Follow Clínica Hispana Nueva Salud Gessner on Instagram",
+    "followFacebook": "Follow Clínica Hispana Nueva Salud Gessner on Facebook",
+    "openServiceDetails": "View service details"
+  }
+}

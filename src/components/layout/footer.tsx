@@ -1,10 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 import { Phone, MapPin, Clock, InstagramLogo, FacebookLogo } from "@phosphor-icons/react/dist/ssr";
-import { CONTACT_INFO, NAVIGATION_LINKS, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
+import { CONTACT_INFO, SITE_CONFIG, SOCIAL_LINKS } from "@/lib/constants";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const t = useTranslations();
+  const locale = useLocale();
+
+  const homeHref = locale === "es" ? "/" : `/${locale}`;
+
+  // Navigation links with translations
+  const navigationLinks = [
+    { label: t("nav.services"), href: `${homeHref}#servicios` },
+    { label: t("nav.greenCard"), href: `${homeHref}#green-card` },
+    { label: t("nav.contact"), href: `${homeHref}#contacto` },
+  ];
 
   return (
     <footer className="bg-teal-dark text-white" id="contacto">
@@ -12,7 +26,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="space-y-4">
-            <Link href="/" className="group flex items-center gap-3">
+            <Link href={homeHref} className="group flex items-center gap-3">
               <Image
                 src="/images/logo.webp"
                 alt="logo clinica hispana nueva salud gessner houston"
@@ -26,20 +40,19 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-white/90 text-sm">
-              Clínica Hispana Nueva Salud Gessner es tu clínica hispana de confianza en
-              Houston, TX. Ofrecemos atención médica profesional 100% en español
-              para toda la comunidad hispana.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Contacto</h3>
+            <h3 className="text-lg font-bold">{t("footer.contactTitle")}</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
                   className="group flex items-start gap-3 text-white/90 hover:text-white transition-all duration-300 hover:translate-x-1"
+                  aria-label={t("accessibility.callClinic")}
                 >
                   <Phone className="size-5 mt-0.5 shrink-0 group-hover:text-primary transition-colors duration-300" weight="fill" />
                   <span>{CONTACT_INFO.phone}</span>
@@ -51,6 +64,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-start gap-3 text-white/90 hover:text-white transition-all duration-300 hover:translate-x-1"
+                  aria-label={t("accessibility.viewLocation")}
                 >
                   <MapPin className="size-5 mt-0.5 shrink-0 group-hover:text-primary transition-colors duration-300" weight="fill" />
                   <span>{CONTACT_INFO.address}</span>
@@ -65,9 +79,9 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Enlaces Rápidos</h3>
+            <h3 className="text-lg font-bold">{t("footer.quickLinksTitle")}</h3>
             <ul className="space-y-2">
-              {NAVIGATION_LINKS.map((link) => (
+              {navigationLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -82,14 +96,14 @@ export function Footer() {
 
           {/* Social & SEO Text */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Síguenos</h3>
+            <h3 className="text-lg font-bold">{t("footer.followUsTitle")}</h3>
             <div className="flex flex-col gap-3">
               <a
                 href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 text-white/90 hover:text-white transition-all duration-300"
-                aria-label="Seguir a Clínica Hispana Nueva Salud Gessner en Instagram"
+                aria-label={t("accessibility.followInstagram")}
               >
                 <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-linear-to-br group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-orange-400 transition-all duration-300 group-hover:scale-110">
                   <InstagramLogo className="size-5 text-white" weight="fill" />
@@ -101,7 +115,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 text-white/90 hover:text-white transition-all duration-300"
-                aria-label="Seguir a Clínica Hispana Nueva Salud Gessner en Facebook"
+                aria-label={t("accessibility.followFacebook")}
               >
                 <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
                   <FacebookLogo className="size-5 text-white" weight="fill" />
@@ -115,26 +129,24 @@ export function Footer() {
               <a
                 href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
                 className="group flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-medium px-4 py-2.5 rounded-full transition-all duration-300 hover:scale-105"
-                aria-label="Llamar a la clínica"
+                aria-label={t("accessibility.callClinic")}
               >
                 <Phone className="size-5" weight="fill" />
-                <span className="text-sm">Llamar</span>
+                <span className="text-sm">{t("common.call")}</span>
               </a>
               <a
                 href={CONTACT_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-medium px-4 py-2.5 rounded-full transition-all duration-300 hover:scale-105"
-                aria-label="Ver ubicación en Google Maps"
+                aria-label={t("accessibility.viewLocation")}
               >
                 <MapPin className="size-5" weight="fill" />
-                <span className="text-sm">Ubicación</span>
+                <span className="text-sm">{t("common.location")}</span>
               </a>
             </div>
             <p className="text-white/90 text-sm mt-4">
-              Visita nuestra clínica hispana en Houston para recibir atención
-              médica de calidad. Somos la clínica hispana autorizada por USCIS
-              para exámenes de Green Card I-693.
+              {t("footer.seoText")}
             </p>
           </div>
         </div>
@@ -144,11 +156,10 @@ export function Footer() {
           {/* Gradient separator */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-px bg-linear-to-r from-transparent via-white/40 to-transparent" />
           <p>
-            &copy; {currentYear} {SITE_CONFIG.name}. Todos los derechos
-            reservados.
+            &copy; {currentYear} {SITE_CONFIG.name}. {t("footer.copyright")}
           </p>
           <p className="mt-2 text-white/60">
-            Clínica Hispana en Houston, TX | Atención Médica en Español
+            {t("footer.tagline")}
           </p>
         </div>
       </div>
