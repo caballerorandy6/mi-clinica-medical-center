@@ -152,16 +152,16 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="relative mt-10 pt-8 text-center text-white/70 text-sm">
+        <div className="relative mt-10 pt-8 text-center text-white/80 text-sm">
           {/* Gradient separator */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-px bg-linear-to-r from-transparent via-white/40 to-transparent" />
           <p>
             &copy; {currentYear} {SITE_CONFIG.name}. {t("footer.copyright")}
           </p>
-          <p className="mt-2 text-white/60">
+          <p className="mt-2 text-white/80">
             {t("footer.tagline")}
           </p>
-          <p className="mt-3 text-white/50">
+          <p className="mt-3 text-white/70">
             {t("footer.createdBy")}{" "}
             <a
               href="https://rcweb.dev"

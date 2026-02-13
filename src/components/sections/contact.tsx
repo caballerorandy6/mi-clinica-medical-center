@@ -113,9 +113,9 @@ export function Contact() {
 
             {/* Why Choose Us */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-              <h4 className="font-bold text-white text-lg mb-4">
+              <h3 className="font-bold text-white text-lg mb-4">
                 ¿Por qué elegir nuestra clínica hispana?
-              </h4>
+              </h3>
               <ul className="space-y-3">
                 {[
                   "Atención 100% en español",
@@ -149,7 +149,7 @@ export function Contact() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-sm text-white/60 mt-12 max-w-3xl mx-auto"
+          className="text-center text-sm text-white/80 mt-12 max-w-3xl mx-auto"
         >
           Contacta la clínica hispana Clínica Hispana Nueva Salud Gessner hoy mismo.
           Nuestra clínica hispana en Houston te espera con atención profesional

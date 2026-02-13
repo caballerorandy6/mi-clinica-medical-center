@@ -26,7 +26,7 @@ function PartialStars({ rating, size = "md" }: { rating: number; size?: "sm" | "
   const starSize = size === "sm" ? "size-4" : "size-5";
 
   return (
-    <div className="flex gap-0.5" aria-label={`${rating} de 5 estrellas`}>
+    <div className="flex gap-0.5" role="img" aria-label={`${rating} de 5 estrellas`}>
       {[1, 2, 3, 4, 5].map((star) => {
         const fill = Math.min(Math.max(rating - (star - 1), 0), 1);
         return (
@@ -169,18 +169,26 @@ export function TestimonialsCarousel({ reviews }: TestimonialsCarouselProps) {
 
       {/* Dots Indicator - Based on actual scroll snaps */}
       {count > 1 && (
-        <div className="flex justify-center gap-1.5">
+        <div className="flex justify-center gap-2">
           {Array.from({ length: count }).map((_, index) => (
             <button
               key={index}
               onClick={() => scrollTo(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
+              className={`min-w-6 min-h-6 flex items-center justify-center rounded-full transition-all duration-300 ${
                 current === index
-                  ? "bg-primary w-6"
-                  : "bg-gray-300 w-1.5 hover:bg-gray-400"
+                  ? "bg-primary/20"
+                  : "bg-transparent hover:bg-gray-100"
               }`}
               aria-label={`Ir a grupo ${index + 1}`}
-            />
+            >
+              <span
+                className={`rounded-full transition-all duration-300 ${
+                  current === index
+                    ? "bg-primary w-5 h-2"
+                    : "bg-gray-300 w-2 h-2 hover:bg-gray-400"
+                }`}
+              />
+            </button>
           ))}
         </div>
       )}

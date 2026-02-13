@@ -107,7 +107,7 @@ export function Promotions() {
                       {promo.price}
                     </span>
                     {promo.originalPrice && (
-                      <span className="text-lg text-white/60 line-through">
+                      <span className="text-lg text-white/75 line-through">
                         {promo.originalPrice}
                       </span>
                     )}

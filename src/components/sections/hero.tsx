@@ -51,7 +51,7 @@ const staggerContainer = {
 function PartialStarsHero({ rating, locale }: { rating: number; locale: string }) {
   const label = locale === "es" ? `${rating} de 5 estrellas` : `${rating} out of 5 stars`;
   return (
-    <div className="flex gap-0.5" aria-label={label}>
+    <div className="flex gap-0.5" role="img" aria-label={label}>
       {[1, 2, 3, 4, 5].map((star) => {
         const fill = Math.min(Math.max(rating - (star - 1), 0), 1);
         return (
@@ -260,7 +260,7 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
                         </span>
                         <PartialStarsHero rating={googleRating} locale={locale} />
                       </div>
-                      <p className="text-[9px] sm:text-[10px] lg:text-xs text-white/60 leading-tight mt-0.5">
+                      <p className="text-[9px] sm:text-[10px] lg:text-xs text-white/80 leading-tight mt-0.5">
                         {googleReviewsCount} {reviewsLabel}
                       </p>
                     </>
@@ -269,7 +269,7 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
                       <p className="font-semibold text-white text-xs sm:text-sm leading-tight">
                         {badge.title}
                       </p>
-                      <p className="hidden sm:block text-[10px] lg:text-xs text-white/60 truncate">
+                      <p className="hidden sm:block text-[10px] lg:text-xs text-white/80 truncate">
                         {badge.description}
                       </p>
                     </>
