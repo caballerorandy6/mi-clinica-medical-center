@@ -48,7 +48,7 @@ export async function generateMetadata({
   const t = messages.metadata;
 
   const isSpanish = locale === "es";
-  const baseUrl = "https://clinicagessner.com";
+  const baseUrl = "https://www.clinicagessner.com";
   const canonicalUrl = isSpanish ? baseUrl : `${baseUrl}/en`;
 
   return {
@@ -156,6 +156,9 @@ export default async function LocaleLayout({ children, params }: Props) {
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        {/* Preconnect for Google Reviews profile images */}
+        <link rel="preconnect" href="https://lh3.googleusercontent.com" />
+        <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
       </head>
       <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
