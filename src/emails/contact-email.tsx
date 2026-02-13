@@ -95,8 +95,8 @@ export function ContactEmail({
             <Text style={footerText}>
               Este mensaje fue enviado desde el formulario de contacto de
             </Text>
-            <Link href="https://clinicagessner.com" style={footerLink}>
-              clinicagessner.com
+            <Link href="https://www.clinicagessner.com" style={footerLink}>
+              www.clinicagessner.com
             </Link>
           </Section>
         </Container>
