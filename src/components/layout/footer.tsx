@@ -161,6 +161,17 @@ export function Footer() {
           <p className="mt-2 text-white/60">
             {t("footer.tagline")}
           </p>
+          <p className="mt-3 text-white/50">
+            {t("footer.createdBy")}{" "}
+            <a
+              href="https://rcweb.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-primary transition-colors duration-300 font-semibold"
+            >
+              RC Web Solutions LLC
+            </a>
+          </p>
         </div>
       </div>
     </footer>
