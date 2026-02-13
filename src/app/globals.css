@@ -42,8 +42,8 @@
   --popover: #FFFFFF;
   --popover-foreground: #1F2937;
 
-  /* Primario: Verde oscuro (CTAs) */
-  --primary: #15803D;
+  /* Primario: Verde oscuro (CTAs) - #166534 para mejor contraste WCAG */
+  --primary: #166534;
   --primary-foreground: #FFFFFF;
 
   /* Secundario: Teal (headers, elementos destacados) */
