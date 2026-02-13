@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
+import { Inter, Poppins } from "next/font/google";
 import { locales, type Locale } from "@/i18n/config";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -12,6 +13,21 @@ import {
   JsonLdFAQ,
   JsonLdBreadcrumb,
 } from "@/components/seo/json-ld";
+
+// Fuente para títulos - Poppins: moderna, profesional, geométrica
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+// Fuente para cuerpo - Inter: legible, limpia, excelente para texto largo
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 type Props = {
   children: React.ReactNode;
@@ -130,15 +146,29 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <JsonLdMedicalClinic />
-      <JsonLdFAQ />
-      <JsonLdBreadcrumb />
-      <Header />
-      <main>{children}</main>
-      <Footer />
-      <FloatingButtons />
-      <ScrollToTop />
-    </NextIntlClientProvider>
+    <html lang={locale} className={`${poppins.variable} ${inter.variable}`} suppressHydrationWarning>
+      <head>
+        <meta name="theme-color" content="#F7FDF9" />
+        <meta name="msapplication-TileColor" content="#16A34A" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
+      <body className="antialiased">
+        <NextIntlClientProvider messages={messages}>
+          <JsonLdMedicalClinic />
+          <JsonLdFAQ />
+          <JsonLdBreadcrumb />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <FloatingButtons />
+          <ScrollToTop />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
