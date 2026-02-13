@@ -46,20 +46,9 @@ export interface ContactInfo {
   googleReviewUrl: string;
 }
 
-export interface TrustBadge {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-}
-
 export interface GreenCardFeature {
   id: string;
   text: string;
   included: boolean;
 }
 
-export interface NavigationLink {
-  label: string;
-  href: string;
-}

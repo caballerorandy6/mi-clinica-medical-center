@@ -3,9 +3,7 @@ import type {
   Promotion,
   FAQ,
   ContactInfo,
-  TrustBadge,
   GreenCardFeature,
-  NavigationLink,
 } from "@/types";
 
 export const SITE_CONFIG = {
@@ -32,39 +30,6 @@ export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/miclinicamedicalcenter/",
   facebook: "https://www.facebook.com/people/Clinica-Hispana-Nueva-Salud-Gessner/61587230040182/",
 } as const;
-
-export const NAVIGATION_LINKS: NavigationLink[] = [
-  { label: "Servicios", href: "/#servicios" },
-  { label: "Green Card", href: "/#green-card" },
-  { label: "Contacto", href: "/#contacto" },
-];
-
-export const TRUST_BADGES: TrustBadge[] = [
-  {
-    id: "sin-seguro",
-    title: "Sin Seguro Bienvenidos",
-    description: "Atención para todos sin importar seguro",
-    icon: "Users",
-  },
-  {
-    id: "precios",
-    title: "Precios Accesibles",
-    description: "Opciones económicas para la comunidad",
-    icon: "Shield",
-  },
-  {
-    id: "rating",
-    title: "Google Reviews",
-    description: "Reseñas verificadas de pacientes",
-    icon: "Star",
-  },
-  {
-    id: "mismo-dia",
-    title: "Citas Mismo Día",
-    description: "Agenda hoy, te atendemos hoy",
-    icon: "Clock",
-  },
-];
 
 // SERVICES - Servicios médicos de la clínica
 export const SERVICES: Service[] = [
@@ -615,15 +580,6 @@ export const FAQS: FAQ[] = [
   },
 ];
 
-export const HERO_CONTENT = {
-  title: "Clínica Hispana Cerca de Ti en Houston | Ginecología y Servicios Médicos en Español",
-  subtitle: "Tu Clínica Hispana Familiar con Ginecólogos que Hablan Español",
-  description:
-    "Somos una clínica hispana cerca de ti en Houston. Nuestra clínica hispana familiar ofrece atención médica completa en español: ginecólogos que hablan español, exámenes médicos de inmigración, ultrasonidos de embarazo, urología, dermatología y más. Como clínica hispana comunitaria, ofrecemos opciones económicas y clínicas gratuitas. Abierto los domingos.",
-  cta: "Agendar Cita Ahora",
-  ctaSecondary: "Ver Servicios",
-};
-
 export const LOCATION_FEATURES = [
   "Estacionamiento gratuito",
   "Accesible para sillas de ruedas",
@@ -631,13 +587,3 @@ export const LOCATION_FEATURES = [
   "Área segura y bien iluminada",
 ];
 
-export const SEO_KEYWORDS = [
-  "clínica hispana Houston",
-  "clínica hispana en Houston TX",
-  "médico hispano Houston",
-  "doctor que habla español Houston",
-  "clínica hispana cerca de mí",
-  "examen Green Card Houston",
-  "I-693 Houston",
-  "ginecología en español Houston",
-];

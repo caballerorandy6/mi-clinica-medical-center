@@ -166,10 +166,9 @@ export default async function ServiceDetailPage({ params }: Props) {
                 quality={85}
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/60 -z-10" />
+              <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/75 to-black/60 -z-10" />
             </>
           )}
-
           <div className="container mx-auto px-4">
             {/* Back Button */}
             <Link
