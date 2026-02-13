@@ -52,9 +52,8 @@ export function Footer() {
                 <a
                   href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
                   className="group flex items-start gap-3 text-white/90 hover:text-white transition-all duration-300 hover:translate-x-1"
-                  aria-label={t("accessibility.callClinic")}
                 >
-                  <Phone className="size-5 mt-0.5 shrink-0 group-hover:text-primary transition-colors duration-300" weight="fill" />
+                  <Phone className="size-5 mt-0.5 shrink-0 group-hover:text-primary transition-colors duration-300" weight="fill" aria-hidden="true" />
                   <span>{CONTACT_INFO.phone}</span>
                 </a>
               </li>
@@ -64,9 +63,8 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-start gap-3 text-white/90 hover:text-white transition-all duration-300 hover:translate-x-1"
-                  aria-label={t("accessibility.viewLocation")}
                 >
-                  <MapPin className="size-5 mt-0.5 shrink-0 group-hover:text-primary transition-colors duration-300" weight="fill" />
+                  <MapPin className="size-5 mt-0.5 shrink-0 group-hover:text-primary transition-colors duration-300" weight="fill" aria-hidden="true" />
                   <span>{CONTACT_INFO.address}</span>
                 </a>
               </li>
@@ -103,9 +101,8 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 text-white/90 hover:text-white transition-all duration-300"
-                aria-label={t("accessibility.followInstagram")}
               >
-                <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-linear-to-br group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-orange-400 transition-all duration-300 group-hover:scale-110">
+                <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-linear-to-br group-hover:from-purple-500 group-hover:via-pink-500 group-hover:to-orange-400 transition-all duration-300 group-hover:scale-110" aria-hidden="true">
                   <InstagramLogo className="size-5 text-white" weight="fill" />
                 </span>
                 <span className="group-hover:translate-x-1 transition-transform duration-300">@miclinicamedicalcenter</span>
@@ -115,9 +112,8 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 text-white/90 hover:text-white transition-all duration-300"
-                aria-label={t("accessibility.followFacebook")}
               >
-                <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
+                <span className="flex items-center justify-center size-10 rounded-full bg-white/15 group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110" aria-hidden="true">
                   <FacebookLogo className="size-5 text-white" weight="fill" />
                 </span>
                 <span className="group-hover:translate-x-1 transition-transform duration-300">Nueva Salud Gessner</span>
