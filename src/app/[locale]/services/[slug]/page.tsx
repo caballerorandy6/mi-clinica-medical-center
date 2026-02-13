@@ -191,7 +191,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   </Badge>
                 )}
                 {service.id === "examenes-inmigracion" && (
-                  <Badge className="bg-amber-500 text-white">
+                  <Badge className="bg-amber-700 text-white">
                     USCIS {locale === "es" ? "Autorizado" : "Authorized"}
                   </Badge>
                 )}

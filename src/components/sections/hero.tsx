@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import {
@@ -31,22 +30,6 @@ const trustBadgeIconMap = {
   Star,
 };
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
 // Componente de estrellas parciales para Hero
 function PartialStarsHero({ rating, locale }: { rating: number; locale: string }) {
   const label = locale === "es" ? `${rating} de 5 estrellas` : `${rating} out of 5 stars`;
@@ -71,9 +54,13 @@ function PartialStarsHero({ rating, locale }: { rating: number; locale: string }
 }
 
 export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
-  const shouldReduceMotion = useReducedMotion();
   const t = useTranslations();
   const locale = useLocale();
+
+  // Check for reduced motion preference
+  const prefersReducedMotion = typeof window !== "undefined"
+    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    : false;
 
   const trustBadges = [
     {
@@ -131,34 +118,29 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
       {/* Main Content - Flex grow para ocupar espacio disponible */}
       <div className="flex-1 flex flex-col justify-center container mx-auto px-4 py-4">
         <div className="max-w-3xl">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-            className="space-y-3 sm:space-y-4 md:space-y-5"
-          >
+          <div className="space-y-3 sm:space-y-4 md:space-y-5 animate-fade-in">
             {/* Title - SEO optimizado */}
-            <motion.h1
-              variants={fadeInUp}
-              className="text-[1.75rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15]"
+            <h1
+              className="text-[1.75rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15] animate-slide-up"
+              style={{ animationDelay: "0.1s" }}
             >
               <span className="text-primary">{t("hero.title")}</span>
               <br />
               <span className="text-primary">{t("hero.titleHighlight")}</span> {t("hero.titleEnd")}
-            </motion.h1>
+            </h1>
 
             {/* Subtitle - SEO optimizado */}
-            <motion.p
-              variants={fadeInUp}
-              className="text-[15px] sm:text-lg md:text-xl lg:text-2xl text-white/90 font-medium max-w-xl leading-snug"
+            <p
+              className="text-[15px] sm:text-lg md:text-xl lg:text-2xl text-white/90 font-medium max-w-xl leading-snug animate-slide-up"
+              style={{ animationDelay: "0.2s" }}
             >
               {t("hero.description")}
-            </motion.p>
+            </p>
 
             {/* Features - 3 diferenciadores */}
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-wrap gap-x-4 sm:gap-x-5 gap-y-1.5 text-white/90"
+            <div
+              className="flex flex-wrap gap-x-4 sm:gap-x-5 gap-y-1.5 text-white/90 animate-slide-up"
+              style={{ animationDelay: "0.3s" }}
             >
               {[
                 t("hero.badge1"),
@@ -170,12 +152,12 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
                   <span className="text-xs sm:text-sm font-medium">{feature}</span>
                 </div>
               ))}
-            </motion.div>
+            </div>
 
             {/* CTAs - Diseño móvil mejorado */}
-            <motion.div
-              variants={fadeInUp}
-              className="pt-1 sm:pt-2"
+            <div
+              className="pt-1 sm:pt-2 animate-slide-up"
+              style={{ animationDelay: "0.4s" }}
             >
               {/* Botones principales en fila */}
               <div className="flex justify-center sm:justify-start gap-2 sm:gap-3">
@@ -200,43 +182,32 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
                   </a>
                 </Button>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <motion.a
+      <a
         href="#servicios"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="group flex flex-col items-center gap-1.5 py-3 sm:py-4 cursor-pointer"
+        className="group flex flex-col items-center gap-1.5 py-3 sm:py-4 cursor-pointer animate-fade-in"
+        style={{ animationDelay: "1s" }}
       >
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white/80 group-hover:bg-white/20 group-hover:text-white transition-all">
           <span className="text-[11px] sm:text-xs font-medium tracking-wide uppercase">
             {t("common.viewServices")}
           </span>
-          {shouldReduceMotion ? (
+          <span className={prefersReducedMotion ? "" : "animate-bounce-slow"}>
             <CaretDown className="size-3.5 sm:size-4" aria-hidden="true" />
-          ) : (
-            <motion.span
-              animate={{ y: [0, 3, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <CaretDown className="size-3.5 sm:size-4" aria-hidden="true" />
-            </motion.span>
-          )}
+          </span>
         </span>
-      </motion.a>
+      </a>
 
       {/* Trust Badges - Al final como social proof */}
       <div className="container mx-auto px-4 pb-3 sm:pb-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4"
+        <div
+          className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4 animate-slide-up"
+          style={{ animationDelay: "0.8s" }}
         >
           {trustBadges.map((badge) => {
             const Icon = trustBadgeIconMap[badge.icon as keyof typeof trustBadgeIconMap];
@@ -278,7 +249,7 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
               </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

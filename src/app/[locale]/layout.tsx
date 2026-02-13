@@ -159,6 +159,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         {/* Preconnect for Google Reviews profile images */}
         <link rel="preconnect" href="https://lh3.googleusercontent.com" />
         <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
+        {/* Preload hero image for faster LCP */}
+        <link rel="preload" href="/images/hero.webp" as="image" type="image/webp" />
       </head>
       <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
