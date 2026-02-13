@@ -119,7 +119,7 @@ export function Hero({ googleRating, googleReviewsCount }: HeroProps) {
           fill
           className="object-cover object-center"
           priority
-          quality={85}
+          quality={75}
           sizes="100vw"
         />
       </div>
