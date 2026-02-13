@@ -134,9 +134,8 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden lg:flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-300"
-                aria-label={t("accessibility.viewLocation")}
               >
-                <MapPin className="size-4 shrink-0" weight="fill" />
+                <MapPin className="size-4 shrink-0" weight="fill" aria-hidden="true" />
                 <span className="truncate max-w-[200px] xl:max-w-xs">{CONTACT_INFO.address}</span>
               </a>
 
@@ -151,9 +150,8 @@ export function Header() {
                 <a
                   href={`tel:${CONTACT_INFO.phone.replace(/\D/g, "")}`}
                   className="flex items-center gap-2 text-white hover:text-green-light transition-colors duration-300 font-semibold"
-                  aria-label={t("accessibility.callClinic")}
                 >
-                  <Phone className="size-4" weight="fill" />
+                  <Phone className="size-4" weight="fill" aria-hidden="true" />
                   <span>{CONTACT_INFO.phone}</span>
                 </a>
               </div>
@@ -169,7 +167,6 @@ export function Header() {
           <Link
             href={homeHref}
             className="flex items-center gap-3 group shrink-0"
-            aria-label="Clínica Hispana Nueva Salud Gessner - Inicio"
           >
             <div
               className={cn(
@@ -314,11 +311,11 @@ export function Header() {
                       className="flex items-center gap-3"
                       onClick={() => setIsOpen(false)}
                     >
-                      <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/10 p-1">
+                      <div className="w-[53px] h-14 rounded-xl overflow-hidden bg-white/10 p-1">
                         <Image
                           src="/images/logo.webp"
                           alt="logo clinica hispana nueva salud gessner houston"
-                          width={56}
+                          width={53}
                           height={56}
                           className="w-full h-full object-contain"
                         />

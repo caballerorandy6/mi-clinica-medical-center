@@ -45,7 +45,7 @@ export function LanguageSwitcher({ className, variant = "default" }: Props) {
             "px-2.5 py-1 text-xs font-semibold rounded-md transition-all duration-200",
             locale === "es"
               ? "bg-primary text-white shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
+              : "text-foreground/70 hover:text-foreground"
           )}
           aria-label="Español"
           aria-pressed={locale === "es"}
@@ -58,7 +58,7 @@ export function LanguageSwitcher({ className, variant = "default" }: Props) {
             "px-2.5 py-1 text-xs font-semibold rounded-md transition-all duration-200",
             locale === "en"
               ? "bg-primary text-white shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
+              : "text-foreground/70 hover:text-foreground"
           )}
           aria-label="English"
           aria-pressed={locale === "en"}

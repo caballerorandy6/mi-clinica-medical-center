@@ -30,9 +30,9 @@ export function Footer() {
               <Image
                 src="/images/logo.webp"
                 alt="logo clinica hispana nueva salud gessner houston"
-                width={60}
-                height={60}
-                className="size-14 bg-white rounded-lg p-1 transition-transform duration-300 group-hover:scale-105"
+                width={53}
+                height={56}
+                className="w-[53px] h-14 bg-white rounded-lg p-1 transition-transform duration-300 group-hover:scale-105"
               />
               <div>
                 <p className="text-lg font-bold group-hover:text-primary transition-colors duration-300">Nueva Salud</p>

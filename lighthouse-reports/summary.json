@@ -1,0 +1,98 @@
+{
+  "averages": {
+    "avgPerf": 97,
+    "avgA11y": 96,
+    "avgBP": 96
+  },
+  "results": [
+    {
+      "name": "Homepage ES",
+      "path": "/es",
+      "performance": 93,
+      "accessibility": 96,
+      "bestPractices": 96
+    },
+    {
+      "name": "Homepage EN",
+      "path": "/en",
+      "performance": 92,
+      "accessibility": 96,
+      "bestPractices": 96
+    },
+    {
+      "name": "Services ES",
+      "path": "/es/services",
+      "performance": 98,
+      "accessibility": 96,
+      "bestPractices": 96
+    },
+    {
+      "name": "Services EN",
+      "path": "/en/services",
+      "performance": 100,
+      "accessibility": 96,
+      "bestPractices": 96
+    },
+    {
+      "name": "Medicina Familiar",
+      "path": "/es/services/medicina-familiar",
+      "performance": 99,
+      "accessibility": 96,
+      "bestPractices": 96
+    },
+    {
+      "name": "Exámenes Inmigración",
+      "path": "/es/services/examenes-inmigracion",
+      "performance": 100,
+      "accessibility": 96,
+      "bestPractices": 96
+    },
+    {
+      "name": "Ginecología",
+      "path": "/es/services/servicios-ginecologia",
+      "performance": 100,
+      "accessibility": 96,
+      "bestPractices": 96
+    },
+    {
+      "name": "Laboratorio",
+      "path": "/es/services/laboratorio-clinico",
+      "performance": 0,
+      "accessibility": 0,
+      "bestPractices": 0,
+      "error": true
+    },
+    {
+      "name": "Family Medicine",
+      "path": "/en/services/family-medicine",
+      "performance": 0,
+      "accessibility": 0,
+      "bestPractices": 0,
+      "error": true
+    },
+    {
+      "name": "Immigration Exams",
+      "path": "/en/services/immigration-exams",
+      "performance": 0,
+      "accessibility": 0,
+      "bestPractices": 0,
+      "error": true
+    },
+    {
+      "name": "Gynecology",
+      "path": "/en/services/gynecology-services",
+      "performance": 0,
+      "accessibility": 0,
+      "bestPractices": 0,
+      "error": true
+    },
+    {
+      "name": "Clinical Laboratory",
+      "path": "/en/services/clinical-laboratory",
+      "performance": 0,
+      "accessibility": 0,
+      "bestPractices": 0,
+      "error": true
+    }
+  ]
+}
