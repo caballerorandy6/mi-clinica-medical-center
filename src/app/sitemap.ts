@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE_CONFIG, SERVICES } from "@/lib/constants";
+import { SITE_CONFIG, SERVICES, BLOG_POSTS } from "@/lib/constants";
 import { locales } from "@/i18n/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -50,6 +50,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages: {
             es: `${baseUrl}/services/${service.slug}`,
             en: `${baseUrl}/en/services/${service.slug}`,
+          },
+        },
+      });
+    });
+
+    // Blog page
+    routes.push({
+      url: `${baseUrl}${prefix}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+      alternates: {
+        languages: {
+          es: `${baseUrl}/blog`,
+          en: `${baseUrl}/en/blog`,
+        },
+      },
+    });
+
+    // Individual blog posts
+    BLOG_POSTS.forEach((post) => {
+      routes.push({
+        url: `${baseUrl}${prefix}/blog/${post.slug}`,
+        lastModified: new Date(post.publishedAt),
+        changeFrequency: "monthly",
+        priority: 0.7,
+        alternates: {
+          languages: {
+            es: `${baseUrl}/blog/${post.slug}`,
+            en: `${baseUrl}/en/blog/${post.slug}`,
           },
         },
       });

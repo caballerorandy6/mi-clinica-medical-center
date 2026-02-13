@@ -12,12 +12,14 @@ export function Footer() {
   const locale = useLocale();
 
   const homeHref = locale === "es" ? "/" : `/${locale}`;
+  const localePrefix = locale === "es" ? "" : `/${locale}`;
 
   // Navigation links with translations
   const navigationLinks = [
-    { label: t("nav.services"), href: `${homeHref}#servicios` },
-    { label: t("nav.greenCard"), href: `${homeHref}#green-card` },
-    { label: t("nav.contact"), href: `${homeHref}#contacto` },
+    { label: t("nav.services"), href: `${localePrefix}/#servicios` },
+    { label: t("nav.greenCard"), href: `${localePrefix}/#green-card` },
+    { label: t("nav.blog"), href: `${localePrefix}/blog` },
+    { label: t("nav.contact"), href: `${localePrefix}/#contacto` },
   ];
 
   return (

@@ -200,6 +200,55 @@ export function JsonLdBreadcrumb({ items }: JsonLdBreadcrumbProps = {}) {
   );
 }
 
+interface JsonLdBlogPostProps {
+  title: string;
+  description: string;
+  url: string;
+  image: string;
+  publishedAt: string;
+  author: {
+    name: string;
+    role: string;
+  };
+}
+
+export function JsonLdBlogPost({ title, description, url, image, publishedAt, author }: JsonLdBlogPostProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    image,
+    url,
+    datePublished: publishedAt,
+    dateModified: publishedAt,
+    author: {
+      "@type": "Person",
+      name: author.name,
+      jobTitle: author.role,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_CONFIG.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_CONFIG.baseUrl}/images/logo.webp`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 interface JsonLdServiceProps {
   name: string;
   description: string;

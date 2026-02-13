@@ -52,3 +52,15 @@ export interface GreenCardFeature {
   included: boolean;
 }
 
+export interface BlogPost {
+  slug: string;
+  publishedAt: string;
+  image?: string;
+  author: {
+    name: string;
+    role: string;
+  };
+  keywords: string[];
+  featured?: boolean;
+}
+

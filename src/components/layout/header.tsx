@@ -21,14 +21,16 @@ export function Header() {
   const t = useTranslations();
   const locale = useLocale();
 
+  const homeHref = locale === "es" ? "/" : `/${locale}`;
+  const localePrefix = locale === "es" ? "" : `/${locale}`;
+
   // Navigation links with translations
   const navigationLinks = [
-    { label: t("nav.services"), href: `/${locale === "es" ? "" : locale}#servicios` },
-    { label: t("nav.greenCard"), href: `/${locale === "es" ? "" : locale}#green-card` },
-    { label: t("nav.contact"), href: `/${locale === "es" ? "" : locale}#contacto` },
+    { label: t("nav.services"), href: `${localePrefix}/#servicios` },
+    { label: t("nav.greenCard"), href: `${localePrefix}/#green-card` },
+    { label: t("nav.blog"), href: `${localePrefix}/blog` },
+    { label: t("nav.contact"), href: `${localePrefix}/#contacto` },
   ];
-
-  const homeHref = locale === "es" ? "/" : `/${locale}`;
 
   useEffect(() => {
     const handleScroll = () => {

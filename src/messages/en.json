@@ -20,6 +20,7 @@
   "nav": {
     "services": "Services",
     "greenCard": "Green Card",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
@@ -190,6 +191,27 @@
     "followInstagram": "Follow Clínica Hispana Nueva Salud Gessner on Instagram",
     "followFacebook": "Follow Clínica Hispana Nueva Salud Gessner on Facebook",
     "openServiceDetails": "View service details"
+  },
+  "blog": {
+    "title": "News from Our",
+    "titleHighlight": "Hispanic Clinic",
+    "description": "Stay informed about the latest news, health tips and events from Clínica Hispana Nueva Salud Gessner.",
+    "badge": "Blog",
+    "readMore": "Read More",
+    "publishedOn": "Published on",
+    "by": "By",
+    "backToBlog": "Back to Blog",
+    "sharePost": "Share article",
+    "relatedPosts": "Related Articles",
+    "noPostsFound": "No articles available",
+    "seoText": "Blog of Clínica Hispana Nueva Salud Gessner. News, health tips and updates for Houston's Hispanic community."
+  },
+  "blogPosts": {
+    "bienvenidos-nueva-pagina-web": {
+      "title": "Welcome to Our New Website!",
+      "excerpt": "We are excited to present our new website, designed to give you a better experience and easier access to our medical services.",
+      "content": "## Welcome to the New Website of Clínica Hispana Nueva Salud Gessner!\n\nWe are very excited to present our new website to the entire Hispanic community in Houston. This site has been designed with you and your family in mind, so you can find all the information you need about our medical services easily and quickly.\n\n### What Will You Find on Our New Website?\n\n- **Detailed information about all our services**: From immigration medical exams (I-693) to gynecology, ultrasounds, clinical laboratory and much more.\n- **Easy-to-use contact form**: Now you can request your appointment directly from the website.\n- **Hours and location information**: We are open 7 days a week, from 9:00 AM to 9:00 PM.\n- **Content 100% in Spanish**: Because we know it's important to communicate in your language.\n\n### We Invite You to Visit Us\n\nWe are located at **1914 Gessner Rd B, Houston, TX 77080**. Our team of healthcare professionals is ready to serve you with the warmth and professionalism that characterizes us.\n\nNo appointment needed - we accept walk-in patients every day.\n\n### Our Commitment\n\nAt Clínica Hispana Nueva Salud Gessner, our commitment is to provide you with quality, accessible medical care that is 100% in Spanish. This new website is just another example of how we constantly work to improve your experience.\n\n**We look forward to seeing you!**\n\n📞 Call us: +1 (346) 226-5820\n\n📍 Visit us: 1914 Gessner Rd B, Houston, TX 77080"
+    }
   },
   "serviceData": {
     "medicina-familiar": {

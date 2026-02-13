@@ -4,6 +4,7 @@ import type {
   FAQ,
   ContactInfo,
   GreenCardFeature,
+  BlogPost,
 } from "@/types";
 
 export const SITE_CONFIG = {
@@ -586,4 +587,34 @@ export const LOCATION_FEATURES = [
   "Cerca de transporte público",
   "Área segura y bien iluminada",
 ];
+
+// BLOG POSTS
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "bienvenidos-nueva-pagina-web",
+    publishedAt: "2026-02-07",
+    image: "/images/logo.webp",
+    author: {
+      name: "Equipo Nueva Salud Gessner",
+      role: "Administración",
+    },
+    keywords: [
+      "clínica hispana Houston",
+      "nueva página web",
+      "Nueva Salud Gessner",
+      "atención médica español Houston",
+    ],
+    featured: true,
+  },
+];
+
+// Helper function to get blog post by slug
+export function getBlogPostBySlug(slug: string): BlogPost | undefined {
+  return BLOG_POSTS.find((post) => post.slug === slug);
+}
+
+// Helper function to get featured blog posts
+export function getFeaturedBlogPosts(): BlogPost[] {
+  return BLOG_POSTS.filter((post) => post.featured);
+}
 
