@@ -46,8 +46,8 @@
   --primary: #166534;
   --primary-foreground: #FFFFFF;
 
-  /* Secundario: Teal (headers, elementos destacados) */
-  --secondary: #0D9488;
+  /* Secundario: Teal (headers, elementos destacados) - #0F766E para mejor contraste WCAG */
+  --secondary: #0F766E;
   --secondary-foreground: #FFFFFF;
 
   /* Muted: Tonos verdes suaves */
