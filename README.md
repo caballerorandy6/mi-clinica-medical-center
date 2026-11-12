@@ -17,7 +17,7 @@
 - **Google reviews** pulled from the Google Places API and shown in a carousel.
 - **Contact form** with client and server validation (React Hook Form + Zod), sent with Resend and React Email.
 - **Local SEO:** per-page metadata, Open Graph, JSON-LD (MedicalClinic, MedicalProcedure, FAQPage, BlogPosting, breadcrumbs), sitemap and robots.
-- **Conversion:** floating call and WhatsApp buttons, clear calls to action on every page.
+- **Conversion:** floating call button, clear calls to action on every page.
 - **Performance and accessibility:** optimized images, lazy loading, keyboard navigation and ARIA labels; Lighthouse reports for every service page are in `lighthouse-reports/`.
 
 ## Tech stack
